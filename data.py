@@ -16,3 +16,5 @@ def pdf_to_text(pdf_path, output_txt):
 
     with open(output_txt, 'w', encoding='utf-8') as txt_file:
         txt_file.write(text)
+
+# is this working?
