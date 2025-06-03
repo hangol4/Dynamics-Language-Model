@@ -1,7 +1,7 @@
-from data import pdf_to_text
+from PyPDF2 import pdf_to_text
 
-input_path = '../Detection of the Milky Way reflex motion due to the Large Magellanic Cloud infall.pdf'
+input_path = '../Petersen2021.pdf'
 
-output_path = './Detection of the Milky Way reflex motion due to the Large Magellanic Cloud infall.txt'
+output_path = './PyPDF2 Petersen2021.txt'
 
 pdf_to_text(input_path, output_path)
