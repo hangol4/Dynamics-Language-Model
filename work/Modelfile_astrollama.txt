@@ -1,0 +1,3 @@
+FROM ./astrollama.gguf
+
+PARAMETER temperature 0.3
