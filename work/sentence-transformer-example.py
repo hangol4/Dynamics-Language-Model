@@ -1,7 +1,9 @@
 from sentence_transformers import SentenceTransformer
+print('imported sentence_transformers')
 
 # 1. Load a pretrained Sentence Transformer model
 model = SentenceTransformer("all-MiniLM-L6-v2")
+print('loaded a model')
 # The sentences to encode
 sentences = [
     "The weather is lovely today.",
@@ -11,6 +13,7 @@ sentences = [
 
 # 2. Calculate embeddings by calling model.encode()
 embeddings = model.encode(sentences)
+print('calculated embeddings')
 print(embeddings.shape)
 # [3, 384]
 

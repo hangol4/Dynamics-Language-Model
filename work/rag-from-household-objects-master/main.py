@@ -6,7 +6,7 @@ from sentence_transformers.util import cos_sim
 print('imported cos_sim')
 
 # file with our "documents"
-fn = 'data/ig.txt'
+fn = '/home/hgolawska/llm_summer_project/Dynamics-Language-Model/work/rag-from-household-objects-master/data/ig.txt'
 
 embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
 llm_model = 'phi3:mini-128k'
@@ -30,8 +30,10 @@ for i in range(0, len(raw), chunk_size):
 
 # create the embeddings for the documents
 model = SentenceTransformer(embedding_model)
+print('loaded an embedding model')
 
 doc_embeddings = model.encode(chunks, show_progress_bar=True)
+print('calculated embeddings')
 
 while True:
     query = input('Ask a question: ')
