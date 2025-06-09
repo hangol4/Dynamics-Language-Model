@@ -10,6 +10,7 @@ fn = '/home/hgolawska/llm_summer_project/Dynamics-Language-Model/work/rag-from-h
 
 embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
 llm_model = 'phi3:mini-128k'
+# llm_model = 'llama3.2:latest'
 
 chunk_size = 250
 chunk_overlap = 50
