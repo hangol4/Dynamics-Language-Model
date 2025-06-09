@@ -2,7 +2,7 @@ from sentence_transformers import SentenceTransformer
 print('imported sentence_transformers')
 
 # 1. Load a pretrained Sentence Transformer model
-model = SentenceTransformer("all-MiniLM-L6-v2")
+model = SentenceTransformer("all-MiniLM-L6-v2", cache_folder="/home/hgolawska/llm_summer_project/caches", local_files_only=True)
 print('loaded a model')
 # The sentences to encode
 sentences = [

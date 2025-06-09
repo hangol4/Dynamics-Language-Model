@@ -1,16 +1,25 @@
 import ollama
+import sys
 print('imported ollama')
 from sentence_transformers import SentenceTransformer
 print('imported sentence_transformers')
 from sentence_transformers.util import cos_sim
 print('imported cos_sim')
 
+# read parameters from the command line
+if(len(sys.argv) != 2):
+    print("Usage python main.py <llm model name>")
+    print("llm model name: e.g. mistral-large, llama3.2, etc.")
+    sys.exit()
+llm_model = sys.argv[1]
+print(f'Using LLM model: {llm_model}')
+
 # file with our "documents"
 fn = '/home/hgolawska/llm_summer_project/Dynamics-Language-Model/work/rag-from-household-objects-master/data/ig.txt'
 
 embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
-llm_model = 'phi3:mini-128k'
-# llm_model = 'llama3.2:latest'
+caches_dir = '/home/hgolawska/llm_summer_project/caches'
+
 
 chunk_size = 250
 chunk_overlap = 50
@@ -30,7 +39,7 @@ for i in range(0, len(raw), chunk_size):
 # print(chunks[0])  # print the first chunk
 
 # create the embeddings for the documents
-model = SentenceTransformer(embedding_model)
+model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
 print('loaded an embedding model')
 
 doc_embeddings = model.encode(chunks, show_progress_bar=True)
