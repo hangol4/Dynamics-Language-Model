@@ -1,0 +1,45 @@
+and find in the notation of Figure 1.5,
+
+\[F_{\perp}=\frac{Gm^{2}}{b^{2}+x^{2}}\cos\theta=\frac{Gm^{2}b}{\left(b^{2}+x^{2} \right)^{3/2}}=\frac{Gm^{2}}{b^{2}}\biggl{[}1+\left(\frac{vt}{b}\right)^{2} \biggr{]}^{-3/2}. \tag{1.28}\]
+
+But by Newton's laws
+
+\[m\dot{\mathbf{v}}=\mathbf{F}\quad\mbox{so}\quad\delta v=\frac{1}{m}\int_{- \infty}^{\infty}\mathrm{d}t\,F_{\perp}, \tag{1.29}\]
+
+and we have
+
+\[\delta v=\frac{Gm}{b^{2}}\int_{-\infty}^{\infty}\frac{\mathrm{d}t}{[1+(vt/b)^{ 2}]^{3/2}}=\frac{Gm}{bv}\int_{-\infty}^{\infty}\frac{\mathrm{d}s}{(1+s^{2})^{3 /2}}=\frac{2Gm}{bv}. \tag{1.30}\]
+
+In words, \(\delta v\) is roughly equal to the acceleration at closest approach, \(Gm/b^{2}\), times the duration of this acceleration \(2b/v\). Notice that our assumption of a straight-line trajectory breaks down, and equation (1.30) becomes invalid, when \(\delta v\simeq v\); from equation (1.30), this occurs if the impact parameter \(b\mathrel{\hbox to 0.0pt{\raise 2.1973pt\hbox{$<$}}{\lower 2.1973pt\hbox{$ \sim$}}}b_{90}\equiv 2Gm/v^{2}\). The subscript 90 stands for a 90-degree deflection--see equation (3.51) for a more precise definition.
+
+Now the surface density of field stars in the host galaxy is of order \(N/\pi R^{2}\), where \(N\) is the number of stars and \(R\) is the galaxy's radius, so in crossing the galaxy once the subject star suffers
+
+\[\delta n=\frac{N}{\pi R^{2}}2\pi b\,\mathrm{d}b=\frac{2N}{R^{2}}b\,\mathrm{d}b \tag{1.31}\]
+
+encounters with impact parameters in the range \(b\) to \(b+\mathrm{d}b\). Each such encounter produces a perturbation \(\delta\mathbf{v}\) to the subject star's velocity, but because these small perturbations are randomly oriented in the plane perpendicular to \(\mathbf{v}\), their mean is zero.10 Although the mean velocity change is zero, the mean-square change is not: after one crossing this amounts to
+
+Footnote 10: Strictly, the mean change in velocity is zero only if the distribution of perturbing stars is the same in all directions. A more precise statement is that the mean change in velocity is due to the smoothed-out mass distribution, and we ignore this because the goal of our calculation is to determine the _difference_ between the acceleration due to the smoothed mass distribution and the actual stars.
+
+\[\sum\delta v^{2}\simeq\delta v^{2}\delta n=\left(\frac{2Gm}{bv}\right)^{2}\frac {2N}{R^{2}}b\,\mathrm{d}b. \tag{1.32}\]Integrating equation (1.32) over all impact parameters from \(b_{\rm min}\) to \(b_{\rm max}\), we find the mean-square velocity change per crossing,
+
+\[\Delta v^{2}\equiv\int_{b_{\rm min}}^{b_{\rm max}}\sum\delta v^{2}\simeq 8N \biggl{(}\frac{Gm}{Rv}\biggr{)}^{2}\ln\Lambda,\] (1.33a) where the factor \[\ln\Lambda\equiv\ln\left(\frac{b_{\rm max}}{b_{\rm min}}\right) \tag{1.33b}\]
+
+is called the **Coulomb logarithm**. Our assumption of a straight-line trajectory breaks down for impact parameters smaller than \(b_{90}\), so we set \(b_{\rm min}=f_{1}b_{90}\), where \(f_{1}\) is a factor of order unity. Our assumption of a homogeneous distribution of field stars breaks down for impact parameters of order \(R\), so we set \(b_{\rm max}=f_{2}R\). Then
+
+\[\ln\Lambda=\ln\left(\frac{R}{b_{90}}\right)+\ln(f_{2}/f_{1}). \tag{1.34}\]
+
+In most systems of interest \(R\gg b_{90}\) (for example, in a typical elliptical galaxy \(R/b_{90}\mathrel{\hbox to 0.0pt{\lower 4.0pt\hbox{ $\sim$}}\raise 1.0pt\hbox{$>$} }10^{10}\)), so the fractional uncertainty in \(\ln\Lambda\) arising from the uncertain values of \(f_{1}\) and \(f_{2}\) is quite small, and we lose little accuracy by setting \(f_{2}/f_{1}=1\).
+
+Thus encounters between the subject star and field stars cause a kind of diffusion of the subject star's velocity that is distinct from the steady acceleration caused by the overall mass distribution in the stellar system. This diffusive process is sometimes called **two-body relaxation** since it arises from the cumulative effect of myriad two-body encounters between the subject star and passing field stars.
+
+The typical speed \(v\) of a field star is roughly that of a particle in a circular orbit at the edge of the galaxy,
+
+\[v^{2}\approx\frac{GNm}{R}. \tag{1.35}\]
+
+If we eliminate \(R\) from equation (1.33a) using equation (1.35), we have
+
+\[\frac{\Delta v^{2}}{v^{2}}\approx\frac{8\ln\Lambda}{N}. \tag{1.36}\]
+
+If the subject star makes many crossings of the galaxy, the velocity \({\bf v}\) will change by roughly \(\Delta v^{2}\) at each crossing, so the number of crossings \(n_{\rm relax}\) that is required for its velocity to change by of order itself is given by
+
+\[n_{\rm relax}\simeq\frac{N}{8\ln\Lambda}. \tag{1.37}\]
