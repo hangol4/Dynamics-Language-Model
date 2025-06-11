@@ -47,18 +47,21 @@ chunk_overlap = 50
 with open(filename) as f:
     raw = f.read()
 
+# split into fixed size chunks
+'''
 chunks = []
 
 for i in range(0, len(raw), chunk_size):
     chunks.append(raw[i:i + chunk_size])
+    # use the most common word in the chunk as the label
+    labels = [most_common_word(chunk) for chunk in chunks]'''
 
-#chunks = raw.split('#')
+# split into chunks corresponding to sections
+chunks = raw.split('#')
 # remove empty chunks
 chunks = [chunk for chunk in chunks if chunk]
-
-# Get labels for each chunk
-labels = [most_common_word(chunk) for chunk in chunks]
-#labels = [chunk.split('\n')[0] for chunk in chunks]
+# use the first line of each chunk as the label
+labels = [chunk.split('\n')[0] for chunk in chunks]
 #print(labels[:10])  # print the first 10 labels for debugging
 
 
@@ -83,13 +86,13 @@ print('flat embedding shape:', flat_embeddings.embedding_.shape)
 plt.figure(figsize=(10, 10))
 plt.title('UMAP projection of the document embeddings')
 umap.plot.points(flat_embeddings)
-plt.savefig('work/plots/umap_projection_words.png', dpi=300)
+plt.savefig('work/plots/umap_projection_headings.png', dpi=300)
 
 fig, ax = plt.subplots(figsize=(12,12))
-ax.scatter(flat_embeddings.embedding_[:, 0], flat_embeddings.embedding_[:, 1], color='lightblue', alpha=0.4, s=30, edgecolors=None)
+ax.scatter(flat_embeddings.embedding_[:, 0], flat_embeddings.embedding_[:, 1], color='lightblue', alpha=1, s=30, edgecolors=None)
 ax.set_aspect('equal')
 # add a label for one in 10 points
-for i in range(0, flat_embeddings.embedding_.shape[0], 10):
+for i in range(0, flat_embeddings.embedding_.shape[0]):
     # Wrap the label to a maximum width (e.g., 15 characters per line)
     wrapped_label = "\n".join(textwrap.wrap(labels[i], width=15))
     ax.text(flat_embeddings.embedding_[i, 0],
@@ -101,4 +104,4 @@ for i in range(0, flat_embeddings.embedding_.shape[0], 10):
             verticalalignment='center',
            )
 plt.title('UMAP projection of the document embeddings with labels')
-plt.savefig('work/plots/umap_projection_words.png', dpi=300)
+plt.savefig('work/plots/umap_projection_headings_wrapped.png', dpi=300)
