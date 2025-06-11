@@ -79,7 +79,7 @@ plt.savefig('work/plots/umap_projection1.png', dpi=300)
 
 fig, ax = plt.subplots(figsize=(12,12))
 ax.set_aspect('equal')
-ax.scatter(flat_embeddings.embedding_[:, 0], flat_embeddings.embedding_[:, 1], color='lightblue', alpha=0.6, s=30)
+ax.scatter(flat_embeddings.embedding_[:, 0], flat_embeddings.embedding_[:, 1], color='blue', alpha=0.4, s=30, edgecolors=None)
 # add a label for one in 10 points
 for i in range(0, flat_embeddings.embedding_.shape[0], 10):
     ax.text(flat_embeddings.embedding_[i, 0],
