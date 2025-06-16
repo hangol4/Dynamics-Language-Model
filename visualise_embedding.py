@@ -39,7 +39,7 @@ def most_common_word(chunk):
 
 #embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
 caches_dir = '/home/hgolawska/llm_summer_project/caches'
-filename = './work/pdf_to_txt/output/Binney_and_Tremaine_chap2_cleaned.mmd'
+filename = './work/pdf_to_txt/output/Binney_and_Tremaine_chap2.mmd'
 
 chunk_size = 250
 chunk_overlap = 50
@@ -64,6 +64,12 @@ chunks = [chunk for chunk in chunks if chunk]
 # use the first line of each chunk as the label
 labels = [chunk.split('\n')[0] for chunk in chunks]
 #print(labels[:10])  # print the first 10 labels for debugging
+# count the number of words in each chunk
+words = [len(chunk.split()) for chunk in chunks] 
+print('maximum number of words in a chunk:', max(words))
+print('minimum number of words in a chunk:', min(words))
+print('average number of words in a chunk:', sum(words) / len(words))
+
 
 
 # print(chunks[0])  # print the first chunk
@@ -109,4 +115,4 @@ for i in range(0, flat_embeddings.embedding_.shape[0]):
             verticalalignment='center',
            )
 plt.title('UMAP projection of the document embeddings with mxbai-embed-large')
-plt.savefig('work/plots/umap_projection_headings_mxbai-embed-large.png', dpi=300)
+plt.savefig('work/plots/umap_projection_headings_mxbai-embed-large_not_cleaned.png', dpi=300)
