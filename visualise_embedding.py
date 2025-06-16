@@ -2,14 +2,15 @@
 Code to embed a text file into a vector space and visualise it using UMAP
 '''
 
-#import ollama
+import ollama
 import umap
 import umap.plot
 import matplotlib.pyplot as plt
 import string
 import textwrap
-from sentence_transformers import SentenceTransformer
-from sentence_transformers.util import cos_sim
+import numpy as np
+#from sentence_transformers import SentenceTransformer
+#from sentence_transformers.util import cos_sim
 
 def most_common_word(chunk):
     # remove punctuation, convert to lowercase and split the chunk into words
@@ -36,9 +37,9 @@ def most_common_word(chunk):
             highest_count = count
     return most_common
 
-embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
+#embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
 caches_dir = '/home/hgolawska/llm_summer_project/caches'
-filename = './work/pdf_to_txt/output/Binney_and_Tremaine_chap2.mmd'
+filename = './work/pdf_to_txt/output/Binney_and_Tremaine_chap2_cleaned.mmd'
 
 chunk_size = 250
 chunk_overlap = 50
@@ -69,12 +70,16 @@ labels = [chunk.split('\n')[0] for chunk in chunks]
 # print(labels[0])  # print the label for the first chunk
 
 # create the embeddings for the documents
-model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
+#model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
+model = 'mxbai-embed-large'
 print('loaded an embedding model')
 
-doc_embeddings = model.encode(chunks, show_progress_bar=True)
+#doc_embeddings = model.encode(chunks, show_progress_bar=True)
+response = ollama.embed(model=model, input=chunks)
+doc_embeddings = response["embeddings"]
 print('calculated embeddings')
-
+print(type(doc_embeddings))
+doc_embeddings = np.array(doc_embeddings)
 print('embedding shape:', doc_embeddings.shape)
 
 # reduce the dimensionality of the embeddings using UMAP
@@ -103,5 +108,5 @@ for i in range(0, flat_embeddings.embedding_.shape[0]):
             horizontalalignment='center',
             verticalalignment='center',
            )
-plt.title('UMAP projection of the document embeddings with labels')
-plt.savefig('work/plots/umap_projection_headings_wrapped.png', dpi=300)
+plt.title('UMAP projection of the document embeddings with mxbai-embed-large')
+plt.savefig('work/plots/umap_projection_headings_mxbai-embed-large.png', dpi=300)
