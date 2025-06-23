@@ -14,13 +14,13 @@ Our goal is to calculate the force \({\bf F}({\bf x})\) on a particle of mass \(
 
 to the overall force from each small element of volume \({\rm d}^{3}{\bf x}^{\prime}\) located at \({\bf x}^{\prime}\). Thus
 
-\[{\bf F}({\bf x})=m_{\rm s}{\bf g}({\bf x})\quad\mbox{where}\quad{\bf g}({\bf x })\equiv G\int{\rm d}^{3}{\bf x}^{\prime}\frac{{\bf x}^{\prime}-{\bf x}}{|{ \bf x}^{\prime}-{\bf x}|^{3}}\rho({\bf x}^{\prime}) \tag{2.2}\]
+\[{\bf F}({\bf x})=m_{\rm s}{\bf g}({\bf x})\quad\mbox{where}\quad{\bf g}({\bf x })\equiv G\int{\rm d}^{3}{\bf x}^{\prime}\frac{{\bf x}^{\prime}-{\bf x}}{|{\bf x }^{\prime}-{\bf x}|^{3}}\rho({\bf x}^{\prime}) \tag{2.2}\]
 
 is the **gravitational field**, the force per unit mass.
 
 If we define the **gravitational potential**\(\Phi({\bf x})\) by
 
-\[\Phi({\bf x})\equiv-G\int{\rm d}^{3}{\bf x}^{\prime}\frac{\rho({\bf x}^{\prime })}{|{\bf x}^{\prime}-{\bf x}|}, \tag{2.3}\]
+\[\Phi({\bf x})\equiv-G\int{\rm d}^{3}{\bf x}^{\prime}\frac{\rho({\bf x}^{ \prime})}{|{\bf x}^{\prime}-{\bf x}|}, \tag{2.3}\]
 
 and notice that
 
@@ -42,11 +42,11 @@ If we take the divergence of equation (2.2), we find
 
 When \(\mathbf{x}^{\prime}-\mathbf{x}\neq 0\) we may cancel the factor \(|\mathbf{x}^{\prime}-\mathbf{x}|^{2}\) from top and bottom of the last term in this equation to conclude that
 
-\[\boldsymbol{\nabla}_{\mathbf{x}}\cdot\left(\frac{\mathbf{x}^{\prime}-\mathbf{x }}{|\mathbf{x}^{\prime}-\mathbf{x}|^{3}}\right)=0\qquad(\mathbf{x}^{\prime} \neq\mathbf{x}). \tag{2.8}\]
+\[\boldsymbol{\nabla}_{\mathbf{x}}\cdot\left(\frac{\mathbf{x}^{\prime}-\mathbf{ x}}{|\mathbf{x}^{\prime}-\mathbf{x}|^{3}}\right)=0\qquad(\mathbf{x}^{\prime}\neq \mathbf{x}). \tag{2.8}\]
 
 Therefore, any contribution to the integral of equation (2.6) must come from the point \(\mathbf{x}^{\prime}=\mathbf{x}\), and we may restrict the volume of integration to a small sphere of radius \(h\) centered on this point. Since, for sufficiently small \(h\), the density will be almost constant through this volume, we can take \(\rho(\mathbf{x}^{\prime})\) out of the integral. The remaining terms of the integrand may then be arranged as follows:
 
-\[\boldsymbol{\nabla}\cdot\mathbf{g}(\mathbf{x}) =G\rho(\mathbf{x})\int_{|\mathbf{x}^{\prime}-\mathbf{x}|\leq h} \mathrm{d}^{3}\mathbf{x}^{\prime}\,\boldsymbol{\nabla}_{\mathbf{x}}\cdot\left( \frac{\mathbf{x}^{\prime}-\mathbf{x}}{|\mathbf{x}^{\prime}-\mathbf{x}|^{3}}\right) \tag{2.9a}\] \[=-G\rho(\mathbf{x})\int_{|\mathbf{x}^{\prime}-\mathbf{x}|\leq h} \mathrm{d}^{2}\mathbf{S}^{\prime}\cdot\frac{(\mathbf{x}^{\prime}-\mathbf{x})} {|\mathbf{x}^{\prime}-\mathbf{x}|^{3}}.\]
+\[\boldsymbol{\nabla}\cdot\mathbf{g}(\mathbf{x}) =G\rho(\mathbf{x})\int_{|\mathbf{x}^{\prime}-\mathbf{x}|\leq h} \mathrm{d}^{3}\mathbf{x}^{\prime}\,\boldsymbol{\nabla}_{\mathbf{x}}\cdot\left( \frac{\mathbf{x}^{\prime}-\mathbf{x}}{|\mathbf{x}^{\prime}-\mathbf{x}|^{3}}\right) \tag{2.9a}\] \[=-G\rho(\mathbf{x})\int_{|\mathbf{x}^{\prime}-\mathbf{x}|\leq h }\mathrm{d}^{2}\mathbf{S}^{\prime}\cdot\frac{(\mathbf{x}^{\prime}-\mathbf{x}) }{|\mathbf{x}^{\prime}-\mathbf{x}|^{3}}.\]
 
 The last step in this sequence uses the divergence theorem to convert the volume integral into a surface integral (eq. B.43). Now on the sphere \(|\mathbf{x}^{\prime}-\mathbf{x}|=h\) we have \(\mathrm{d}^{2}\mathbf{S}^{\prime}=(\mathbf{x}^{\prime}-\mathbf{x})h\,\mathrm{ d}^{2}\Omega\), where \(\mathrm{d}^{2}\Omega\) is a small element of solid angle. Hence equation (2.9a) becomes
 
@@ -96,11 +96,11 @@ To obtain an alternative expression for \(W\), we again apply the divergence the
 
 where \(\rho\) and \(\Phi\) are the density and potential of some body, and the integral is to be taken over all space. We now deduce some useful properties of \({\bf W}\), which is known as the **Chandrasekhar potential-energy tensor**.2
 
-Footnote 2: Subramanyan Chandrasekhar (1910–1995) was educated in India and England and spent most of his career at the University of Chicago. He discovered the Chandrasekhar limit, the maximum mass of a white dwarf star, and elucidated the concept of dynamical friction in astrophysics (SS8.1). He shared the 1983 Nobel Prize in Physics with W. A. Fowler.
+Footnote 2: Subramanyan Chandrasekhar (1910–1995) was educated in India and England and spent most of his career at the University of Chicago. He discovered the Chandrasekhar limit, the maximum mass of a white dwarf star, and elucidated the concept of dynamical friction in astrophysics (§8.1). He shared the 1983 Nobel Prize in Physics with W. A. Fowler.
 
 If we substitute for \(\Phi\) from equation (2.3), \({\bf W}\) becomes
 
-\[W_{jk}=G\int{\rm d}^{3}{\bf x}\,\rho({\bf x})x_{j}\frac{\partial}{\partial x_ {k}}\int{\rm d}^{3}{\bf x^{\prime}}\,\frac{\rho({\bf x^{\prime}})}{|{\bf x^{ \prime}}-{\bf x}|}. \tag{2.20}\]
+\[W_{jk}=G\int{\rm d}^{3}{\bf x}\,\rho({\bf x})x_{j}\frac{\partial}{\partial x_{ k}}\int{\rm d}^{3}{\bf x^{\prime}}\,\frac{\rho({\bf x^{\prime}})}{|{\bf x^{ \prime}}-{\bf x}|}. \tag{2.20}\]
 
 Since the range of the integration over \({\bf x^{\prime}}\) does not depend on \({\bf x}\), we may carry the differentiation inside the integral to find
 
@@ -218,7 +218,7 @@ and shall use this as a measure of the characteristic time associated with the o
 
 The potential energy of a homogeneous sphere of radius \(a\) and density \(\rho\) is conveniently obtained from equation (2.32). We have \(M(r)=\frac{4}{3}\pi\rho r^{3}\), and therefore
 
-\[W=-\frac{16\pi^{2}}{3}G\rho^{2}\int_{0}^{a}{\rm d}r\,r^{4}=-\frac{16}{15}\pi^ {2}G\rho^{2}a^{5}=-\frac{3}{5}\frac{GM^{2}}{a}. \tag{2.41}\]
+\[W=-\frac{16\pi^{2}}{3}G\rho^{2}\int_{0}^{a}{\rm d}r\,r^{4}=-\frac{16}{15}\pi^{ 2}G\rho^{2}a^{5}=-\frac{3}{5}\frac{GM^{2}}{a}. \tag{2.41}\]
 
 Sometimes it is useful to characterize the size of a system that lacks a sharp boundary by quoting the **gravitational radius**, which is defined as
 
@@ -226,9 +226,9 @@ Sometimes it is useful to characterize the size of a system that lacks a sharp b
 
 From equation (2.28) the gravitational potential of a homogeneous sphere of radius \(a\) is
 
-\[\Phi(r)=\left\{\begin{array}{ll}-2\pi G\rho(a^{2}-\frac{1}{3}r^{2})&(r<a),\\ -\frac{4\pi G\rho a^{3}}{3r}&(r>a).\end{array}\right. \tag{2.43}\]
+\[\Phi(r)=\cases{-2\pi G\rho(a^{2}-\frac{1}{3}r^{2})&($r<a$),\cr-\frac{4\pi G\rho a ^{3}}{3r}&($r>a$).\cr} \tag{2.43}\]
 
-**(c) Plummer model** We might expect that in many spherical systems the density is roughly constant near the center, and falls to zero at large radii. The potential of a system of this type would be proportional to \(r^{2}+\)_constant_ at small radii and to \(r^{-1}\) at large radii. A simple potential with these properties is the **Plummer model**
+**(c) Plummer model** We might expect that in many spherical systems the density is roughly constant near the center, and falls to zero at large radii. The potential of a system of this type would be proportional to \(r^{2}+\mbox{\it constant}\) at small radii and to \(r^{-1}\) at large radii. A simple potential with these properties is the **Plummer model**
 
 \[\Phi=-\frac{GM}{\sqrt{r^{2}+b^{2}}}. \tag{2.44a}\]
 
@@ -236,7 +236,7 @@ The linear scale of the system that generates this potential is set by the **Plu
 
 From equation (B.53) for \(\nabla^{2}\) in spherical polar coordinates we have
 
-\[\nabla^{2}\Phi=\frac{1}{r^{2}}\frac{\rm d}{{\rm d}r}\left(r^{2}\frac{{\rm d} \Phi}{{\rm d}r}\right)=\frac{3GMb^{2}}{(r^{2}+b^{2})^{5/2}}. \tag{2.45}\]
+\[\nabla^{2}\Phi=\frac{1}{r^{2}}\frac{{\rm d}}{{\rm d}r}\left(r^{2}\frac{{\rm d }\Phi}{{\rm d}r}\right)=\frac{3GMb^{2}}{(r^{2}+b^{2})^{5/2}}. \tag{2.45}\]
 
 Thus from Poisson's equation (2.10) we have that the density corresponding to the potential (2.44a) is
 
@@ -324,11 +324,11 @@ In Chapter 1 we saw that the circular-speed curves of many galaxies are remarkab
 
 The potential difference between radius \(r\) and the reference radius \(r_{0}\) is
 
-\[\eqalign{\Phi(r)-\Phi(r_{0})&=G\int_{r_{0}}^{r}{\rm d}r^{\prime}\,\frac{M(r^{ \prime})}{r^{\prime 2}}=\frac{4\pi G\rho_{0}r_{0}^{\alpha}}{3-\alpha}\int_{r_{0}}^ {r}{\rm d}r^{\prime}\,r^{\prime(1-\alpha)}\cr&=\left\{\begin{array}{ll}\frac {v_{\rm c}^{2}(r_{0})-v_{\rm c}^{2}(r)}{\alpha-2}&\hbox{for $\alpha\neq 2$}\\ v_{\rm c}^{2}\ln(r/r_{0})&\hbox{for $\alpha=2$}\end{array}\right.\cr} \tag{2.62}\]
+\[\begin{split}\Phi(r)-\Phi(r_{0})&=G\int_{r_{0}}^{r }{\rm d}r^{\prime}\,\frac{M(r^{\prime})}{r^{\prime 2}}=\frac{4\pi G\rho_{0}r_{0}^{ \alpha}}{3-\alpha}\int_{r_{0}}^{r}{\rm d}r^{\prime}\,r^{\prime(1-\alpha)}\\ &=\left\{\begin{array}{ll}\frac{v_{\rm c}^{2}(r_{0})-v_{\rm c}^ {2}(r)}{\alpha-2}&\mbox{for $\alpha\neq 2$}\\ v_{\rm c}^{2}\ln(r/r_{0})&\mbox{for $\alpha=2$}\end{array}\right.\end{split} \tag{2.62}\]
 
 Equation (2.60) shows that \(M(r)\) diverges at large \(r\) for all \(\alpha<3\). However, such models are still useful because by Newton's first theorem, the mass exterior to any radius \(r\) does not affect the dynamics interior to \(r\). For \(3>\alpha>2\), \(v_{\rm c}^{2}(r)\) decreases with increasing \(r\) (eq. 2.61), so by (2.62) there is only a finite potential difference between radius \(r\) and infinity. In fact, the escape speed \(v_{\rm e}(r)\) from radius \(r\) is given by
 
-\[v_{\rm e}^{2}(r)=2[\Phi(\infty)-\Phi(r)]=2\frac{v_{\rm c}^{2}(r)}{\alpha-2} \ \ \ \ \ (\alpha>2). \tag{2.63}\]
+\[v_{\rm e}^{2}(r)=2[\Phi(\infty)-\Phi(r)]=2\frac{v_{\rm c}^{2}(r)}{\alpha-2} \ \ \ \ (\alpha>2). \tag{2.63}\]
 
 For \(\alpha<2\), \(\Phi(r)\) grows without limit as \(r\to\infty\), so the interpretation of \(\Phi\) as the energy per unit mass required to remove a particle to infinity is no longer valid. The potential is nevertheless a useful concept because the gravitational field is given by \({\bf g}=-{\bf\nabla}\Phi\). Since the light distributions of elliptical galaxies suggest \(\alpha\simeq 3\) at large \(r\) (see eq. 2.53), while the flatness of the circular-speed curves in spiral galaxies suggest \(\alpha\simeq 2\), it is clear that the escape speeds of galaxies are very uncertain.
 
@@ -372,15 +372,11 @@ The potential-density pair of equations (2.68) was introduced by Kuzmin (1956), 
 
 Consider next the potential
 
-\[\Phi_{\rm M}(R,z)=-\frac{GM}{\sqrt{R^{2}+(a+\sqrt{z^{2}+b^{2}}\,)^{2}}}.\] (2.69a) When \[a=0\], \[\Phi_{\rm M}\] reduces to Plummer's spherical potential ( 2.44a ), and when \[b=0\], \[\Phi_{\rm M}\] reduces to Kuzmin's potential of a razor-thin disk ( 2.68a ). Thus, depending on the choice of the two parameters \[a\] and \[b\], \[\Phi_{\rm M}\] can represent the potential of anything from an infinitesimally thin disk to a spherical system. If we calculate \[\nabla^{2}\Phi_{\rm M}\], we find that the mass distribution with which it is associated is (Miyamoto & Nagai 1975 ) \[\rho_{\rm M}(R,z)=\left(\frac{b^{2}M}{4\pi}\right)\frac{aR^{2}+(a+3\sqrt{z^{2} +b^{2}}\,)(a+\sqrt{z^{2}+b^{2}}\,)^{2}}{\left[R^{2}+(a+\sqrt{z^{2}+b^{2}}\,)^{ 2}\right]^{5/2}(z^{2}+b^{2})^{3/2}}. \tag{2.69b}\]
+\[\Phi_{\rm M}(R,z)=-\frac{GM}{\sqrt{R^{2}+(a+\sqrt{z^{2}+b^{2}}\,)^{2}}}.\] (2.69a) When \[a=0\], \[\Phi_{\rm M}\] reduces to Plummer's spherical potential ( 2.44a ), and when \[b=0\], \[\Phi_{\rm M}\] reduces to Kuzmin's potential of a razor-thin disk ( 2.68a ). Thus, depending on the choice of the two parameters \[a\] and \[b\], \[\Phi_{\rm M}\] can represent the potential of anything from an infinitesimally thin disk to a spherical system. If we calculate \[\nabla^{2}\Phi_{\rm M}\], we find that the mass distribution with which it is associated is (Miyamoto & Nagai 1975 ) \[\rho_{\rm M}(R,z)=\left(\frac{b^{2}M}{4\pi}\right)\frac{aR^{2}+(a+3\sqrt{z^{2} +b^{2}}\,)(a+\sqrt{z^{2}+b^{2}}\,)^{2}}{\left[R^{2}+(a+\sqrt{z^{2}+b^{2}}\,)^{2 }\right]^{5/2}}(z^{2}+b^{2})^{3/2}.\] (2.69b) In Figure 2.7 we show contour plots of \[\rho_{\rm M}(R,z)\] for various values of \[b/a\]. When \[b/a\simeq 0.2\], these are qualitatively similar to the light distributions of disk galaxies, although there are quantitative differences. For example, from equation ( 2.69b ) we have that \[\rho(R,0)\propto R^{-3}\] when \[R\] is large, whereas the brightness profiles of disks fall off at least as fast as \[\exp(-R/R_{\rm d})\] (eq. 1.7 ).
 
-In Figure 2.7 we show contour plots of \(\rho_{\rm M}(R,z)\) for various values of \(b/a\). When \(b/a\simeq 0.2\), these are qualitatively similar to the light distributions of disk galaxies, although there are quantitative differences. For example, from equation (2.69b) we have that \(\rho(R,0)\propto R^{-3}\) when \(R\) is large, whereas the brightness profiles of disks fall off at least as fast as \(\exp(-R/R_{\rm d})\) (eq. 1.7).
+Since Poisson's equation is linear in \(\Phi\) and \(\rho\), the difference between any two potential-density pairs is itself a potential-density pair. Therefore, if we differentiate a potential-density pair with respect to one of its parameters, we obtain a new potential-density pair. For example, Toomre (1963) derived a family of potential-density pairs by differentiating \(\Phi_{\rm K}(R,z)/a\)\(n\) times with respect to \(a^{2}\). Similarly, Satoh (1980) obtained a series of spherical potential-density pairs by differentiating \(b^{-2}\) times the Plummer potential and density (eq. 2.44 ) \(n\) times with respect to \(b^{2}\). He flattened these potentials by replacing \(r^{2}+b^{2}\) with \(R^{2}+(a+\sqrt{z^{2}+b^{2}}\,)^{2}\), and in the limit \(n\to\infty\) obtained
 
-Since Poisson's equation is linear in \(\Phi\) and \(\rho\), the difference between any two potential-density pairs is itself a potential-density pair. Therefore, if we differentiate a potential-density pair with respect to one of its parameters, we obtain a new potential-density pair. For example, Toomre (1963) derived a family of potential-density pairs by differentiating \(\Phi_{\rm K}(R,z)/a\)\(n\) times with respect to \(a^{2}\). Similarly, Satoh (1980) obtained a series of spherical potential-density pairs by differentiating \(b^{-2}\) times the Plummer potential and density (eq. 2.44) \(n\) times with respect to \(b^{2}\). He flattened these potentials by replacing \(r^{2}+b^{2}\) with \(R^{2}+(a+\sqrt{z^{2}+b^{2}}\,)^{2}\), and in the limit \(n\to\infty\) obtained
-
-\[\Phi_{\rm S}(R,z)=-\frac{GM}{S},\] (2.70a) where \[S^{2}\equiv R^{2}+z^{2}+a\left(a+2\sqrt{z^{2}+b^{2}}\,\right).\] (2.70c) The corresponding density distribution follows from Poisson's equation: \[\rho_{\rm S}(R,z)=\frac{ab^{2}M}{4\pi S^{3}(z^{2}+b^{2})}\left[\frac{1}{\sqrt {z^{2}+b^{2}}}+\frac{3}{a}\left(1-\frac{R^{2}+z^{2}}{S^{2}}\right)\right]. \tag{2.70b}\]
-
-Figure 2.8 shows that at large \(b/a\) the isodensity surfaces \(\Phi_{\rm S}\) are more nearly elliptical than those of \(\Phi_{\rm M}\).
+\[\Phi_{\rm S}(R,z)=-\frac{GM}{S},\] (2.70a) where \[S^{2}\equiv R^{2}+z^{2}+a\left(a+2\sqrt{z^{2}+b^{2}}\,\right).\] (2.70c) The corresponding density distribution follows from Poisson's equation: \[\rho_{\rm S}(R,z)=\frac{ab^{2}M}{4\pi S^{3}(z^{2}+b^{2})}\left[\frac{1}{\sqrt {z^{2}+b^{2}}}+\frac{3}{a}\left(1-\frac{R^{2}+z^{2}}{S^{2}}\right)\right].\] (2.70b) Figure 2.8 shows that at large \[b/a\] the isodensity surfaces \[\Phi_{\rm S}\] are more nearly elliptical than those of \[\Phi_{\rm M}\].
 
 #### 2.3.2 Logarithmic potentials
 
@@ -394,7 +390,7 @@ Figure 2.7: Contours of equal density in the \((R,z)\) plane for the Miyamoto–
 
 The density distribution to which \(\Phi_{\rm L}\) corresponds is
 
-\[\rho_{\rm L}(R,z)={v_{0}^{2}\over 4\pi Gq_{\Phi}^{2}}\ {(2q_{\Phi}^{2}+1)R_{ \rm c}^{2}+R^{2}+(2-q_{\Phi}^{-2})z^{2}\over(R_{\rm c}^{2}+R^{2}+z^{2}q_{\Phi}^ {-2})^{2}}. \tag{2.71c}\]
+\[\rho_{\rm L}(R,z)={v_{0}^{2}\over 4\pi Gq_{\Phi}^{2}}\ {(2q_{\Phi}^{2}+1)R_{ \rm c}^{2}+R^{2}+(2-q_{\Phi}^{-2})z^{2}\over(R_{\rm c}^{2}+R^{2}+z^{2}q_{\Phi} ^{-2})^{2}}. \tag{2.71c}\]
 
 Figure 2.8: Contours of equal density in the \((R,z)\) plane for Satoh’s density distribution (2.70c) when: \(b/a=1\) (top); \(b/a=10\) (bottom). There are two contours per decade, and the highest contour levels are \(0.1M/a^{3}\) (top), and \(0.001M/a^{3}\) (bottom).
 
@@ -436,7 +432,7 @@ The first such technique, based on spherical harmonics, works best for systems t
 
 Our first step is to obtain the potential of a thin spherical shell of variable surface density. Since the shell has negligible thickness, the task of solving Poisson's equation \(\nabla^{2}\Phi=4\pi G\rho\) reduces to that of solving Laplace's equation \(\nabla^{2}\Phi=0\) inside and outside the shell, subject to suitable boundary conditions at infinity, at the origin, and on the shell. Now in spherical coordinates Laplace's equation is (eq. B.53)
 
-\[\frac{1}{r^{2}}\frac{\partial}{\partial r}\left(r^{2}\frac{\partial\Phi}{ \partial r}\right)+\frac{1}{r^{2}\sin\theta}\frac{\partial}{\partial\theta} \left(\sin\theta\frac{\partial\Phi}{\partial\theta}\right)+\frac{1}{r^{2}\sin^ {2}\theta}\frac{\partial^{2}\Phi}{\partial\phi^{2}}=0. \tag{2.76}\]
+\[\frac{1}{r^{2}}\frac{\partial}{\partial r}\left(r^{2}\frac{\partial\Phi}{ \partial r}\right)+\frac{1}{r^{2}\sin\theta}\frac{\partial}{\partial\theta} \left(\sin\theta\frac{\partial\Phi}{\partial\theta}\right)+\frac{1}{r^{2}\sin ^{2}\theta}\frac{\partial^{2}\Phi}{\partial\phi^{2}}=0. \tag{2.76}\]
 
 This may be solved by the method of **separation of variables**. We seek special solutions that are the product of functions of one variable only:
 
@@ -448,11 +444,11 @@ Substituting equation (2.77a) into (2.76) and rearranging, we obtain
 
 The left side of this equation does not depend on \(\phi\), and the right side does not depend on \(r\) or \(\theta\). It follows that both sides are equal to some constant, say \(m^{2}\). Hence
 
-\[-\frac{1}{Q}\frac{\mathrm{d}^{2}Q}{\mathrm{d}\phi^{2}}=m^{2}, \tag{2.78a}\] \[\frac{\sin^{2}\theta}{R}\frac{\mathrm{d}}{\mathrm{d}r}\left(r^{2}\frac{ \mathrm{d}R}{\mathrm{d}r}\right)+\frac{\sin\theta}{P}\frac{\mathrm{d}}{ \mathrm{d}\theta}\left(\sin\theta\frac{\mathrm{d}P}{\mathrm{d}\theta}\right)= m^{2}. \tag{2.78b}\]
+\[-\frac{1}{Q}\frac{\mathrm{d}^{2}Q}{\mathrm{d}\phi^{2}}=m^{2}, \tag{2.78a}\] \[\frac{\sin^{2}\theta}{R}\frac{\mathrm{d}}{\mathrm{d}r}\left(r^{2}\frac{ \mathrm{d}R}{\mathrm{d}r}\right)+\frac{\sin\theta}{P}\frac{\mathrm{d}}{ \mathrm{d}\theta}\left(\sin\theta\frac{\mathrm{d}P}{\mathrm{d}\theta}\right)=m ^{2}. \tag{2.78b}\]
 
 Equation (2.78a) may be immediately integrated to
 
-\[Q(\phi)=Q_{m}^{+}\mathrm{e}^{\mathrm{i}m\phi}+Q_{m}^{-}\mathrm{e}^{-\mathrm{ i}m\phi}. \tag{2.79a}\]We require \(\Phi\) to be a periodic function of \(\phi\) with period \(2\pi\), so \(m\) can take only integer values. Since equations (2.78) depend only on \(m^{2}\), we could restrict our attention to non-negative values of \(m\) without loss of generality. However, a simpler convention is to allow \(m\) to take both positive and negative values, so the second exponential in equation (2.79a) becomes redundant, and we may write simply
+\[Q(\phi)=Q_{m}^{+}\mathrm{e}^{\mathrm{i}m\phi}+Q_{m}^{-}\mathrm{e}^{-\mathrm{i }m\phi}. \tag{2.79a}\]We require \(\Phi\) to be a periodic function of \(\phi\) with period \(2\pi\), so \(m\) can take only integer values. Since equations (2.78) depend only on \(m^{2}\), we could restrict our attention to non-negative values of \(m\) without loss of generality. However, a simpler convention is to allow \(m\) to take both positive and negative values, so the second exponential in equation (2.79a) becomes redundant, and we may write simply
 
 \[Q=Q_{m}{\rm e}^{{\rm i}m\phi}\quad\,(m=\ldots,-1,0,1,\ldots). \tag{2.79b}\]
 
@@ -472,35 +468,35 @@ The solutions of equation (2.81b) are associated Legendre functions \(P_{l}^{m}(
 
 Rather than write out the product \(P_{l}^{m}(\cos\theta){\rm e}^{{\rm i}m\phi}\) again and again, it is helpful to define the spherical harmonic \({\rm Y}_{l}^{m}(\theta,\phi)\), which is equal to \(P_{l}^{m}(\cos\theta){\rm e}^{{\rm i}m\phi}\) times a constant chosen so the \({\rm Y}_{l}^{m}\) satisfy the orthogonality relation (see eq. C.44)
 
-\[\begin{split}\int{\rm d}^{2}\Omega\,{\rm Y}_{l}^{m\,*}(\mathbf{\Omega }){\rm Y}_{l^{\prime}}^{m^{\prime}}(\mathbf{\Omega})&\equiv\int_{0 }^{\pi}{\rm d}\theta\,\sin\theta\int_{0}^{2\pi}{\rm d}\phi\,{\rm Y}_{l}^{m\,*} (\theta,\phi){\rm Y}_{l^{\prime}}^{m^{\prime}}(\theta,\phi)\\ &=\delta_{ll^{\prime}}\delta_{mm^{\prime}},\end{split} \tag{2.83}\]
+\[\begin{split}\int{\rm d}^{2}\Omega\,{\rm Y}_{l}^{m\,*}(\mathbf{\Omega }){\rm Y}_{l^{\prime}}^{m^{\prime}}(\mathbf{\Omega})&\equiv\int_{0} ^{\pi}{\rm d}\theta\,\sin\theta\int_{0}^{2\pi}{\rm d}\phi\,{\rm Y}_{l}^{m\,*}( \theta,\phi){\rm Y}_{l^{\prime}}^{m^{\prime}}(\theta,\phi)\\ &=\delta_{ll^{\prime}}\delta_{mm^{\prime}},\end{split} \tag{2.83}\]
 
 where we have used \(\mathbf{\Omega}\) as a shorthand for \((\theta,\phi)\) and \({\rm d}^{2}\Omega\) for \(\sin\theta\,{\rm d}\theta\,{\rm d}\phi\). The spherical harmonics with \(l\leq 2\) are listed in equation (C.50).
 
 Putting all these results together, we have from equations (2.77a), (2.79b), and (2.82) that
 
-\[\Phi_{lm}(r,\boldsymbol{\Omega})=\left(A_{lm}r^{l}+B_{lm}r^{-(l+1)}\right){\rm Y }_{l}^{m}(\boldsymbol{\Omega}) \tag{2.84}\]
+\[\Phi_{lm}(r,{\bf\Omega})=\left(A_{lm}r^{l}+B_{lm}r^{-(l+1)}\right){\rm Y}_{l}^{m }({\bf\Omega}) \tag{2.84}\]
 
 is a solution of \(\nabla^{2}\Phi=0\) for all non-negative integers \(l\) and integer \(m\) in the range \(-l\leq m\leq l\).
 
-Now let us apply these results to the problem of determining the potential of a thin shell of radius \(a\) and surface density \(\sigma(\boldsymbol{\Omega})\). We write the potential internal and external to the shell as
+Now let us apply these results to the problem of determining the potential of a thin shell of radius \(a\) and surface density \(\sigma({\bf\Omega})\). We write the potential internal and external to the shell as
 
-\[\Phi_{\rm int}(r,\boldsymbol{\Omega})=\sum_{l=0}^{\infty}\sum_{m=-l}^{l} \left(A_{lm}r^{l}+B_{lm}r^{-(l+1)}\right){\rm Y}_{l}^{m}(\boldsymbol{\Omega}) \quad(r\leq a),\] (2.85a) and \[\Phi_{\rm ext}(r,\boldsymbol{\Omega})=\sum_{l=0}^{\infty}\sum_{m=-l}^{l} \left(C_{lm}r^{l}+D_{lm}r^{-(l+1)}\right){\rm Y}_{l}^{m}(\boldsymbol{\Omega}) \quad(r\geq a). \tag{2.85b}\]
+\[\Phi_{\rm int}(r,{\bf\Omega})=\sum_{l=0}^{\infty}\sum_{m=-l}^{l}\left(A_{lm}r ^{l}+B_{lm}r^{-(l+1)}\right){\rm Y}_{l}^{m}({\bf\Omega})\quad(r\leq a),\] (2.85a) and \[\Phi_{\rm ext}(r,{\bf\Omega})=\sum_{l=0}^{\infty}\sum_{m=-l}^{l}\left(C_{lm}r ^{l}+D_{lm}r^{-(l+1)}\right){\rm Y}_{l}^{m}({\bf\Omega})\quad(r\geq a). \tag{2.85b}\]
 
-The potential at the center must be non-singular, so \(B_{lm}=0\) for all \(l,m\). Similarly, the potential at infinity must be zero, so \(C_{lm}=0\) for all \(l,m\). Furthermore, \(\Phi_{\rm ext}(a,\boldsymbol{\Omega})\) must equal \(\Phi_{\rm int}(a,\boldsymbol{\Omega})\) because no work can be done in passing through an infinitesimally thin shell. Hence from equations (2.85) we have
+The potential at the center must be non-singular, so \(B_{lm}=0\) for all \(l,m\). Similarly, the potential at infinity must be zero, so \(C_{lm}=0\) for all \(l,m\). Furthermore, \(\Phi_{\rm ext}(a,{\bf\Omega})\) must equal \(\Phi_{\rm int}(a,{\bf\Omega})\) because no work can be done in passing through an infinitesimally thin shell. Hence from equations (2.85) we have
 
-\[\sum_{l=0}^{\infty}\sum_{m=-l}^{l}A_{lm}a^{l}{\rm Y}_{l}^{m}(\boldsymbol{\Omega })=\sum_{l=0}^{\infty}\sum_{m=-l}^{l}D_{lm}a^{-(l+1)}{\rm Y}_{l}^{m}( \boldsymbol{\Omega}). \tag{2.86}\]
+\[\sum_{l=0}^{\infty}\sum_{m=-l}^{l}A_{lm}a^{l}{\rm Y}_{l}^{m}({\bf\Omega})=\sum _{l=0}^{\infty}\sum_{m=-l}^{l}D_{lm}a^{-(l+1)}{\rm Y}_{l}^{m}({\bf\Omega}). \tag{2.86}\]
 
-The coefficients \(A_{lm}a^{l}\) etc. of each spherical harmonic \({\rm Y}_{l}^{m}\) on the two sides of equation (2.86) must be equal, as can be shown by multiplying both sides of the equation by \({\rm Y}_{l^{\prime}}^{m^{\prime}}{}^{*}(\boldsymbol{\Omega})\), integrating over \(\boldsymbol{\Omega}\), and using the orthogonality relation (2.83). Therefore, from equation (2.86) we have
+The coefficients \(A_{lm}a^{l}\) etc. of each spherical harmonic \({\rm Y}_{l}^{m}\) on the two sides of equation (2.86) must be equal, as can be shown by multiplying both sides of the equation by \({\rm Y}_{l^{\prime}}^{m^{\prime}}{}^{*}({\bf\Omega})\), integrating over \({\bf\Omega}\), and using the orthogonality relation (2.83). Therefore, from equation (2.86) we have
 
 \[D_{lm}=A_{lm}a^{2l+1}. \tag{2.87}\]
 
 Now let us expand the surface density of the thin shell as
 
-\[\sigma(\boldsymbol{\Omega})=\sum_{l=0}^{\infty}\sum_{m=-l}^{l}\sigma_{lm}{\rm Y }_{l}^{m}(\boldsymbol{\Omega}), \tag{2.88}\]
+\[\sigma({\bf\Omega})=\sum_{l=0}^{\infty}\sum_{m=-l}^{l}\sigma_{lm}{\rm Y}_{l}^{ m}({\bf\Omega}), \tag{2.88}\]
 
-where the \(\sigma_{lm}\) are numbers yet to be determined. To obtain the coefficient \(\sigma_{l^{\prime}m^{\prime}}\), we multiply both sides of equation (2.88) by \({\rm Y}_{l^{\prime}}^{m^{\prime}}{}^{*}(\boldsymbol{\Omega})\) and integrate over \(\boldsymbol{\Omega}\). With equation (2.83) we find
+where the \(\sigma_{lm}\) are numbers yet to be determined. To obtain the coefficient \(\sigma_{l^{\prime}m^{\prime}}\), we multiply both sides of equation (2.88) by \({\rm Y}_{l^{\prime}}^{m^{\prime}}{}^{*}({\bf\Omega})\) and integrate over \({\bf\Omega}\). With equation (2.83) we find
 
-\[\int{\rm d}^{2}\Omega\,{\rm Y}_{l^{\prime}}^{m^{\prime}}{}^{*}(\boldsymbol{ \Omega})\,\sigma(\boldsymbol{\Omega})=\sigma_{l^{\prime}m^{\prime}}. \tag{2.89}\]Since \({\rm Y}_{0}^{0}=1/\sqrt{4\pi}\), \(\sigma_{00}=M/(2a^{2}\sqrt{\pi})\), where \(M\) is the mass of the shell.
+\[\int{\rm d}^{2}\Omega\,{\rm Y}_{l^{\prime}}^{m^{\prime}}{}^{*}({\bf\Omega})\, \sigma({\bf\Omega})=\sigma_{l^{\prime}m^{\prime}}. \tag{2.89}\]Since \({\rm Y}_{0}^{0}=1/\sqrt{4\pi}\), \(\sigma_{00}=M/(2a^{2}\sqrt{\pi})\), where \(M\) is the mass of the shell.
 
 Gauss's theorem (2.12) applied to a small piece of the shell tells us that
 
@@ -522,7 +518,7 @@ where the \(\sigma_{lm}\) are given by equation (2.89).
 
 Finally we evaluate the potential of a solid body by breaking it down into a series of spherical shells. We let \(\delta\sigma_{lm}(a)\) be the \(\sigma\)-coefficient of the shell lying between \(a\) and \(a+\delta a\), and \(\delta\Phi(r,{\bf\Omega};a)\) be the corresponding potential at \(r\). Then we have by equation (2.89)
 
-\[\delta\sigma_{lm}(a)=\int_{0}^{\pi}{\rm d}\theta\,\sin\theta\int_{0}^{2\pi}{ \rm d}\phi\,{\rm Y}_{l}^{m*}({\bf\Omega})\rho(a,{\bf\Omega})\delta a\equiv \rho_{lm}(a)\delta a. \tag{2.94}\]
+\[\delta\sigma_{lm}(a)=\int_{0}^{\pi}{\rm d}\theta\,\sin\theta\int_{0}^{2\pi}{ \rm d}\phi\,{\rm Y_{l}^{m}}^{*}({\bf\Omega})\rho(a,{\bf\Omega})\delta a\equiv \rho_{lm}(a)\delta a. \tag{2.94}\]
 
 Substituting these values of \(\sigma_{lm}\) into equations (2.93) and integrating over all \(a\), we obtain the potential at \(r\) generated by the entire collection of shells:
 
@@ -546,7 +542,7 @@ Figure 2.11: Curves of constant \(u\) and \(v\) in the \((R,z)\) plane. Semi-ell
 
 #### 2.5.1 Potentials of spheroidal shells
 
-Consider a system in which the isodensity surfaces are similar concentric spheroids. We align our coordinate system such that the \(z\) axis is the minor axis of the spheroids, and designate the principal-axis lengths of the spheroids by \(a\) and \(c\), with \(a\geq c\). Spheroidal bodies call for spheroidal coordinates, so we consider the form of Laplace's equation, \(\nabla^{2}\Phi=0\), in **oblate spheroidal coordinates**. These coordinates employ the usual azimuthal angle \(\phi\) of cylindrical coordinates, but replace the coordinates \((R,z)\) with new coordinates \((u,v)\) that are defined by
+Consider a system in which the isodensity surfaces are similar concentric spheroids. We align our coordinate system such that the \(z\) axis is the minor axis of the spheroids, and designate the principal-axis lengths of the spheroids by \(a\) and \(c\), with \(a\geq c\). Spheroidal bodies call for spheroidal dominates, so we consider the form of Laplace's equation, \(\nabla^{2}\Phi=0\), in **oblate spheroidal coordinates**. These coordinates employ the usual azimuthal angle \(\phi\) of cylindrical coordinates, but replace the coordinates \((R,z)\) with new coordinates \((u,v)\) that are defined by
 
 \[R=\Delta\cosh u\sin v\quad;\quad z=\Delta\sinh u\cos v\quad(u\geq 0,0\leq v\leq \pi), \tag{2.96}\]
 
@@ -560,17 +556,17 @@ Similarly, the curves \(v=\)_constant_ coincide with the hyperbolae
 
 formed by the normals to these ellipses.
 
-From equations (2.96) we see that if we increase one of \(u\), \(v\), and \(\phi\) by a small amount while holding the other two coordinates constant, the point \((u,v,\phi)\) moves parallel to the three orthogonal unit vectors \(\hat{\bf e}_{u}\), \(\hat{\bf e}_{v}\), \(\hat{\bf e}_{\phi}\) by the distances \(h_{u}\delta u\), \(h_{v}\delta v\) and \(h_{\phi}\delta\phi\), where the scale factors are
+From equations (2.96) we see that if we increase one of \(u\), \(v\), and \(\phi\) by a small amount while holding the other two coordinates constant, the point \((u,v,\phi)\) moves parallel to the three orthogonal unit vectors \(\hat{\mathbf{e}}_{u}\), \(\hat{\mathbf{e}}_{v}\), \(\hat{\mathbf{e}}_{\phi}\) by the distances \(h_{u}\delta u\), \(h_{v}\delta v\) and \(h_{\phi}\delta\phi\), where the scale factors are
 
 \[h_{u}=h_{v}=\Delta\sqrt{\sinh^{2}u+\cos^{2}v}\quad;\quad h_{\phi}=\Delta\cosh u \sin v. \tag{2.99}\]
 
 Hence the gradient of a potential \(\Phi\) may be expressed in these coordinates as (eq. B.39)
 
-\[\boldsymbol{\nabla}\Phi=\frac{1}{\Delta\sqrt{\sinh^{2}u+\cos^{2}v}}\left[ \frac{\partial\Phi}{\partial u}\hat{\bf e}_{u}+\frac{\partial\Phi}{\partial v }\hat{\bf e}_{v}\right]+\frac{1}{\Delta\cosh u\sin v}\frac{\partial\Phi}{ \partial\phi}\hat{\bf e}_{\phi}. \tag{2.100}\]
+\[\boldsymbol{\nabla}\Phi=\frac{1}{\Delta\sqrt{\sinh^{2}u+\cos^{2}v}}\left[ \frac{\partial\Phi}{\partial u}\hat{\mathbf{e}}_{u}+\frac{\partial\Phi}{ \partial v}\hat{\mathbf{e}}_{v}\right]+\frac{1}{\Delta\cosh u\sin v}\frac{ \partial\Phi}{\partial\phi}\hat{\mathbf{e}}_{\phi}. \tag{2.100}\]
 
 We further have (eq. B.54)
 
-\[\begin{split}\nabla^{2}\Phi&=\frac{1}{\Delta^{2}( \sinh^{2}u+\cos^{2}v)}\biggl{[}\frac{1}{\cosh u}\frac{\partial}{\partial u} \biggl{(}\cosh u\frac{\partial\Phi}{\partial u}\biggr{)}\\ &\qquad\qquad+\frac{1}{\sin v}\frac{\partial}{\partial v}\biggl{(} \sin v\frac{\partial\Phi}{\partial v}\biggr{)}\biggr{]}+\frac{1}{\Delta^{2} \cosh^{2}u\sin^{2}v}\frac{\partial^{2}\Phi}{\partial\phi^{2}}.\end{split} \tag{2.101}\]We concentrate on potentials that are functions \(\Phi(u)\) of only the "radial" coordinate \(u\). For potentials of this class, \(\nabla^{2}\Phi=0\) reduces to
+\[\begin{split}\nabla^{2}\Phi&=\frac{1}{\Delta^{2}( \sinh^{2}u+\cos^{2}v)}\bigg{[}\frac{1}{\cosh u}\frac{\partial}{\partial u} \bigg{(}\cosh u\frac{\partial\Phi}{\partial u}\bigg{)}\\ &\qquad\qquad+\frac{1}{\sin v}\frac{\partial}{\partial v}\bigg{(} \sin v\frac{\partial\Phi}{\partial v}\bigg{)}\bigg{]}+\frac{1}{\Delta^{2} \cosh^{2}u\sin^{2}v}\frac{\partial^{2}\Phi}{\partial\phi^{2}}.\end{split} \tag{2.101}\]We concentrate on potentials that are functions \(\Phi(u)\) of only the "radial" coordinate \(u\). For potentials of this class, \(\nabla^{2}\Phi=0\) reduces to
 
 \[{{\rm d}\over{\rm d}u}\left(\cosh u{{\rm d}\Phi\over{\rm d}u}\right)=0.\]
 
@@ -600,7 +596,7 @@ and we may rewrite equations (2.105) as
 
 \[\Phi=-{G\delta M\over ae}\times\cases{\sin^{-1}(e)&$(u<u_{0})$,\cr\sin^{-1}({ \rm sech}\,u)&$(u\geq u_{0})$.\cr}\]We can find the surface density of the shell \(u=u_{0}\) by applying Gauss's theorem (2.12) to the potential (2.107). Since \(\boldsymbol{\nabla}\Phi=0\) inside the shell, by equation (2.100) the surface density of the shell is
 
-\[\begin{split}\Sigma(v)=\frac{\hat{\mathbf{e}}_{u}\cdot \boldsymbol{\nabla}\Phi}{4\pi G}&=\frac{1}{4\pi G\Delta\sqrt{ \sinh^{2}u_{0}+\cos^{2}v}}\biggl{(}\frac{\mathrm{d}\Phi}{\mathrm{d}u}\biggr{)} _{u=u_{0}+}\\ &=\frac{\delta M}{4\pi a^{2}\sqrt{1-e^{2}\sin^{2}v}},\end{split} \tag{2.108}\]
+\[\begin{split}\Sigma(v)=\frac{\hat{\bf e}_{u}\cdot\boldsymbol{ \nabla}\Phi}{4\pi G}&=\frac{1}{4\pi G\Delta\sqrt{\sinh^{2}u_{0}+ \cos^{2}v}}\biggl{(}\frac{{\rm d}\Phi}{{\rm d}u}\biggr{)}_{u=u_{0}+}\\ &=\frac{\delta M}{4\pi a^{2}\sqrt{1-e^{2}\sin^{2}v}},\end{split} \tag{2.108}\]
 
 where evaluation at \(u_{0}+\) denotes the limiting value as \(u\to u_{0}\) from above.
 
@@ -608,7 +604,7 @@ Equation (2.108) has a simple physical interpretation: \(\Sigma(v)\) is the surf
 
 \[\frac{R^{2}}{a^{2}}+\frac{z^{2}}{c^{2}}=\beta^{2}, \tag{2.109}\]
 
-where \(\delta\beta\) and \(\delta M\) are related by (2.113) below. _Proof:_ The small perpendicular \(\mathbf{s}\) in Figure 2.12 runs between the shell's inner and outer skins. Thus \(\mathbf{s}=s\boldsymbol{\nabla}\beta/|\boldsymbol{\nabla}\beta|\), and at any point on the surface we have \(\delta\beta=(\mathbf{s}\cdot\boldsymbol{\nabla}\beta)=s|\boldsymbol{\nabla}\beta|\). Hence \(s=\delta\beta/|\boldsymbol{\nabla}\beta|\) and the surface density of the shell is
+where \(\delta\beta\) and \(\delta M\) are related by (2.113) below. _Proof:_ The small perpendicular \({\bf s}\) in Figure 2.12 runs between the shell's inner and outer skins. Thus \({\bf s}=s\boldsymbol{\nabla}\beta/|\boldsymbol{\nabla}\beta|\), and at any point on the surface we have \(\delta\beta=({\bf s}\cdot\boldsymbol{\nabla}\beta)=s|\boldsymbol{\nabla}\beta|\). Hence \(s=\delta\beta/|\boldsymbol{\nabla}\beta|\) and the surface density of the shell is
 
 \[\widetilde{\Sigma}=\rho s=\frac{\rho\delta\beta}{|\boldsymbol{\nabla}\beta|}= \biggl{(}\frac{R^{2}}{a^{4}}+\frac{z^{2}}{c^{4}}\biggr{)}^{-1/2}\rho\beta\, \delta\beta. \tag{2.110}\]
 
@@ -618,7 +614,7 @@ Finally, writing \(R=\beta a\sin v\), \(z=\beta c\cos v\), and \(e=\sqrt{1-c^{2}
 
 The volume inside an oblate spheroidal shell with semi-axis lengths \(a\beta\) and \(c\beta\) is
 
-\[V=\tfrac{4}{3}\pi a^{2}c\beta^{3}=\tfrac{4}{3}\pi a^{3}\beta^{3}\sqrt{1-e^{2}}, \tag{2.112}\]
+\[V={{4\over 3}}\pi a^{2}c\beta^{3}={{4\over 3}}\pi a^{3}\beta^{3} \sqrt{1-e^{2}}, \tag{2.112}\]
 
 so the mass that is bounded by the surfaces \(\beta\) and \(\beta+\delta\beta\) is
 
@@ -644,7 +640,7 @@ These theorems help us to understand qualitatively the potential of an inhomogen
 
 We now use equation (2.107) to calculate the gravitational potential of a body whose isodensity surfaces are the similar spheroids
 
-\[\mbox{constant}=m^{2}\equiv R^{2}+\frac{z^{2}}{1-e^{2}}, \tag{2.114}\]
+\[{\rm constant}=m^{2}\equiv R^{2}+\frac{z^{2}}{1-e^{2}}, \tag{2.114}\]
 
 i.e., a body in which \(\rho=\rho(m^{2})\). Comparing equations (2.109) and (2.114), we see that \(m=\beta a\), so the mass of the shell between \(m\) and \(m+\delta m\) is given by equation (2.113) as
 
@@ -672,13 +668,13 @@ Similarly,
 
 Integrating equation (2.120) by parts,
 
-\[\begin{split}\sum_{m<m_{0}}&\delta\Phi_{\rm ext}=-2 \pi G\frac{\sqrt{1-e^{2}}}{e}\\ &\times\left\{\left[\psi(m)\sin^{-1}(\operatorname{sech}u_{m}) \right]_{m=0}^{m_{0}}-\int_{m=0}^{m_{0}}\frac{\psi(m){\rm d}\operatorname{sech }u_{m}}{\sqrt{1-\operatorname{sech}^{2}u_{m}}}\right\}.\end{split} \tag{2.121}\]The quantity \(u_{m}\) appearing in equation (2.121) is a function \(u_{m}(R_{0},z_{0})\) by virtue of the condition that \(u_{m}\) label the spheroid through \((R_{0},z_{0})\) that is confocal with the homoeoid \(m=\mathit{constant}\). Let the \(\Delta\) parameter of the confocal family of spheroids containing \(m\) be \(\Delta_{m}\), and let \(u_{\star}\) be the label of the homoeoid \(m\) within this family. Then \(m=\Delta_{m}\cosh u_{\star}\) and \(\sqrt{1-e^{2}}\,m=\Delta_{m}\sinh u_{\star}\), so \(\Delta_{m}=me\), and we have from equation (2.97) that
+\[\begin{split}\sum_{m<m_{0}}&\delta\Phi_{\rm ext}=- 2\pi G\frac{\sqrt{1-e^{2}}}{e}\\ &\times\left\{\left[\psi(m)\sin^{-1}(\operatorname{sech}u_{m}) \right]^{m_{0}}_{m=0}-\int_{m=0}^{m_{0}}\frac{\psi(m){\rm d}\operatorname{sech }u_{m}}{\sqrt{1-\operatorname{sech}^{2}u_{m}}}\right\}.\end{split} \tag{2.121}\]The quantity \(u_{m}\) appearing in equation (2.121) is a function \(u_{m}(R_{0},z_{0})\) by virtue of the condition that \(u_{m}\) label the spheroid through \((R_{0},z_{0})\) that is confocal with the homoeoid \(m=\mathit{constant}\). Let the \(\Delta\) parameter of the confocal family of spheroids containing \(m\) be \(\Delta_{m}\), and let \(u_{\star}\) be the label of the homoeoid \(m\) within this family. Then \(m=\Delta_{m}\cosh u_{\star}\) and \(\sqrt{1-e^{2}}\,m=\Delta_{m}\sinh u_{\star}\), so \(\Delta_{m}=me\), and we have from equation (2.97) that
 
 \[\begin{split}\frac{R_{0}^{2}}{\Delta_{m}^{2}\cosh^{2}u_{m}}+ \frac{z_{0}^{2}}{\Delta_{m}^{2}\sinh^{2}u_{m}}&=1,\\ \text{which implies}\qquad\frac{R_{0}^{2}}{1+\sinh^{2}u_{m}}+ \frac{z_{0}^{2}}{\sinh^{2}u_{m}}&=m^{2}e^{2}.\end{split} \tag{2.122}\]
 
 This is the required equation for \(u_{m}\). Thus, in particular, \(m=0\) implies \(\sinh u_{m}=\infty\), and \(m=m_{0}\) implies \(\sinh u_{m}=\sqrt{1-e^{2}}\,/e\). Inserting these limits into equation (2.121), and adding the result to equation (2.116), we find
 
-\[\begin{split}\Phi(R_{0},z_{0})&=-2\pi G\frac{ \sqrt{1-e^{2}}}{e}\\ &\quad\times\biggl{(}\psi(\infty)\sin^{-1}e-\int_{\sinh u_{m}= \sqrt{1-e^{2}}\,/e}^{\infty}\psi(m)\frac{\mathrm{d}\sinh u_{m}}{1+\sinh^{2}u_{ m}}\biggr{)}.\end{split} \tag{2.123}\]
+\[\begin{split}\Phi(R_{0},z_{0})&=-2\pi G\frac{ \sqrt{1-e^{2}}}{e}\\ &\quad\times\biggl{(}\psi(\infty)\sin^{-1}e-\int_{\sinh u_{m}= \sqrt{1-e^{2}}\,/e}^{\infty}\psi(m)\frac{\mathrm{d}\sinh u_{m}}{1+\sinh^{2}u_ {m}}\biggr{)}.\end{split} \tag{2.123}\]
 
 We can simplify this equation by defining a new variable of integration
 
@@ -686,18 +682,18 @@ We can simplify this equation by defining a new variable of integration
 
 where \(a_{0}\) is any constant. Then equation (2.122) becomes
 
-\[\frac{R_{0}^{2}}{\tau+a_{0}^{2}}+\frac{z_{0}^{2}}{\tau+c_{0}^{2}}=\frac{m^{2} }{a_{0}^{2}}\quad\ (c_{0}\equiv\sqrt{1-e^{2}}a_{0}),\] (2.125a) and equation ( 2.123 ) becomes \[\begin{split}\Phi(R_{0},z_{0})&=-2\pi G\frac{ \sqrt{1-e^{2}}}{e}\\ &\quad\times\biggl{(}\psi(\infty)\sin^{-1}e-\frac{a_{0}e}{2}\int_ {0}^{\infty}\mathrm{d}\tau\,\frac{\psi(m)}{(\tau+a_{0}^{2})\sqrt{\tau+c_{0}^{2 }}}\biggr{)}.\end{split} \tag{2.125b}\]
+\[\frac{R_{0}^{2}}{\tau+a_{0}^{2}}+\frac{z_{0}^{2}}{\tau+c_{0}^{2}}=\frac{m^{2} }{a_{0}^{2}}\quad\ (c_{0}\equiv\sqrt{1-e^{2}}a_{0}),\] (2.125a) and equation ( 2.123 ) becomes \[\begin{split}\Phi(R_{0},z_{0})&=-2\pi G\frac{ \sqrt{1-e^{2}}}{e}\\ &\quad\times\biggl{(}\psi(\infty)\sin^{-1}e-\frac{a_{0}e}{2}\int_ {0}^{\infty}\mathrm{d}\tau\,\frac{\psi(m)}{(\tau+a_{0}^{2})\sqrt{\tau+c_{0}^{ 2}}}\biggr{)}.\end{split} \tag{2.125b}\]
 
 The integral in this equation gives the contributions to \(\Phi\) from homoeoids for which \((R_{0},z_{0})\) is an exterior point, with \(\tau=0\) corresponding to the homoeoid that touches \((R_{0},z_{0})\), and large \(\tau\) corresponding to small homoeoids.
 
 It is instructive to apply equations (2.125) to the determination of the interior potential of a homogeneous spheroid of density \(\rho_{0}\) and eccentricity 
 
 \begin{table}
-\begin{tabular}{c c c} Thin shell & \(\Phi({\bf x}_{\rm int})=\frac{Ga_{1}}{2a_{2}a_{3}}I({\bf a})M_{\rm shell}\) & \(\Phi({\bf x}_{\rm ext})=\frac{Ga_{1}^{\prime}}{2a_{2}^{\prime}a_{3}^{\prime}}I({ \bf a})M_{\rm shell}\) \\ Homogeneous & \(\Phi({\bf x}_{\rm int})=-\pi G\rho\{I({\bf a})a_{1}^{2}-\sum_{i=1}^{3}A_{i}({ \bf a})x_{i}^{2}\}\) & \(W_{\bar{q}j}=-\frac{8}{15}\pi^{2}G\rho^{2}a_{1}a_{2}a_{3}A_{\bar{n}}a_{\bar{n} }^{2}\delta_{ij}\) \\  & \(\Phi({\bf x}_{\rm ext})=-\pi G\rho\frac{a_{1}a_{2}a_{3}}{a_{1}^{\prime}a_{2}^{ \prime}a_{3}^{\prime}}I({\bf a}){d_{1}^{\prime}}^{2}-\sum_{i=1}^{3}A_{i}({\bf a })x_{i}^{2}\}\) & \(W=-\frac{8}{15}\pi^{2}G\rho^{2}a_{1}^{3}a_{2}a_{3}I\) \\ Inhomogeneous & \(\Phi({\bf x})=-\pi G\frac{a_{2}a_{3}}{a_{1}}\int_{0}^{\infty}\frac{{\rm d} \tau}{\Delta}\left\{\psi(\infty)-\psi[m(\tau,{\bf x})]\right\}\) & \(W_{\bar{q}j}=-2\pi^{2}G\frac{a_{2}a_{3}}{a_{1}^{\prime}}SA_{i}a_{\bar{n}}^{2} \delta_{ij}\) & \(W=-2\pi^{2}G\frac{a_{2}a_{3}}{a_{1}^{\prime}}SI\delta_{ij}\) \\ \end{tabular}
+\begin{tabular}{c c c} Thin shell & \(\Phi({\bf x}_{\rm int})=\frac{Ga_{1}}{2a_{2}a_{3}}I({\bf a})M_{\rm shell}\) & \(\Phi({\bf x}_{\rm ext})=\frac{Ga_{1}^{\prime}}{2a_{2}^{\prime}a_{3}^{\prime}}I({ \bf a})M_{\rm shell}\) \\ Homogeneous & \(\Phi({\bf x}_{\rm int})=-\pi G\rho\{I({\bf a})a_{1}^{2}-\sum_{i=1}^{3}A_{i}({ \bf a})x_{i}^{2}\}\) & \(W_{\bar{u}j}=-\frac{8}{15}\pi^{2}G\rho^{2}a_{1}a_{2}a_{3}A_{i}a_{i}^{2}\delta_ {ij}\) \\  & \(\Phi({\bf x}_{\rm ext})=-\pi G\rho\frac{a_{1}a_{2}a_{3}}{a_{1}^{\prime}a_{2}^{ \prime}a_{3}^{\prime}}I({\bf a}){d_{1}^{\prime}}^{2}-\sum_{i=1}^{3}A_{i}({\bf a })x_{i}^{2}\}\) & \(W=-\frac{8}{15}\pi^{2}G\rho^{2}a_{1}^{3}a_{2}a_{3}I\) \\ Inhomogeneous & \(\Phi({\bf x})=-\pi G\frac{a_{2}a_{3}}{a_{1}}\int_{0}^{\infty}\frac{{\rm d}\tau} {\Delta}\left\{\psi(\infty)-\psi[m(\tau,{\bf x})]\right\}\) & \(W_{\bar{u}j}=-2\pi^{2}G\frac{a_{2}a_{3}}{a_{1}^{\prime}}SA_{i}a_{i}^{2}\delta_ {ij}\) & \(W=-2\pi^{2}G\frac{a_{2}a_{3}}{a_{1}^{\prime}}SI\delta_{ij}\) \\ \end{tabular}
 \end{table}
 Table 2: Potentials and potential-energy tensors of ellipsoidal bodiesthat has semi-axes of lengths \(a_{1}\) and \(a_{3}=\sqrt{1-e^{2}}\,a_{1}\). For this case, equation (2.117) yields
 
-\[\psi(m)=\rho_{0}\times\cases{m^{2}&(m^{2}<a_{1}^{2}),\cr a_{1}^{2}&(m^{2}\geq a_ {1}^{2}).\cr} \tag{2.126}\]
+\[\psi(m)=\rho_{0}\times\cases{m^{2}&$(m^{2}<a_{1}^{2})$,\cr a_{1}^{2}&$(m^{2}\geq a _{1}^{2})$.\cr} \tag{2.126}\]
 
 Equation (2.125b) takes on a particularly simple form if we set the arbitrary constant \(a_{0}\) equal to \(a_{1}\). If \((R_{0},z_{0})\) lies inside the spheroid, \(m(\tau)\) is always smaller than \(a_{0}\). Hence, we may substitute from equation (2.125a) and (2.126) into (2.125b), to obtain
 
@@ -743,11 +739,7 @@ one may show that the integral of equation (2.134) equals
 
 where \(F\) and \(E\) are incomplete elliptic integrals (see Appendix C.4),
 
-\[k\equiv\frac{R}{\sqrt{e^{2}a_{0}^{2}+R^{2}}},\quad\mbox{and}\quad\theta_{m} \equiv\sin^{-1}\sqrt{\frac{e^{2}a_{0}^{2}+R^{2}}{a_{0}^{2}+R^{2}}}. \tag{2.137a}\]
-
-Hence
-
-\[v_{\rm c}^{2}(R)=4\pi G\rho_{0}a_{0}^{3}\frac{\sqrt{1-e^{2}}}{R}k\left[F( \theta_{m},k)-E(\theta_{m},k)\right]. \tag{2.137b}\]
+\[k\equiv\frac{R}{\sqrt{e^{2}a_{0}^{2}+R^{2}}},\quad\mbox{and}\quad\theta_{m} \equiv\sin^{-1}\sqrt{\frac{e^{2}a_{0}^{2}+R^{2}}{a_{0}^{2}+R^{2}}}.\] (2.137a) Hence \[v_{\rm c}^{2}(R)=4\pi G\rho_{0}a_{0}^{3}\frac{\sqrt{1-e^{2}}}{R}k\left[F(\theta _{m},k)-E(\theta_{m},k)\right]. \tag{2.137b}\]
 
 We may use this result to investigate how strongly a galaxy's circular speed is affected by its shape. In Figure 2.13 we plot the circular-speed curves of three galaxies whose density profiles are given by equation (2.133) for axis ratio \(q=\sqrt{1-e^{2}}=1\) (spherical system), \(q=0.5\) (E5 galaxy), and \(q=0.1\) (the flatness characteristic of disk galaxies). The central density has in each case been adjusted so as to hold constant the mass \(M(a)\) interior to the spheroid of semi-major axis \(a\). The peak circular speed of the \(q=0.1\) model is about 20% higher than that of the spherical system because flattening the system increases the radial component of the force between a given mass element and a test mass in the equatorial plane.
 
@@ -821,7 +813,7 @@ If we now let \(q\) tend to zero while holding \(2\rho qa\equiv\Sigma_{0}\) cons
 
 We may construct a razor-thin disk of known surface density \(\Sigma(R)\) by finding the family of homoeoids whose combined surface density equals \(\Sigma(R)\) at all \(R\). In mathematical language, we have to find the function \(\Sigma_{0}(a)\) that satisfies the integral equation
 
-\[\Sigma(R)=\sum_{a\geq R}\delta\Sigma(a,R)=\int_{R}^{\infty}\mathrm{d}a\,\frac {\Sigma_{0}(a)}{\sqrt{a^{2}-R^{2}}}.\] (2.148a) This is an Abel integral equation. Its solution is (eq. B.72) \[\Sigma_{0}(a)=-\frac{2}{\pi}\frac{\mathrm{d}}{\mathrm{d}a}\int_{a}^{\infty} \mathrm{d}R\,\frac{R\Sigma(R)}{\sqrt{R^{2}-a^{2}}}. \tag{2.148b}\]
+\[\Sigma(R)=\sum_{a\geq R}\delta\Sigma(a,R)=\int_{R}^{\infty}\mathrm{d}a\,\frac{ \Sigma_{0}(a)}{\sqrt{a^{2}-R^{2}}}.\] (2.148a) This is an Abel integral equation. Its solution is (eq. B.72) \[\Sigma_{0}(a)=-\frac{2}{\pi}\frac{\mathrm{d}}{\mathrm{d}a}\int_{a}^{\infty} \mathrm{d}R\,\frac{R\Sigma(R)}{\sqrt{R^{2}-a^{2}}}. \tag{2.148b}\]
 
 Note that \(\Sigma_{0}(a)\) is _not_ the same function as \(\Sigma(R)\). In particular, some of the mass that lies interior to radius \(R\) comes from homoeoids having \(a>R\). By Newton's third theorem, this portion of matter does not contribute to the gravitational force at \(R\), because a point in the equatorial plane at radius \(R\) is an interior point of all homoeoids with \(a>R\). Thus two disks can have identical surface-density distributions for \(R^{\prime}<R\) and yet have very different force fields at \(R\). In this respect disks differ from spherical distributions of mass, for which the force at \(r_{0}\) depends only on the density at \(r<r_{0}\). In fact, the surface density of a disk at \(R^{\prime}>R\) affects the attraction at \(R\) because the annulus of material exterior to \(R\) actually pulls a star placed at radius \(R\) outward, thus partially compensating the inward attraction of the interior matter. For example on the perimeter of a sharp-edged disk, the circular speed can be much higher than at the edge of a spherical body, or a more extended disk, with the same mass interior to this point.
 
@@ -847,19 +839,19 @@ Taking the square root of both sides and substituting the result into equation (
 
 Finally, the potential of an axisymmetric disk of arbitrary surface-density profile is obtained by combining this result with equations (2.148), which decompose a disk into homoeoids. We have (Cuddeford 1993)
 
-\[\Phi(R,z)=4G\int_{0}^{\infty}\mathrm{d}a\,\sin^{-1}\!\bigg{(}\frac{2a}{\sqrt{ +}+\sqrt{-}}\bigg{)}\frac{\mathrm{d}}{\mathrm{d}a}\int_{a}^{\infty}\mathrm{d} R^{\prime}\frac{R^{\prime}\Sigma(R^{\prime})}{\sqrt{R^{\prime 2}-a^{2}}}.\] (2.153a) where \[\sqrt{\pm}\equiv\sqrt{z^{2}+(a\pm R)^{2}}. \tag{2.153b}\]
+\[\Phi(R,z)=4G\int_{0}^{\infty}\mathrm{d}a\,\sin^{-1}\!\bigg{(}\frac{2a}{\sqrt{ +}+\sqrt{-}}\bigg{)}\frac{\mathrm{d}}{\mathrm{d}a}\int_{a}^{\infty}\mathrm{d }R^{\prime}\frac{R^{\prime}\Sigma(R^{\prime})}{\sqrt{R^{\prime 2}-a^{2}}}.\] (2.153a) where \[\sqrt{\pm}\equiv\sqrt{z^{2}+(a\pm R)^{2}}. \tag{2.153b}\]
 
 An alternative form is obtained by integrating by parts:
 
-\[\begin{split}\Phi(R,z)=-2\sqrt{2}G\int_{0}^{\infty}\mathrm{d}a& \,\frac{[(a+R)/\sqrt{+}]-[(a-R)/\sqrt{-}]}{\sqrt{R^{2}-z^{2}-a^{2}+ \sqrt{+}\sqrt{-}}}\\ &\times\int_{a}^{\infty}\mathrm{d}R^{\prime}\frac{R^{\prime} \Sigma(R^{\prime})}{\sqrt{R^{\prime 2}-a^{2}}}.\end{split} \tag{2.154}\]This form does not require differentiation of the term that depends on the surface density. Equations (2.153a) and (2.154) are numerically convenient because the inner integrals depend only on \(a\), and thus can be tabulated on a grid of values of \(a\) at the outset. Then only a single integral is required to evaluate \(\Phi\) at each fresh point \((R,z)\). Moreover, the integrands do not oscillate in sign, so numerical integrations converge rapidly.
+\[\begin{split}\Phi(R,z)=-2\sqrt{2}G\int_{0}^{\infty}\mathrm{d}a& \,\frac{[(a+R)/\sqrt{+}]-[(a-R)/\sqrt{-}]}{\sqrt{R^{2}-z^{2}-a^{2} +\sqrt{+}\sqrt{-}}}\\ &\times\int_{a}^{\infty}\mathrm{d}R^{\prime}\frac{R^{\prime} \Sigma(R^{\prime})}{\sqrt{R^{\prime 2}-a^{2}}}.\end{split} \tag{2.154}\]This form does not require differentiation of the term that depends on the surface density. Equations (2.153a) and (2.154) are numerically convenient because the inner integrals depend only on \(a\), and thus can be tabulated on a grid of values of \(a\) at the outset. Then only a single integral is required to evaluate \(\Phi\) at each fresh point \((R,z)\). Moreover, the integrands do not oscillate in sign, so numerical integrations converge rapidly.
 
 We are particularly interested in the value of the potential in the equatorial plane. Consider first the case \(a>R\). For small \(z\), it is easy to see that \(\sqrt{\pm}\to(a\pm R)+{\rm O}(z^{2})\), with the consequence that the numerator of the fraction in the first line in equation (2.154) vanishes like \(z^{2}\) as \(z\to 0\). In the same limit the denominator vanishes too, but more slowly, like \(z\). Hence, for \(a>R\) the integrand tends to zero with \(z\) and we readily find that
 
-\[\Phi(R,0)=-4G\int_{0}^{R}{{\rm d}a\over\sqrt{R^{2}-a^{2}}}\int_{a}^{\infty}{\rm d }R^{\prime}{R^{\prime}\Sigma(R^{\prime})\over\sqrt{R^{\prime 2}-a^{2}}}. \tag{2.155}\]
+\[\Phi(R,0)=-4G\int_{0}^{R}{{\rm d}a\over\sqrt{R^{2}-a^{2}}}\int_{a}^{\infty}{ \rm d}R^{\prime}{R^{\prime}\Sigma(R^{\prime})\over\sqrt{R^{\prime 2}-a^{2}}}. \tag{2.155}\]
 
 To obtain the circular speed at radius \(R\) in the equatorial plane, the natural procedure is to differentiate this expression with respect to \(R\), which is the upper limit of the outer integral. The usual formula for differentiating such an integral requires us to evaluate the integrand at \(a=R\), when it diverges. Instead of resolving this problem we return to equation (2.153a), in which we may put \(z\) to zero without any awkwardness, to obtain
 
-\[\Phi(R,0)=4G\int_{0}^{\infty}{\rm d}a\,\sin^{-1}\left({2a\over(a+R)+|a-R|} \right)\!{{\rm d}\over{\rm d}a}\int_{a}^{\infty}{\rm d}R^{\prime}{R^{\prime} \Sigma(R^{\prime})\over\sqrt{R^{\prime 2}-a^{2}}}. \tag{2.156}\]
+\[\Phi(R,0)=4G\int_{0}^{\infty}{\rm d}a\,\sin^{-1}\bigg{(}{2a\over(a+R)+|a-R|} \bigg{)}{{\rm d}\over{\rm d}a}\int_{a}^{\infty}{\rm d}R^{\prime}{R^{\prime} \Sigma(R^{\prime})\over\sqrt{R^{\prime 2}-a^{2}}}. \tag{2.156}\]
 
 The argument of \(\sin^{-1}\) is unity for \(R<a\) and \(a/R\) otherwise. Consequently, when we differentiate with respect to \(R\) we obtain
 
@@ -867,7 +859,7 @@ The argument of \(\sin^{-1}\) is unity for \(R<a\) and \(a/R\) otherwise. Conseq
 
 **(a) The Mestel disk**  As a simple application of equation (2.157) consider a disk in which the surface density is given by
 
-\[\Sigma(R)=\left\{\begin{array}{ll}{v_{0}^{2}\over 2\pi GR}&{\rm for }\ R<R_{\rm max}\\ 0&{\rm otherwise},\end{array}\right. \tag{2.158}\]
+\[\Sigma(R)=\cases{{v_{0}^{2}\over 2\pi GR}&for $R<R_{\rm max}$\cr 0&otherwise,} \tag{2.158}\]
 
 where \(v_{0}\) and \(R_{\rm max}\) are constants with dimensions of velocity and length, respectively. For this surface density the inner integral in equation (2.157) is proportional to \(\cosh^{-1}(R_{\rm max}/a)\), so its derivative with respect to \(a\) follows from
 
@@ -987,11 +979,11 @@ The integral of \(\hbox{\boldmath$\nabla$}\Phi_{km}\) over the closed unit surfa
 
 We now use equations (2.179) to find the potential generated by a disk of arbitrary surface density \(\Sigma(R,\phi)\). If we can find functions \(S_{m}(k)\) such that
 
-\[\eqalign{\Sigma(R,\phi)&=\sum_{m=-\infty}^{\infty}\int_{0}^{\infty}{\rm d}k\, S_{m}(k)\Sigma_{km}(R,\phi)\cr&=-{1\over 2\pi G}\sum_{m=-\infty}^{\infty}\int_{0}^{ \infty}{\rm d}k\,kS_{m}(k){\rm e}^{{\rm i}m\phi}J_{m}(kR),\cr}\]
+\[\eqalign{\Sigma(R,\phi)&=\sum_{m=-\infty}^{\infty}\int_{0}^{\infty}{\rm d}k\, S_{m}(k)\Sigma_{km}(R,\phi)\cr&=-{1\over 2\pi G}\sum_{m=-\infty}^{\infty}\int_{0}^{ \infty}{\rm d}k\,kS_{m}(k){\rm e}^{{\rm i}m\phi}J_{m}(kR),}\]
 
 then we will have
 
-\[\eqalign{\Phi(R,\phi,z)&=\sum_{m=-\infty}^{\infty}\int_{0}^{\infty}{\rm d}k\, S_{m}(k)\Phi_{km}(R,\phi,z)\cr&=\sum_{m=-\infty}^{\infty}\int_{0}^{\infty}{\rm d}k\, S_{m}(k)J_{m}(kR){\rm e}^{{\rm i}m\phi-k|z|}.\cr}\]
+\[\eqalign{\Phi(R,\phi,z)&=\sum_{m=-\infty}^{\infty}\int_{0}^{\infty}{\rm d}k\, S_{m}(k)\Phi_{km}(R,\phi,z)\cr&=\sum_{m=-\infty}^{\infty}\int_{0}^{\infty}{\rm d}k\, S_{m}(k)J_{m}(kR){\rm e}^{{\rm i}m\phi-k|z|}.}\]
 
 Multiplying (2.181) through by \({\rm e}^{-{\rm i}m^{\prime}\phi}\) and averaging over \(\phi\), we obtain
 
@@ -1029,7 +1021,7 @@ Comparison of this formula with our expression (2.188) for the reverse relation 
 
 An alternative technique for finding non-axisymmetric potential-density pairs was introduced by Kalnajs (1971). The potential \(\Phi(R,\phi)\) at any point in the plane of a disk is
 
-\[\Phi(R,\phi) =-G\int{\rm d}R^{\prime}\,R^{\prime}\int{\rm d}\phi^{\prime}\, \frac{\Sigma(R^{\prime},\phi^{\prime})}{|{\bf x}-{\bf x}^{\prime}|} \tag{2.191}\] \[=-G\int_{0}^{\infty}{\rm d}R^{\prime}\,R^{\prime}\int_{0}^{2\pi }{\rm d}\phi^{\prime}\,\frac{\Sigma(R^{\prime},\phi^{\prime})}{\sqrt{R^{ \prime 2}+R^{2}-2RR^{\prime}\cos(\phi^{\prime}-\phi)}}.\]
+\[\Phi(R,\phi) =-G\int{\rm d}R^{\prime}\,R^{\prime}\int{\rm d}\phi^{\prime}\, \frac{\Sigma(R^{\prime},\phi^{\prime})}{|{\bf x}-{\bf x}^{\prime}|} \tag{2.191}\] \[=-G\int_{0}^{\infty}{\rm d}R^{\prime}\,R^{\prime}\int_{0}^{2\pi} {\rm d}\phi^{\prime}\,\frac{\Sigma(R^{\prime},\phi^{\prime})}{\sqrt{R^{ \prime 2}+R^{2}-2RR^{\prime}\cos(\phi^{\prime}-\phi)}}.\]
 
 The integral in this expression can be simplified if we define a new radial coordinate,
 
@@ -1047,7 +1039,7 @@ Now consider the reduced potential \(V_{\alpha m}(u,\phi)\) that is generated by
 
 \[S_{\alpha m}(u,\phi)={\rm e}^{{\rm i}(\alpha u+m\phi)}, \tag{2.195}\]where \(\alpha\) is a real number and \(m\) is an integer. We have
 
-\[V_{\alpha m}(u,\phi)=-G\int_{-\infty}^{\infty}\mathrm{d}u^{\prime} \int_{0}^{2\pi}\mathrm{d}\phi^{\prime}\,K(u-u^{\prime},\phi-\phi^{\prime}) \mathrm{e}^{\mathrm{i}(\alpha u^{\prime}+m\phi^{\prime})} \tag{2.196}\] \[=-G\mathrm{e}^{\mathrm{i}(\alpha u+m\phi)}\int_{-\infty}^{\infty} \mathrm{d}u^{\prime}\int_{0}^{2\pi}\mathrm{d}\phi^{\prime}\,K(u-u^{\prime}, \phi-\phi^{\prime})\mathrm{e}^{\mathrm{i}[\alpha(u^{\prime}-u)+m(\phi^{\prime} -\phi)]}.\]
+\[V_{\alpha m}(u,\phi)=-G\int_{-\infty}^{\infty}\mathrm{d}u^{\prime }\int_{0}^{2\pi}\mathrm{d}\phi^{\prime}\,K(u-u^{\prime},\phi-\phi^{\prime}) \mathrm{e}^{\mathrm{i}(\alpha u^{\prime}+m\phi^{\prime})} \tag{2.196}\] \[=-G\mathrm{e}^{\mathrm{i}(\alpha u+m\phi)}\int_{-\infty}^{\infty} \mathrm{d}u^{\prime}\int_{0}^{2\pi}\mathrm{d}\phi^{\prime}\,K(u-u^{\prime}, \phi-\phi^{\prime})\mathrm{e}^{\mathrm{i}[\alpha(u^{\prime}-u)+m(\phi^{\prime }-\phi)]}.\]
 
 If we change to new variables of integration \(u^{\prime\prime}\equiv u-u^{\prime}\) and \(\phi^{\prime\prime}\equiv\phi-\phi^{\prime}\), equation (2.196) becomes
 
@@ -1055,13 +1047,17 @@ If we change to new variables of integration \(u^{\prime\prime}\equiv u-u^{\prim
 
 where
 
-\[\begin{split} N(\alpha,m)&\equiv\int_{-\infty}^{ \infty}\mathrm{d}u^{\prime\prime}\int_{0}^{2\pi}\mathrm{d}\phi^{\prime\prime} \,K(u^{\prime\prime},\phi^{\prime\prime})\mathrm{e}^{-\mathrm{i}(\alpha u^{ \prime\prime}+m\phi^{\prime\prime})}\\ &=\pi\frac{(\frac{1}{2}m-\frac{3}{4}+\frac{1}{2}\mathrm{i}\alpha)!(\frac{1}{2}m-\frac{3}{4}-\frac{1}{2}\mathrm{i}\alpha)!}{(\frac{1}{2}m-\frac{ 1}{4}+\frac{1}{2}\mathrm{i}\alpha)!(\frac{1}{2}m-\frac{1}{4}-\frac{1}{2} \mathrm{i}\alpha)!}.\end{split} \tag{2.198}\]
+\[\begin{split} N(\alpha,m)&\equiv\int_{-\infty}^{ \infty}\mathrm{d}u^{\prime\prime}\int_{0}^{2\pi}\mathrm{d}\phi^{\prime\prime} \,K(u^{\prime\prime},\phi^{\prime\prime})\mathrm{e}^{-\mathrm{i}(\alpha u^{ \prime\prime}+m\phi^{\prime\prime})}\\ &=\pi\frac{(\frac{1}{2}m-\frac{3}{4}+\frac{1}{2}\mathrm{i}\alpha)!(\frac{1}{2}m-\frac{3}{4}-\frac{1}{2}\mathrm{i}\alpha)!}{(\frac{1}{2}m-\frac {1}{4}+\frac{1}{2}\mathrm{i}\alpha)!(\frac{1}{2}m-\frac{1}{4}-\frac{1}{2} \mathrm{i}\alpha)!}.\end{split} \tag{2.198}\]
 
 The kernel \(N(\alpha,m)\) is real and even in both \(\alpha\) and \(m\).7 The reduced potential generated by an arbitrary linear combination
 
 Footnote 7: These statements can be proved using equations (C.12) and (C.14).
 
-\[S(u,\phi)\equiv\sum_{m=-\infty}^{\infty}\int_{-\infty}^{\infty}\frac{\mathrm{ d}\alpha}{2\pi}\,A_{m}(\alpha)\mathrm{e}^{\mathrm{i}(\alpha u+m\phi)}\] (2.199a) of surface densities of the form ( 2.195 ) is \[V(u,\phi)=-G\sum_{m=-\infty}^{\infty}\int_{-\infty}^{\infty}\frac{\mathrm{d} \alpha}{2\pi}\,N(\alpha,m)A_{m}(\alpha)\mathrm{e}^{\mathrm{i}(\alpha u+m\phi)}.\] (2.199b) Furthermore, equation ( 2.199a ) states that \[A_{m}(\alpha)\] is nothing but the Fourier transform of the reduced surface density \[S(u,\phi)\] (eqs. B.64  and B.67 ). Consequently, \[A_{m}(\alpha)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\mathrm{d}u\int_{0}^{2\pi} \mathrm{d}\phi\,S(u,\phi)\mathrm{e}^{-\mathrm{i}(\alpha u+m\phi)}. \tag{2.199c}\]
+\[S(u,\phi)\equiv\sum_{m=-\infty}^{\infty}\int_{-\infty}^{\infty}\frac{\mathrm{ d}\alpha}{2\pi}\,A_{m}(\alpha)\mathrm{e}^{\mathrm{i}(\alpha u+m\phi)}\] (2.199a) of surface densities of the form ( 2.195 ) is \[V(u,\phi)=-G\sum_{m=-\infty}^{\infty}\int_{-\infty}^{\infty}\frac{\mathrm{d} \alpha}{2\pi}\,N(\alpha,m)A_{m}(\alpha)\mathrm{e}^{\mathrm{i}(\alpha u+m\phi)}. \tag{2.199b}\]
+
+Furthermore, equation (2.199a) states that \(A_{m}(\alpha)\) is nothing but the Fourier transform of the reduced surface density \(S(u,\phi)\) (eqs. B.64 and B.67). Consequently,
+
+\[A_{m}(\alpha)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\mathrm{d}u\int_{0}^{2\pi} \mathrm{d}\phi\,S(u,\phi)\mathrm{e}^{-\mathrm{i}(\alpha u+m\phi)}. \tag{2.199c}\]
 
 So we may use equations (2.199) to obtain the potential in the plane \(z=0\) that is generated by any distribution of surface density. Since \(\alpha u+m\phi=\alpha\ln R+m\phi\) is constant on **logarithmic spirals**, equations (2.199) determine the potential of a disk by decomposing the density into spirals. Note that this derivation does not produce an expression for the value of the potential away from the plane \(z=0\) (Problem 2.19 remedies this defect).
 
@@ -1085,9 +1081,9 @@ If we change the independent variable in equation (2.200b) to \(x={\rm i}\sinh u
 
 satisfy Laplace's equation everywhere outside the excluded disk \(u=0\) (\(z=0\), \(R\leq\Delta\)) and vanish at infinity. However, there is a discontinuity in the gradient of \(\Phi_{lm}\) on the excluded disk. By Gauss's theorem, this discontinuity is generated by a surface density \(\Sigma_{lm}(v,\phi)\); thus from equation (2.100) we have
 
-\[\begin{split} 4\pi G\Sigma_{lm}(v,\phi)&=2\left(\hat{ \bf e}_{u}\!\cdot\!\mathbf{\nabla}\Phi_{lm}\right)_{u\to 0+}=\frac{2}{\Delta|\cos v |}\lim_{u\to 0+}\left(\frac{\partial\Phi_{lm}}{\partial u}\right)\\ &=2V_{lm}{\rm i}\lim_{x\to 0}\left[\frac{{\rm d}\ln Q_{l}^{m}(x)}{{ \rm d}x}\right]\frac{{\rm Y}_{l}^{m}(v,\phi)}{\Delta|\cos v|},\end{split} \tag{2.203}\]where \(x\) approaches zero along the positive imaginary axis. Using equations (C.31) and (C.13) to evaluate the limit in equation (2.203), we then find (Hunter 1963)
+\[\begin{split} 4\pi G\Sigma_{lm}(v,\phi)&=2\left(\hat{\bf e }_{u}\!\cdot\!\!\nabla\Phi_{lm}\right)_{u\to 0+}=\frac{2}{\Delta|\cos v|} \lim_{u\to 0+}\left(\frac{\partial\Phi_{lm}}{\partial u}\right)\\ &=2V_{lm}{\rm i}\lim_{x\to 0}\left[\frac{{\rm d}\ln Q_{l}^{m}(x)}{{ \rm d}x}\right]\frac{{\rm Y}_{l}^{m}(v,\phi)}{\Delta|\cos v|},\end{split} \tag{2.203}\]where \(x\) approaches zero along the positive imaginary axis. Using equations (C.31) and (C.13) to evaluate the limit in equation (2.203), we then find (Hunter 1963)
 
-\[\Sigma_{lm}=-\frac{2V_{lm}}{\pi^{2}G\Delta g_{lm}}\,\frac{{\rm Y}_{l}^{m}(v, \phi)}{|\cos v|},\] (2.204a) where \[g_{lm}\equiv\frac{(l+m)!(l-m)!}{2^{2l-1}\left[\left(\frac{l+m}{2}\right)! \left(\frac{l-m}{2}\right)!\right]^{2}}. \tag{2.204b}\]
+\[\Sigma_{lm}=-\frac{2V_{lm}}{\pi^{2}G\Delta g_{lm}}\,\frac{{\rm Y}_{l}^{m}(v, \phi)}{|\cos v|},\] (2.204a) where \[g_{lm}\equiv\frac{(l+m)!(l-m)!}{2^{2l-1}\left[\left(\frac{l+m}{2}\right)!\left( \frac{l-m}{2}\right)!\right]^{2}}. \tag{2.204b}\]
 
 A general disk potential, which is a sum over \(l\) and \(m\) of potentials of the form (2.202), is generated by the surface density \(\Sigma(v,\phi)\) that is the sum of surface densities \(\Sigma_{lm}(v,\phi)\). According to equation (2.204a), \(-2V_{lm}/(\pi^{2}G\Delta g_{lm})\) is the coefficient of \({\rm Y}_{l}^{m}(v,\phi)\) when \(|\cos v|\Sigma(v,\phi)\) is expanded in spherical harmonics. Thus with the orthogonality relation (C.44) we have
 
@@ -1111,12 +1107,7 @@ The brightness distribution of each component is assumed to be similar to those 
 
 The models are constrained by fitting to the following data (cf. Table 1.2):
 
-1. The circular-speed curve \(v_{\rm c}(R)\) for an assumed value of the solar circular speed, \(v_{0}\equiv v_{\rm c}(R_{0})\). Since this curve is determined from the line-of-sight velocities of tracers such as HI clouds and Cepheid stars, the circular-speed curve depends on \(v_{0}\), which must be determined by other methods.
-2. The values of the Oort constants (Table 1.2, eq. 3.83, and BM SS10.3.3).
-3. The total surface density within 1.1 kpc of the Galactic plane near the Sun, \(\Sigma_{1.1}(R_{0})\), and the contribution of the disk to this density (Table 1.1).
-4. The velocity dispersion of bulge stars in Baade's window, a line of sight that passes \(\sim 500\) pc from the Galactic center in which absorption by intervening dust is unusually low. We take this dispersion to be \(117\pm 15\) km s\({}^{-1}\).
-5. The total mass within 100 kpc of the Galactic center (eq. 1.12).
-6. The solar radius \(R_{0}=8\) kpc.
+(i) The circular-speed curve \(v_{\rm c}(R)\) for an assumed value of the solar circular speed, \(v_{0}\equiv v_{\rm c}(R_{0})\). Since this curve is determined from the line-of-sight velocities of tracers such as HI clouds and Cepheid stars, the circular-speed curve depends on \(v_{0}\), which must be determined by other methods. (ii) The values of the Oort constants (Table 1.2, eq. 3.83, and BM SS10.3.3). (iii) The total surface density within \(1.1\,{\rm kpc}\) of the Galactic plane near the Sun, \(\Sigma_{1.1}(R_{0})\), and the contribution of the disk to this density (Table 1.1). (iv) The velocity dispersion of bulge stars in Baade's window, a line of sight that passes \(\sim 500\,{\rm pc}\) from the Galactic center in which absorption by intervening dust is unusually low. We take this dispersion to be \(117\pm 15\,{\rm km\,s^{-1}}\). (v) The total mass within \(100\,{\rm kpc}\) of the Galactic center (eq. 1.12). (vi) The solar radius \(R_{0}=8\,{\rm kpc}\).
 
 The functional forms assumed for each of the Galaxy's components are as follows.
 
@@ -1128,7 +1119,7 @@ For \(q_{\rm b}<1\) this is an oblate, spheroidal power-law model that is trunca
 
 \[e=\sqrt{1-q_{\rm b}^{2}}\quad;\quad\psi(m)=\rho_{\rm b0}\int_{0}^{m}{\rm d}m^ {2}\,\Bigl{(}{m\over a_{\rm b}}\Bigr{)}^{-\alpha_{\rm b}}{\rm e}^{-m^{2}/r_{ \rm b}^{2}}. \tag{2.208}\]
 
-Near-infrared photometry (BM SS10.2.1) suggests values for three of the parameters, \(\alpha_{\rm b}=1.8\), \(q_{\rm b}=0.6\), \(r_{\rm b}=1.9\) kpc, and without loss of generality,we can set \(a_{\rm b}=1\,{\rm kpc}\). The parameter \(\rho_{\rm b0}\), and hence the mass of the bulge, are determined by fitting the dynamical constraints.
+Near-infrared photometry (BM SS10.2.1) suggests values for three of the parameters, \(\alpha_{\rm b}=1.8\), \(q_{\rm b}=0.6\), \(r_{\rm b}=1.9\,{\rm kpc}\), and without loss of generality,we can set \(a_{\rm b}=1\,{\rm kpc}\). The parameter \(\rho_{\rm b0}\), and hence the mass of the bulge, are determined by fitting the dynamical constraints.
 
 **(b) The dark halo** By extending the spherical two-power-law models of SS2.2.2f to oblate models, the density of this component is taken to have the form
 
@@ -1172,9 +1163,9 @@ Figures 2.21 and 2.22 analyze the potential of Model II, a model that has a larg
 
 Figure 2.21: Equipotential contours of the halo-dominated Galaxy model, Model II, which has \(R_{\rm d}=3.2\,{\rm kpc}\). The top left panel shows the potential of the bulge, while the potentials of halo and disk are shown at top right and lower left, respectively. The lower right panel shows the overall potential with contour levels \((-0.5,-1,\,-1.5\ldots)\times(100\,{\rm km\,s^{-1}})^{2}\). From top left to lower right the potentials at \((R,z)=(8\,{\rm kpc},0)\) are \(-0.20\), \(-9.83\), \(-2.19\), \(-12.21\times(100\,{\rm km\,s^{-1}})^{2}\).
 
-One of the striking conclusions from these models is that the relative contributions of the disk and the halo to the interior mass and the circular speed at \(R_{0}\) are very uncertain. As \(R_{\rm d}\) varies from 3.2 kpc to 2 kpc, the mass of the dark halo inside 10 kpc decreases by nearly a factor 2 and the fraction of the gravitational force at \(R_{0}\) contributed by the halo falls9 from 0.63 to 0.35. Similar uncertainties are encountered in models of external disk galaxies (van Albada et al. 1985; Sellwood 1999). This degeneracy between the disk and halo parameters has to be resolved by bringing other observational constraints or dynamical arguments to bear, such as those obtained from measurements of the dynamics of galactic bars (SS6.5.2e), and
+One of the striking conclusions from these models is that the relative contributions of the disk and the halo to the interior mass and the circular speed at \(R_{0}\) are very uncertain. As \(R_{\rm d}\) varies from \(3.2\,{\rm kpc}\) to \(2\,{\rm kpc}\), the mass of the dark halo inside \(10\,{\rm kpc}\) decreases by nearly a factor 2 and the fraction of the gravitational force at \(R_{0}\) contributed by the halo falls9 from 0.63 to 0.35. Similar uncertainties are encountered in models of external disk galaxies (van Albada et al. 1985; Sellwood 1999). This degeneracy between the disk and halo parameters has to be resolved by bringing other observational constraints or dynamical arguments to bear, such as those obtained from measurements of the dynamics of galactic bars (SS6.5.2e), and
 
-Figure 2.23: In each panel the full curve shows as a function of \(z\) in a Galactic model the force towards the galactic plane, \(K_{z}=\partial\Phi/\partial z\) at \(R_{0}=8\) kpc. The contributions from the bulge plus halo and disk are shown by the dotted and dashed curves, respectively. The left panel is for disk-dominated model, Model I (Figures 2.19 and 2.20), while the right panel is for Model II (Figures 2.21 and 2.22).
+Figure 2.23: In each panel the full curve shows as a function of \(z\) in a Galactic model the force towards the galactic plane, \(K_{z}=\partial\Phi/\partial z\) at \(R_{0}=8\,{\rm kpc}\). The contributions from the bulge plus halo and disk are shown by the dotted and dashed curves, respectively. The left panel is for disk-dominated model, Model I (Figures 2.19 and 2.20), while the right panel is for Model II (Figures 2.21 and 2.22).
 
 Figure 2.22: The full curve shows the circular-speed curve of Model II. The contributions from the bulge, halo and disk are shown by the long-dashed, dotted and short-dashed curves, respectively.
 
@@ -1182,7 +1173,7 @@ the optical depth to gravitational microlensing towards the Galactic center (Bis
 
 Even though the halo of Model II dominates the circular speed at \(R_{0}\), Figure 2.23 shows that the vertical force towards the disk, \(K_{z}=\partial\Phi/\partial z\), is dominated by the disk within \(\sim 2\,{\rm kpc}\) of the plane. Even a relatively low-mass disk can dominate \(K_{z}\) in this way because a disk's contribution to \(K_{z}\) rises extremely quickly near the plane, where the density of disk material is high. Above one scale height, \(\sim 200\,{\rm pc}\), the disk's contribution to \(K_{z}\) flattens off to the nearly constant value \(2\pi G\Sigma(R)\) (cf. Problem 2.3). By contrast, in both panels of Figure 2.23 the halo's contribution to \(K_{z}\) (dotted curves) rises nearly linearly with \(z\) out to several kiloparsecs above the Sun. Notice how similar the full curves in Figure 2.23 are: despite the very different contributions to \(v_{\rm c}\) from disk and halo in the two models, the shape of the observationally measurable quantity \(K_{z}\) (SS4.9.3) is almost the same in the two cases.
 
-**(e) The bulge as a bar** There is both kinematic and photometric evidence that the Milky Way's bulge is in fact a bar, that is, a highly elongated, rapidly rotating stellar system (SS6.5 and BM SSSS9.4 and 10.1). From the vantage point of the Sun, it is hard to determine the precise shape of the bar, but, as sketched in Figure 2.24, the bar is believed to extend to a Galactocentric radius \(\sim 3\,{\rm kpc}\), with its longest axis inclined by about \(20^{\circ}\) to the line from the Sun to the Galactic center (Bissantz & Gerhard 2002). The lengths of the bar's semi-axes are roughly in the ratios \(1\,{:}\,0.3\,{:}\,0.3\).
+**(e) The bulge as a bar** There is both kinematic and photometric evidence that the Milky Way's bulge is in fact a bar, that is, a highly elongated, rapidly rotating stellar system (SS6.5 and BM SSS9.4 and 10.1). From the vantage point of the Sun, it is hard to determine the precise shape of the bar, but, as sketched in Figure 2.24, the bar is believed to extend to a Galactocentric radius \(\sim 3\,{\rm kpc}\), with its longest axis inclined by about \(20^{\circ}\) to the line from the Sun to the Galactic center (Bissantz & Gerhard 2002). The lengths of the bar's semi-axes are roughly in the ratios \(1\,{:}\,0.3\,{:}\,0.3\).
 
 Both photometric studies of the bar itself and comparisons with bars in other galaxies suggest that the isodensity surfaces deviate significantly from ellipsoids (Lopez-Corredoira et al. 2005). Nonetheless, when considering the impact that the bar has on the Galaxy's gravitational potential, it is useful to start by approximating the isodensity surfaces by ellipsoids for in this case we can obtain the potential from equation (2.140)--if a more exact result were required, one could expand the difference \(\rho({\bf x})-\rho_{\rm e}({\bf x})\) between the actual density distribution \(\rho\) and the elliptical model \(\rho_{\rm e}\) in spherical harmonics, and obtain the small correction to the potential from equation (2.95). In this spirit, we estimate the effect of the bar on the Galaxy's potential by fashioning a bar out of the axisymmetric bulge of Model I as follows.
 
@@ -1190,9 +1181,9 @@ In equations (2.207) we increase the scale radius \(r_{\rm b}\) from \(1.9\,{\rm
 
 Figure 2.24: Schematic diagram of the Galactic bar.
 
-intersection with the Galactic plane of the bar's isopotential surfaces, while the dotted curves show the corresponding curves for the bulge of Model I. As expected, the bar's isopotential surfaces are elongated. The effect is very small near the solar circle but appreciable at \(R\mathrel{\hbox to 0.0pt{\lower 4.0pt\hbox{ $\sim$}}\raise 1.0pt\hbox{$<$}}5\,\)kpc. On account of this elongation, the potential now generates tangential forces: Along a radius that makes an angle of \(45^{\circ}\) with the bar's long axis, the ratio \(F_{\phi}/F_{r}\) of the tangential and radial forces from the bar falls from 0.4 at the center to 0.27 at 2 kpc and 0.125 at 4 kpc. From Figure 2.20 we see that the bulge dominates \(F_{r}\) at \(R\mathrel{\hbox to 0.0pt{\lower 4.0pt\hbox{ $\sim$}}\raise 1.0pt\hbox{$<$}}1\,\)kpc, so in this crude model tangential forces are very important at small radii. Conversely, at \(R\simeq 4\,\)kpc the bulge contributes only 11% of \(F_{r}\), so at that radius \(F_{\phi}\) is only \(\sim 1\%\) of \(F_{r}\). Nonetheless, the tangential forces that the bar induces can be dynamically significant for resonant orbits as far out as the solar circle because along such orbits the effect of \(F_{\phi}\) can accumulate over several periods (SS3.7.2 and Dehnen 2000a).
+intersection with the Galactic plane of the bar's isopotential surfaces, while the dotted curves show the corresponding curves for the bulge of Model I. As expected, the bar's isopotential surfaces are elongated. The effect is very small near the solar circle but appreciable at \(R\lesssim 5\,{\rm kpc}\). On account of this elongation, the potential now generates tangential forces: Along a radius that makes an angle of \(45^{\circ}\) with the bar's long axis, the ratio \(F_{\phi}/F_{r}\) of the tangential and radial forces from the bar falls from 0.4 at the center to 0.27 at 2 kpc and 0.125 at 4 kpc. From Figure 2.20 we see that the bulge dominates \(F_{r}\) at \(R\lesssim 1\,{\rm kpc}\), so in this crude model tangential forces are very important at small radii. Conversely, at \(R\simeq 4\,{\rm kpc}\) the bulge contributes only 11% of \(F_{r}\), so at that radius \(F_{\phi}\) is only \(\sim 1\%\) of \(F_{r}\). Nonetheless, the tangential forces that the bar induces can be dynamically significant for resonant orbits as far out as the solar circle because along such orbits the effect of \(F_{\phi}\) can accumulate over several periods (SS3.7.2 and Dehnen 2000a).
 
-We conclude that accurate models of the triaxial bar are needed to understand the dynamics of the Milky Way at \(R\mathrel{\hbox to 0.0pt{\lower 4.0pt\hbox{ $\sim$}}\raise 1.0pt\hbox{$<$}}2\)-3 kpc, and possibly beyond.
+We conclude that accurate models of the triaxial bar are needed to understand the dynamics of the Milky Way at \(R\lesssim 2\)-3 kpc, and possibly beyond.
 
 ### 2.8 Potentials from functional expansions
 
@@ -1220,7 +1211,7 @@ The elements of the matrix \({\bf M}\) have a simple physical interpretation: \(
 
 Footnote 10: In the language of linear operators, the natural inner product on the space spanned by \(\{\Phi_{\alpha}\}\) is \((f,g)=-(4\pi G)^{-1}\int{\rm d}^{3}{\bf x}\,f^{*}\nabla^{2}g\). Then \((f,g)=(g,f)^{*}\) is minus the interaction energy of the density distributions associated with the potentials \(f^{*}\) and \(g\).
 
-\[\eqalign{M_{\alpha\beta}&=-{1\over 4\pi G}\int{\rm d}^{3}{\bf x}\,\Phi_{ \alpha}^{*}\nabla^{2}\Phi_{\beta}\cr&=-{1\over 4\pi G}\oint\Phi_{\alpha}^{*}{ \boldsymbol{\nabla}}\Phi_{\beta}\cdot{\rm d}^{2}{\bf S}+{1\over 4\pi G}\int{\rm d }^{3}{\bf x}\,{\boldsymbol{\nabla}}\Phi_{\alpha}^{*}\cdot{\boldsymbol{\nabla}} \Phi_{\beta}.\cr} \tag{2.215}\]The surface term vanishes when the integral is taken over all space, because \(\Phi_{\alpha}\) falls off at least as fast as \(r^{-1}\). This result shows that \(M_{\alpha\beta}=M^{*}_{\beta\alpha}\) so \({\bf M}\) is Hermitian. Note that \({\bf M}\) does not depend on the galactic mass distribution, so it can be computed once and for all after the basis potentials \(\Phi_{\alpha}\) have been chosen, and subsequently used time and again to follow the evolution of the potentials of many different galaxies, or of a single dynamically evolving galaxy.
+\[\eqalign{M_{\alpha\beta}&=-{1\over 4\pi G}\int{\rm d}^{3}{\bf x}\,\Phi_{ \alpha}^{*}\nabla^{2}\Phi_{\beta}\cr&=-{1\over 4\pi G}\oint\Phi_{\alpha}^{*} \boldsymbol{\nabla}\Phi_{\beta}\cdot{\rm d}^{2}{\bf S}+{1\over 4\pi G}\int{\rm d}^{3}{ \bf x}\,\boldsymbol{\nabla}\Phi_{\alpha}^{*}\cdot\boldsymbol{\nabla}\Phi_{ \beta}.}\]The surface term vanishes when the integral is taken over all space, because \(\Phi_{\alpha}\) falls off at least as fast as \(r^{-1}\). This result shows that \(M_{\alpha\beta}=M^{*}_{\beta\alpha}\) so \({\bf M}\) is Hermitian. Note that \({\bf M}\) does not depend on the galactic mass distribution, so it can be computed once and for all after the basis potentials \(\Phi_{\alpha}\) have been chosen, and subsequently used time and again to follow the evolution of the potentials of many different galaxies, or of a single dynamically evolving galaxy.
 
 The coefficients \(a_{\beta}\) can now be found by solving the linear equation (2.214a). We can choose the basis functions to facilitate this process. There are two strategies for exploiting this freedom.
 
@@ -1250,11 +1241,11 @@ We must still expand our basis to include functions \(F_{\bf n}(r)\) for each gi
 
 where \(U_{0}(r)=1\) and the set of \(U_{n}\) is complete. A possible choice would be
 
-\[U_{n}(r)=u^{n}\quad{\rm where}\quad u\equiv{r/r_{0}-1\over r/r_{0}+1}\quad(-1 \leq u<1).\]
+\[U_{n}(r)=u^{n}\quad\hbox{where}\quad u\equiv{r/r_{0}-1\over r/r_{0}+1}\quad(- 1\leq u<1).\]
 
 When our choice of basis functions is inserted in equation (2.214b), we find with equation (2.218) that the matrix \({\bf M}\) and the vector \({\bf s}\) take the forms
 
-\[\eqalign{M_{{\bf n}^{\prime}{\bf n}}&=-(4\pi G)^{-1}\delta_{l^{\prime}l} \delta_{m^{\prime}m}\int{\rm d}r\,F_{n^{\prime}l}^{*}(r)\biggl{[}{{\rm d}\over {\rm d}r}\Bigl{(}r^{2}{{\rm d}\over{\rm d}r}\Bigr{)}-l(l+1)\biggr{]}F_{nl}(r) \cr s_{{\bf n}^{\prime}}&=-\int{\rm d}^{3}{\bf x}\,{\rm Y}_{l}^{m*}({\bf\Omega })F_{n^{\prime}l}^{*}(r)\rho({\bf x}).}\]
+\[\eqalign{M_{{\bf n}^{\prime}{\bf n}}&=-(4\pi G)^{-1}\delta_{l^{\prime}l} \delta_{m^{\prime}m}\int{\rm d}r\,F_{n^{\prime}l}^{*}(r)\biggl{[}{{\rm d} \over{\rm d}r}\Bigl{(}r^{2}{{\rm d}\over{\rm d}r}\Bigr{)}-l(l+1)\biggr{]}F_{ nl}(r)\cr s_{{\bf n}^{\prime}}&=-\int{\rm d}^{3}{\bf x}\,{\rm Y}_{l}^{m*}({\bf\Omega})F_{n^ {\prime}l}^{*}(r)\rho({\bf x}).}\]
 
 It is possible to combine the best features of bi-orthonormal and designer basis functions. For example, if we choose \(F_{nl}(r)=U_{nl}(r)F_{l}(r)\), where \(F_{l}(r)\) is given by (2.219) and \(U_{nl}(r)\) is an appropriate polynomial in the variable \(u\) defined by equation (2.221), the designer basis functions are bi-orthonormal (Hernquist & Ostriker 1992).
 
@@ -1262,7 +1253,9 @@ It is possible to combine the best features of bi-orthonormal and designer basis
 
 ### 2.1 Introduction
 
-The studyPoisson solvers for collisional problems can be designed to be essentially perfect: in SS7.4.6d we shall see that the conceptually difficult part of a collisional simulation is integrating the orbits of particles. By contrast, Poisson solvers for collisionless simulations are fundamentally limited by particle noise: since we do not really know \(\rho({\bf r})\) but only the locations of a finite number of particles that sample \(\rho({\bf r})\), we cannot recover \(\Phi({\bf r})\) accurately no matter how much potential theory we know. On account of this fundamental limitation, Poisson solvers for collisionless simulations inevitably involve a compromise between inadequate resolution and excessive statistical noise. Some solvers are undoubtedly better than others, but the solver that is best suited to a given simulation depends on the scientific problem that is to be addressed. In this section we describe the most important types of Poisson solver, and discuss their strengths and weaknesses.
+The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the dynamics of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the dynamics of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the \(N\)-body system. The study of the \(N\)-body system is a very important topic in the study of the \(N\)-body system.
+
+Poisson solvers for collisional problems can be designed to be essentially perfect: in SS7.4.6d we shall see that the conceptually difficult part of a collisional simulation is integrating the orbits of particles. By contrast, Poisson solvers for collisionless simulations are fundamentally limited by particle noise: since we do not really know \(\rho({\bf r})\) but only the locations of a finite number of particles that sample \(\rho({\bf r})\), we cannot recover \(\Phi({\bf r})\) accurately no matter how much potential theory we know. On account of this fundamental limitation, Poisson solvers for collisionless simulations inevitably involve a compromise between inadequate resolution and excessive statistical noise. Some solvers are undoubtedly better than others, but the solver that is best suited to a given simulation depends on the scientific problem that is to be addressed. In this section we describe the most important types of Poisson solver, and discuss their strengths and weaknesses.
 
 #### Direct summation
 
@@ -1288,7 +1281,7 @@ This equation differs from (2.223) only in the replacement of \(r^{-2}\) by \(S_
 
 \(S_{\rm F}(r)\) is the derivative of another function \(S(r)\), the **softening kernel**, which appears in the equation for the potential at the location of particle \(\alpha\):
 
-\[\Phi_{\alpha}\equiv\Phi({\bf r}_{\alpha})=\sum_{\beta\neq\alpha}Gm_{\beta}S(| {\bf r}_{\beta}-{\bf r}_{\alpha}|). \tag{2.225}\]
+\[\Phi_{\alpha}\equiv\Phi({\bf r}_{\alpha})=\sum_{\beta\neq\alpha}Gm_{\beta}S(|{ \bf r}_{\beta}-{\bf r}_{\alpha}|). \tag{2.225}\]
 
 A widely used form of \(S\) is
 
@@ -1316,15 +1309,13 @@ Suppose now that we locate the center of mass of the particles in each cube and 
 
 and so forth, where the sums run over the particles in the cube and \({\bf x}^{\alpha}\) is the position vector of particle \(\alpha\) relative to the cube's center of mass. This hierarchy of sums is closely related to the multipole expansion of SS2.4, and these quantities are called the **Cartesian multipole moments**. The three in equation (2.228) are the monopole, quadrupole, and octopole moments.
 
-### 2.2 Scaling of tree codes
+## Chapter 2 Potential Theory
 
-Consider the work involved in determining the potential at the location of one of \(N\) simulation particles. For simplicity we assume that the system is not very inhomogeneous, although the argument we give can be generalized. The sum over cubes for the potential includes some cubes ("leaves") that contain only one particle, the rest being "branches" that contain more than one particle. All branch cubes have opening angle \(\leq\theta_{\rm o}\), while most of the leaf cubes have opening angle \(>\theta_{\rm o}\). If the simulation is representing a system of linear size \(L\), the leaf cubes have a characteristic linear size \(l=L/N^{1/3}\) and lie within distance \(\sim D=l/\theta_{\rm o}\) of the given particle; hence there are \(\sim(D/l)^{3}=\theta_{\rm o}^{-3}\) leaf cubes.
+### 2.1 Introduction
 
-Suppose we now increase the number of simulation particles by a factor 8. Then branch cubes will continue to be branch cubes and will not require further subdivision because the angles they subtend are \(<\theta_{\rm o}\). Hence the extra work that comes with increased \(N\) arises mainly from the \(\theta_{\rm o}^{-3}\) leaf cubes that previously had only one particle; most will now need to be subdivided. Thus every time we increase \(N\) by a factor 8 we have to do a fixed amount of additional work. It now follows that the work required to determine the potential at the location of a given particle is proportional to \(\ln N\), and the work involved in determining the forces on all particles scales as \(N\ln N\).
+The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic. The study of the properties of the potential in the presence of a single particle is very important topic. The study of the properties of the potential in the presence of a single particle is a very important topic.
 
-The object \(M_{i}=\sum_{\alpha}m_{\alpha}x_{i}^{\alpha}\) that might have been listed in equation (2.228) is the cube's dipole moment, and it vanishes identically by virtue of the fact that \({\bf x}^{\alpha}\) is the position of \(\alpha\) relative to the center of mass. If the cube is one of the tree's leaves, \(M_{0}=m_{\alpha}\) and all the other multipoles vanish. There are of order \(N\log_{2}N\) cubes in the tree, so the labor involved in setting it up scales as \(N\ln N\).
-
-Once the tree has been constructed, we can evaluate the sum (2.225) that yields the potential at any location \({\bf x}\) to good accuracy with only \(\sim\ln N\) operations as follows. We first consider evaluating the force as the sum of the forces due to the monopole, quadrupole, octopole,..., \(2^{k}\)-pole etc., of the root cube, up to some predetermined order \(k=K\). This sum would converge rapidly and could be truncated after a few terms without unacceptable inaccuracy if \({\bf x}\) were remote from the root cube in the sense that the root cube subtended a small **opening angle**\(\theta_{\rm o}\), say \(\theta_{\rm o}\mathrel{\raise 1.29pt\hbox{$<$\kern-7.5pt\lower 4.3pt\hbox{$ \sim$}}}1^{\circ}\), at \({\bf x}\). In general, \({\bf x}\) will lie within the root cube, so the desired condition will be not be satisfied. However, we may then instead consider evaluating the potential by summing the multipole contributions from each of the root's eight child cubes. If any of these subtends an angle at \({\bf x}\) that exceeds \(\theta_{\rm o}\), we consider the sum of the multipoles of its children, and so on recursively until the whole potential is obtained as a sum of the multipoles from cubes thatsubtend angles at \({\bf x}\) smaller than \(\theta_{\rm o}\). Some of these final cubes will be leaves, which are deemed to subtend zero angle, because they contain only a single particle. The key point is that as the number of particles in the simulation is increased, the number of cubes over which we sum to get the force at \({\bf x}\) increases much more slowly--see Box 2.2.
+subtend angles at \({\bf x}\) smaller than \(\theta_{\rm o}\). Some of these final cubes will be leaves, which are deemed to subtend zero angle, because they contain only a single particle. The key point is that as the number of particles in the simulation is increased, the number of cubes over which we sum to get the force at \({\bf x}\) increases much more slowly--see Box 2.2.
 
 **Cartesian multipole expansion** To derive explicit formulae for the potential in terms of the multipoles of cubes, we now develop some of the theory of Cartesian multipoles. We consider the contribution to the gravitational potential \(\Phi\) at position \({\bf X}\) in cube A that is generated by the matter in cube B. We have
 
@@ -1332,11 +1323,11 @@ Once the tree has been constructed, we can evaluate the sum (2.225) that yields 
 
 where \(\rho\) is the matter density and \(S\) is the softening kernel (eq. 2.225). We specialize to the case of well-separated cubes and write \({\bf X}=\hat{\bf X}+{\bf x}\) and \({\bf Y}=\hat{\bf Y}+{\bf y}\), where \(\hat{\bf X}\) and \(\hat{\bf Y}\) are the centers of mass of cubes A and B, respectively. Then we Taylor expand \(S({\bf X}-{\bf Y})\) in powers of \({\bf x}-{\bf y}\) around \(\hat{\bf X}-\hat{\bf Y}\):
 
-\[\eqalign{S({\bf X}-{\bf Y})&=S(\hat{\bf X}-\hat{\bf Y})+\sum_{i=1}^{3}({\bf x }-{\bf y})_{i}{\partial S({\bf R})\over\partial R_{i}}\bigg{|}_{{\bf R}=\hat{ \bf X}-\hat{\bf Y}}\cr&\qquad+{1\over 2!}\sum_{i,j=1}^{3}({\bf x}-{\bf y})_{i}({\bf x}-{ \bf y})_{j}{\partial^{2}S({\bf R})\over\partial R_{i}\partial R_{j}}\bigg{|}_ {{\bf R}=\hat{\bf X}-\hat{\bf Y}}+\cdots\cr&=\sum_{n}{1\over n!}({\bf x}-{\bf y })^{(n)}\cdot\big{[}\partial_{(n)}S({\bf R})\big{]}_{{\bf R}=\hat{\bf X}-\hat{ \bf Y}}.}\]
+\[\eqalign{S({\bf X}-{\bf Y})&=S(\hat{\bf X}-\hat{\bf Y})+\sum_{i=1}^{3}({\bf x }-{\bf y})_{i}{\partial S({\bf R})\over\partial R_{i}}\bigg{|}_{{\bf R}=\hat{ \bf X}-\hat{\bf Y}}\cr&\qquad+{1\over 2!}\sum_{i,j=1}^{3}({\bf x}-{\bf y})_{i}({\bf x }-{\bf y})_{j}{\partial^{2}S({\bf R})\over\partial R_{i}\partial R_{j}}\bigg{|} _{{\bf R}=\hat{\bf X}-\hat{\bf Y}}+\cdots\cr&=\sum_{n}{1\over n!}({\bf x}-{ \bf y})^{(n)}\cdot\big{[}\partial_{(n)}S({\bf R})\big{]}_{{\bf R}=\hat{\bf X}- \hat{\bf Y}}.}\]
 
 Here the last line employs a notation in which \({\bf r}^{(n)}\equiv r_{i_{1}}r_{i_{2}}\cdots r_{i_{n}}\) is a product of \(n\) components of the vector \({\bf r}\) and \(\partial_{(n)}\) is the corresponding product of partial derivatives with respect to these components, while the centered dot implies summation over all the \(n\) indices \(i_{k}\) (a total of \(3^{n}\) terms). Substituting (2.230) into (2.229), we obtain
 
-\[\Phi(\hat{\bf X}+{\bf x})=G\sum_{n}{1\over n!}\bigg{[}\int{\rm d}^{3}{\bf y}\, \rho(\hat{\bf Y}+{\bf y})({\bf x}-{\bf y})^{(n)}\bigg{]}\cdot\big{[}\partial_ {(n)}S({\bf R})\big{]}_{{\bf R}=\hat{\bf X}-\hat{\bf Y}}.\]
+\[\Phi(\hat{\bf X}+{\bf x})=G\sum_{n}{1\over n!}\bigg{[}\int{\rm d}^{3}{\bf y} \,\rho(\hat{\bf Y}+{\bf y})({\bf x}-{\bf y})^{(n)}\bigg{]}\cdot\big{[} \partial_{(n)}S({\bf R})\big{]}_{{\bf R}=\hat{\bf X}-\hat{\bf Y}}.\]
 
 Using the expansion
 
@@ -1350,11 +1341,11 @@ we have
 
 Consider the case of a spherically symmetric softening kernel \(S({\bf R})\), i.e., one of the form \(S(|{\bf R}|)\). In this case the evaluation of the first few tensors \(\partial_{(n)}S\) is straightforward:
 
-\[\eqalign{\partial_{(1)}S(R)&={S^{\prime}}{R_{i}\over R}\cr\partial_{(2)}S(R)&= \Bigl{(}{S^{\prime\prime}}-{S^{\prime}\over R}\Bigr{)}{R_{i}R_{j}\over R^{2}}+ {S^{\prime}\over R}\delta_{ij}\cr\partial_{(3)}S(R)&=\Bigl{(}{S^{\prime\prime \prime}}-3{S^{\prime\prime}\over R}+3{S^{\prime}\over R^{2}}\Bigr{)}{R_{i}R_{ j}R_{k}\over R^{3}}\cr&\qquad+\Bigl{(}{S^{\prime\prime}}-{S^{\prime}\over R}\Bigr{)}{ \delta_{ij}R_{k}+\delta_{jk}R_{i}+\delta_{ki}R_{j}\over R^{2}}\cr\partial_{(4 )}S(R)&=\Bigl{(}{S^{iv}}-6{S^{\prime\prime\prime}\over R}+9{S^{\prime\prime} \over R^{2}}-9{S^{\prime}\over R^{3}}\Bigr{)}{R_{i}R_{j}R_{k}R_{l}\over R^{4}} \cr&\qquad+\Bigl{(}{S^{\prime\prime\prime}}-3{S^{\prime\prime}\over R}+3{S^{ \prime}\over R^{2}}\Bigr{)}\bigl{(}\delta_{ij}R_{k}R_{l}+\delta_{jk}R_{i}R_{l}+ \delta_{ki}R_{j}R_{l}\cr&\qquad+\delta_{il}R_{j}R_{k}+\delta_{lj}R_{i}R_{k}+ \delta_{lk}R_{i}R_{j}\Bigr{)}/R^{3}\cr&\qquad+\Bigl{(}{S^{\prime\prime}}-{S^{ \prime}\over R}\Bigr{)}{\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_ {il}\delta_{jk}\over R^{2}}\cr}\]
+\[\eqalign{\partial_{(1)}S(R)&={S^{\prime}}{R_{i}\over R}\cr\partial_{(2)}S(R)&= \Bigl{(}{S^{\prime\prime}}-{S^{\prime}\over R}\Bigr{)}{R_{i}R_{j}\over R^{2}}+ {S^{\prime}\over R}\delta_{ij}\cr\partial_{(3)}S(R)&=\Bigl{(}{S^{\prime\prime \prime}}-3{S^{\prime\prime}\over R}+3{S^{\prime}\over R^{2}}\Bigr{)}{R_{i}R_{ j}R_{k}\over R^{3}}\cr&\qquad+\Bigl{(}{S^{\prime\prime}}-{S^{\prime}\over R}\Bigr{)}{ \delta_{ij}R_{k}+\delta_{jk}R_{i}+\delta_{ki}R_{j}\over R^{2}}\cr\partial_{(4 )}S(R)&=\Bigl{(}{S^{iv}}-6{S^{\prime\prime\prime}\over R}+9{S^{\prime\prime} \over R^{2}}-9{S^{\prime}\over R^{3}}\Bigr{)}{R_{i}R_{j}R_{k}R_{l}\over R^{4}} \cr&\qquad+\Bigl{(}{S^{\prime\prime\prime}}-3{S^{\prime\prime}\over R}+3{S^{ \prime}\over R^{2}}\Bigr{)}\bigl{(}\delta_{ij}R_{k}R_{l}+\delta_{jk}R_{i}R_{l} +\delta_{ki}R_{j}R_{l}\cr&\qquad+\delta_{il}R_{j}R_{k}+\delta_{lj}R_{i}R_{k}+ \delta_{lk}R_{i}R_{j}\Bigr{)}/R^{3}\cr&\qquad+\Bigl{(}{S^{\prime\prime}}-{S^{ \prime}\over R}\Bigr{)}{\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_ {il}\delta_{jk}\over R^{2}}\cr}\]
 
 where
 
-\[{\bf M}^{(k)}\equiv\int_{\rm cube\ B}\!\!{\rm d}^{3}{\bf y}\,\rho({\bf\hat{Y}} +{\bf y}){\bf y}^{(k)}.\]
+\[{\bf M}^{(k)}\equiv\int_{\rm cube\ B}\!\!{\rm d}^{3}{\bf y}\,\rho({\bf\hat{Y} }+{\bf y}){\bf y}^{(k)}.\]
 
 When the density distribution is simulated with particles, \(\rho({\bf r})=\sum_{\alpha}m_{\alpha}\delta({\bf r}-{\bf r}^{\alpha})\) is a sum of delta functions centered on the locations of the particles. In this case the integral in (2.234) can be immediately evaluated and yields the objects defined by equations (2.228).
 
@@ -1392,11 +1383,11 @@ where \(S^{(n)}\) is the \(n\)th derivative of \(S\). If condition \(M_{0}=1\) i
 
 If the mass is distributed between two nodes,
 
-\[w(x)=\cases{1-|x|/\Delta&for $|x|<\Delta$,\cr 0&otherwise,} \tag{1}\]
+\[w(x)=\cases{1-|x|/\Delta&for $|x|<\Delta$,\cr 0&otherwise,\cr} \tag{1}\]
 
 satisfies \(M_{0}=1\), \(M_{1}=0\). This is the cloud in cell (CIC) mass-assignment scheme. If the mass is distributed between three nodes,
 
-\[w(x)=\cases{\frac{3}{4}-|x|^{2}/\Delta^{2}&for $|x|<\frac{1}{2}\Delta$\cr\frac{1}{2}( \frac{3}{2}-|x|/\Delta)^{2}&for $\frac{1}{2}\Delta<|x|<\frac{3}{2}\Delta$\cr 0& otherwise.} \tag{2}\]
+\[w(x)=\cases{\frac{3}{4}-|x|^{2}/\Delta^{2}&for $|x|<\frac{1}{2}\Delta$\cr\frac{1}{2}( \frac{3}{2}-|x|/\Delta)^{2}&for $\frac{1}{2}\Delta<|x|<\frac{3}{2}\Delta$\cr 0& otherwise.\cr} \tag{2}\]
 
 satisfies \(M_{0}=1\), \(M_{1}=0\), \(M_{2}=\frac{1}{4}\Delta^{2}\). This is the triangular shaped cloud (TSC) mass-assignment scheme. There is an alternative three-node scheme in which \(M_{2}=0\), but in this scheme \(w(x)\) is discontinuous at \(|x|/\Delta=\frac{1}{2}\), \(\frac{3}{2}\), whereas in the TSC scheme \(w(x)\) is continuous and differentiable.
 
@@ -1436,7 +1427,7 @@ We describe the method of James (1977) for imposing vacuum boundary conditions o
 
 We start from the density values on a cubical grid and imagine the values to represent electric charge density rather than mass density. Next, we find the potential that would be generated by the charges attached to the interior of the grid if the boundary of the grid were grounded--that is, if the potential \(\Phi\) vanished on the boundary. This potential is the solution of Poisson's equation for the given charge density at interior points of the grid, subject to the boundary condition \(\Phi=0\) on the grid boundary. We obtain the required solution by writing \(\Phi\) in terms of its sine transform (eq. G.7a)
 
-\[\Phi_{lmn}=\sum_{\alpha\beta\gamma=1}^{K-1}\Phi^{\alpha\beta\gamma}(\mbox{SSS })\sin\left(\frac{\pi l\alpha}{K}\right)\sin\left(\frac{\pi m\beta}{K}\right) \sin\left(\frac{\pi n\gamma}{K}\right)\!, \tag{1}\]
+\[\Phi_{lmn}=\sum_{\alpha\beta\gamma=1}^{K-1}\Phi^{\alpha\beta\gamma}(\mbox{SSS} )\sin\left(\frac{\pi l\alpha}{K}\right)\sin\left(\frac{\pi m\beta}{K}\right) \sin\left(\frac{\pi n\gamma}{K}\right)\!, \tag{1}\]
 
 where \(0\leq l,m,n\leq K\). The sine transform automatically ensures that \(\Phi_{lmn}\) vanishes on the boundary. Substituting this expression for \(\Phi_{lmn}\) into the numerical approximation (2.235) for the Laplacian, and then equating this to \(4\pi G\rho_{lmn}\) with \(\rho_{lmn}\) expressed in terms of its sine transform, we discover that each amplitude \(\Phi^{\alpha\beta\gamma}(\mbox{SSS})\) is simply a multiple of the corresponding amplitude \(\rho^{\alpha\beta\gamma}(\mbox{SSS})\). Since the sine transform is its own inverse (eq. G.7b), it is a simple matter to recover the \(\Phi_{lmn}\) from the \(\Phi^{\alpha\beta\gamma}(\mbox{SSS})\).
 
@@ -1486,7 +1477,7 @@ We saw in SS2.4 and Figure 2.10 that good approximations to the potentials of st
 
 Two rather different approaches to the numerical implementation of equation (2.95) have been widely used. In the first (McGlynn 1984; Bonteko 1988), we cover the computational volume with a spherical mesh centered on the estimated location of the center of the system. We identify the particles that lie within each spherical shell around this center, say between radii \(a_{i}-\Delta/2\) and \(a_{i}+\Delta/2\), and then evaluate the integrals (2.94) up to \(l=l_{\rm max}\), using the formula
 
-\[m_{lm}(a_{i})\simeq\sum_{a_{i}-\Delta/2<r_{\alpha}\leq a_{i}+\Delta/2}\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!
+\[m_{lm}(a_{i})\simeq\sum_{a_{i}-\Delta/2<r_{\alpha}\leq a_{i}+\Delta/2}\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!
 
 #### 2.9.5 Simulations of planar systems
 
@@ -1572,7 +1563,7 @@ where \((u,v)\) are oblate spheroidal coordinates defined by equation (2.96) wit
 
 where \(H\) is a continuous function (de Zeeuw 1985 and SS3.5.3). Finally, show that
 
-\[\Phi(u,v)=-\frac{2\pi Ga_{1}^{2}a_{3}\rho_{0}}{\Delta^{2}}\,\frac{f(\Delta \sinh u)-f(\mathrm{i}\Delta\cos v)}{\sinh^{2}u+\cos^{2}v},\] (2.258a) where \[f(z)\equiv z\tan^{-1}(z/a_{3}). \tag{2.258b}\]
+\[\Phi(u,v)=-\frac{2\pi Ga_{1}^{2}a_{3}\rho_{0}}{\Delta^{2}}\,\frac{f(\Delta \sinh u)-f(\lambda\cos v)}{\sinh^{2}u+\cos^{2}v},\] (2.258a) where \[f(z)\equiv z\tan^{-1}(z/a_{3}). \tag{2.258b}\]
 
 Hint: to ensure convergence of the integrals, you may wish to add \((\tau+a_{3}^{2})^{-\frac{1}{2}}\) to one of the integrands and subtract it from the other. The body with this potential is called the **perfect prolate spheroid**, because it is the only prolate axisymmetric density distribution of constant ellipticity that has a Stackel potential.
 
@@ -1602,37 +1593,37 @@ Show that these formulae correspond to the Mestel disk in an appropriate limit. 
 
 **2.19**[3] We have derived relations between the potential and surface density of non-axisymmetric disks by solving Laplace's equation in cylindrical coordinates (SS2.6.2) and oblate spheroidal coordinates (SS2.6.4). Derive a relation of this kind by solving Laplace's equation in spherical coordinates, and show that the result is identical with the formula derived using logarithmic spirals (eq. 2.199). Hint: you may need associated Legendre functions \(P_{\lambda}^{m}(x)\), where \(\lambda\) is a real number. See also equations (C.12) and (C.31).
 
-**2.20**[2] Show that the circular speed \(v_{\rm c}(R)\) in a thin axisymmetric disk of surface density \(\Sigma(R)\) may be written in the form (Mestel 1963)
+**2.20**[2] Show that the circular speed \(v_{c}(R)\) in a thin axisymmetric disk of surface density \(\Sigma(R)\) may be written in the form (Mestel 1963)
 
-\[\begin{split} v_{\rm c}^{2}(R)=\frac{GM(R)}{R}+2G\sum_{k=1}^{ \infty}\alpha_{k}\biggl{[}&\frac{2k+1}{R^{2k+1}}\int_{0}^{R}{ \rm d}R^{\prime}\,\Sigma(R^{\prime}){R^{\prime}}^{2k+1}\\ &-2kR^{2k}\int_{R}^{\infty}{\rm d}R^{\prime}\,\frac{\Sigma(R^{ \prime})}{{R^{\prime}}^{2k}}\biggr{]},\end{split}\]
+\[\begin{split} v_{\rm c}^{2}(R)=\frac{GM(R)}{R}+2G\sum_{k=1}^{ \infty}\alpha_{k}\biggl{[}&\frac{2k+1}{R^{2k+1}}\int_{0}^{R}{ \rm d}R^{\prime}\,\Sigma(R^{\prime}){R^{\prime}}^{2k+1}\\ &-2kR^{2k}\int_{R}^{\infty}{\rm d}R^{\prime}\,\frac{\Sigma(R^{ \prime})}{{R^{\prime}}^{2k}}\biggr{]},\end{split} \tag{2.263}\]
 
 where
 
-\[\alpha_{k}\equiv\int_{0}^{\pi}{\rm d}\theta P_{2k}(\cos\theta)=\pi\left[\frac {(2k)!}{2^{2k}(k!)^{2}}\right]^{2}.\]
+\[\alpha_{k}\equiv\int_{0}^{\pi}{\rm d}\theta P_{2k}(\cos\theta)=\pi\left[ \frac{(2k)!}{2^{2k}(k!)^{2}}\right]^{2}. \tag{2.264}\]
 
 Hint: start with equation (2.3) and expand \(|{\bf x}-{\bf x}^{\prime}|^{-1}\) in Legendre polynomials using equation (C.35).
 
 **2.21**[2] Show that the potential of an axisymmetric disk with surface density \(\Sigma(R)\) is
 
-\[\Phi(R,z)=-\frac{2G}{\sqrt{R}}\int_{0}^{\infty}{\rm d}R^{\prime}\,\Sigma(R^{ \prime})kK(k)\sqrt{R^{\prime}},\]
+\[\Phi(R,z)=-\frac{2G}{\sqrt{R}}\int_{0}^{\infty}{\rm d}R^{\prime}\,\Sigma(R^{ \prime})kK(k)\sqrt{R^{\prime}}, \tag{2.265}\]
 
 where \(K(k)\) is a complete elliptic integral (Appendix C.4) and
 
-\[k^{2}\equiv\frac{4RR^{\prime}}{(R+R^{\prime})^{2}+z^{2}}.\]
+\[k^{2}\equiv\frac{4RR^{\prime}}{(R+R^{\prime})^{2}+z^{2}}. \tag{2.266}\]
 
 Hint: start with equation (2.3) and show that \(|{\bf x}-{\bf x}^{\prime}|^{2}=4RR^{\prime}k^{-2}\{1-k^{2}\cos^{2}[\frac{1}{ 2}(\phi-\phi^{\prime})]\}\). Note that the integral (2.265) has a logarithmic singularity when \(z=0\) and \(R^{\prime}\to R\), which requires some care when the integral is being evaluated numerically.
 
 **2.22**[3] (Suggested by H. Dejonghe) Prove that the surface density \(\Sigma(x,y)\) and potential \(\Phi(x,y)\) in a disk occupying the plane \(z=0\) are related by
 
-\[\Sigma(x^{\prime},y^{\prime})=\frac{1}{4\pi^{2}G}\iint\frac{{\rm d}x\,{\rm d} y}{|{\bf x}-{\bf x}^{\prime}|}\left(\frac{\partial^{2}\Phi}{\partial x^{2}}+ \frac{\partial^{2}\Phi}{\partial y^{2}}\right).\]
+\[\Sigma(x^{\prime},y^{\prime})=\frac{1}{4\pi^{2}G}\iint\frac{{\rm d}x\,{\rm d} y}{|{\bf x}-{\bf x}^{\prime}|}\left(\frac{\partial^{2}\Phi}{\partial x^{2}}+ \frac{\partial^{2}\Phi}{\partial y^{2}}\right). \tag{2.267}\]
 
 **2.23**[1] Consider the discrete form of Poisson's equation with periodic boundary conditions that is obtained by using the approximation (2.235) for the value of the Laplacian on a grid with \(K\) mesh cells on a side. Write \(\Phi_{lmn}\) and \(\rho_{lmn}\) in terms of their DFTs,
 
-\[\Phi_{\bf r}=\sum_{\bf k}\hat{\Phi}_{\bf k}{\rm e}^{2\pi{\rm i}{\bf k}\cdot{ \bf r}/K}\quad;\quad\rho_{\bf r}=\sum_{\bf k}\hat{\rho}_{\bf k}{\rm e}^{2\pi{ \rm i}{\bf k}\cdot{\bf r}/K},\]
+\[\Phi_{\bf r}=\sum_{\bf k}\hat{\Phi}_{\bf k}{\rm e}^{2\pi{\rm i}{\bf k}\cdot{ \bf r}/K}\quad;\quad\rho_{\bf r}=\sum_{\bf k}\hat{\rho}_{\bf k}{\rm e}^{2\pi{ \rm i}{\bf k}\cdot{\bf r}/K}, \tag{2.268}\]
 
 where \({\bf r}\) and \({\bf k}\) are vectors with integer components in the range \((0,K-1)\). Show that
 
-\[\Phi_{\bf k}=\frac{2\pi G\rho_{\bf k}\Delta^{2}}{\cos(2\pi k_{x}/K)+\cos(2\pi k _{y}/K)+\cos(2\pi k_{z}/K)-3}\.\]
+\[\Phi_{\bf k}=\frac{2\pi G\rho_{\bf k}\Delta^{2}}{\cos(2\pi k_{x}/K)+\cos(2\pi k _{y}/K)+\cos(2\pi k_{z}/K)-3}. \tag{2.269}\]
 
 **2.24**[2] In some numerical simulations of spherical stellar systems, spherical symmetry is enforced by treating each of the \(N\) stars as a "superstar," that is, a spherical shell containing a large number of stars with randomly oriented orbits but the same radius, radial velocity, and scalar angular momentum. Let \(m_{n}\) and \(r_{n}\) be the mass and radius of the \(n^{\rm th}\) superstar. Assume that the superstars are sorted in order of increasing radius, that is, \(r_{1}\leq r_{2}<\cdots<r_{N}\).
 
@@ -1640,6 +1631,6 @@ where \({\bf r}\) and \({\bf k}\) are vectors with integer components in the ran
 
 \[{\bf F}_{n}=-\hat{\bf e}_{r}\,\frac{GM_{n}}{r_{n}^{2}}\quad\mbox{where}\quad M_{n }\equiv\sum_{j=1}^{n-1}m_{j}. \tag{2.270}\]
 
-Thus show that the force on every star can be computed in O(\(N\)) steps once the stars are sorted in radius, in contrast to direct summation (SS2.9.1), which requires O(\(N^{2}\)) steps.
+Thus show that the force on every star can be computed in O\((N)\) steps once the stars are sorted in radius, in contrast to direct summation (SS2.9.1), which requires O\((N^{2})\) steps.
 
-(b) A set of \(N\) superstars can be sorted into increasing order in O(\(N\ln N\)) steps (e.g., Press et al. 1986). Thus, the initial calculation of the forces for an unsorted system requires O(\(N\ln N\)) steps. Show that force calculations at subsequent timesteps require only O(\(N\)) steps.
+(b) A set of \(N\) superstars can be sorted into increasing order in O\((N\ln N)\) steps (e.g., Press et al. 1986). Thus, the initial calculation of the forces for an unsorted system requires O\((N\ln N)\) steps. Show that force calculations at subsequent timesteps require only O\((N)\) steps.
