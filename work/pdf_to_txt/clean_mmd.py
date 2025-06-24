@@ -5,6 +5,8 @@ import random
 import re
 import logging
 from multiprocessing import Pool, cpu_count
+# import nltk
+# nltk.download('punkt_tab')
 from nltk.tokenize import sent_tokenize
 from collections import deque
 
@@ -21,7 +23,7 @@ def remove_duplicate_sentences(text):
             last_sentence = sentence
     return ' '.join(unique_sentences)
 
-def remove_repeated_phrases(text, min_phrase_length=2, max_phrase_length=22, iterations=3):
+def remove_repeated_phrases(text, min_phrase_length=2, max_phrase_length=26, iterations=4):
     words = text.split()
     for _ in range(iterations):
         modified = False
@@ -79,12 +81,12 @@ def process_file(filename):
             text = f.read()
             cleaned_text = clean_text(text)
             json_line = json.dumps({"text": cleaned_text})
-        return json_line
+        return cleaned_text ####### edited this
     except Exception as e:
         logging.error(f"Error processing file {filename}: {e}")
         return None
 
-def process_directory(directory, outfile_path):
+def process_directory_old(directory, outfile_path):
     filenames = glob.glob(os.path.join(directory, "*.mmd"))
     random.shuffle(filenames)
     num_processes = cpu_count() #min(cpu_count(), 8)
@@ -97,9 +99,23 @@ def process_directory(directory, outfile_path):
                 if json_line is not None:
                     fout.write(json_line + '\n')
 
+def process_directory(directory, outfile_path):
+    filenames = glob.glob(os.path.join(directory, "*.mmd"))
+    for filename in filenames:
+        cleaned_text = process_file(filename)
+        name = (filename.split('/')[-1]).split('.')[-2]
+        outfile_name = outfile_path + '/' + name + '.mmd'
+        with open(outfile_name, 'w') as outfile:
+            outfile.write(cleaned_text)
+
+
 if __name__ == "__main__":
+   
+   '''
    directories = ["datasets/arxiv_mmd", "datasets/textbooks_mmd"]
-   output_files = ["datasets/arxiv_mmd.jsonl", "datasets/textbooks_mmd.jsonl"]
+   output_files = ["datasets/arxiv_mmd.jsonl", "datasets/textbooks_mmd.jsonl"]'''
+   directories = ['output/to_clean']
+   output_files = ['output/cleaned']
 
    for directory, outfile in zip(directories, output_files):
        process_directory(directory, outfile)
