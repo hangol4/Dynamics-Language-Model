@@ -67,7 +67,6 @@ labels = [chunk.split('\n')[0] for chunk in chunks]
 # count the number of words in each chunk
 words = [len(chunk.split()) for chunk in chunks] 
 print('maximum number of words in a chunk:', max(words))
-print('minimum number of words in a chunk:', min(words))
 print('average number of words in a chunk:', sum(words) / len(words))
 
 
@@ -78,6 +77,7 @@ print('average number of words in a chunk:', sum(words) / len(words))
 # create the embeddings for the documents
 #model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
 model = 'mxbai-embed-large'
+# model = nomic-embed-text
 print('loaded an embedding model')
 
 #doc_embeddings = model.encode(chunks, show_progress_bar=True)
