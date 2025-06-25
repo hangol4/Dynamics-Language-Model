@@ -38,8 +38,19 @@ def most_common_word(chunk):
     return most_common
 
 #embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
+
+min_dist = 0.9
+n_neighbors = 30
+
 caches_dir = '/home/hgolawska/llm_summer_project/caches'
-filename = './work/pdf_to_txt/output/Binney_and_Tremaine_chap2.mmd'
+filename = './work/pdf_to_txt/output/cleaned/Binney_and_Tremaine_1-3_no_rrp.mmd'
+
+plot_title = f'UMAP projection of B&T 1-3 embeddings with nomic-embed-text\nmin_dist={min_dist}, n_neighbors={n_neighbors}'
+outfile_title = f'./work/plots/umap_1-3_no_rrp_level_higher.png'
+
+#model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
+#model = 'mxbai-embed-large'
+model = 'nomic-embed-text'
 
 chunk_size = 250
 chunk_overlap = 50
@@ -58,7 +69,7 @@ for i in range(0, len(raw), chunk_size):
     labels = [most_common_word(chunk) for chunk in chunks]'''
 
 # split into chunks corresponding to sections
-chunks = raw.split('#')
+chunks = raw.split('###')
 # remove empty chunks
 chunks = [chunk for chunk in chunks if chunk]
 # use the first line of each chunk as the label
@@ -75,29 +86,24 @@ print('average number of words in a chunk:', sum(words) / len(words))
 # print(labels[0])  # print the label for the first chunk
 
 # create the embeddings for the documents
-#model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
-model = 'mxbai-embed-large'
-# model = nomic-embed-text
-print('loaded an embedding model')
+
+
 
 #doc_embeddings = model.encode(chunks, show_progress_bar=True)
 response = ollama.embed(model=model, input=chunks)
 doc_embeddings = response["embeddings"]
 print('calculated embeddings')
-print(type(doc_embeddings))
 doc_embeddings = np.array(doc_embeddings)
 print('embedding shape:', doc_embeddings.shape)
 
+min_dist = 0.5
+n_neighbors = 15
+
 # reduce the dimensionality of the embeddings using UMAP
-flat_embeddings = umap.UMAP(n_components=2, metric='cosine').fit(doc_embeddings)
+flat_embeddings = umap.UMAP(n_components=2, min_dist=min_dist, n_neighbors=n_neighbors, metric='cosine').fit(doc_embeddings)
 print('flat embedding shape:', flat_embeddings.embedding_.shape)
 
 # plot the embeddings
-
-plt.figure(figsize=(10, 10))
-plt.title('UMAP projection of the document embeddings')
-umap.plot.points(flat_embeddings)h
-plt.savefig('work/plots/umap_projection_headings.png', dpi=300)
 
 fig, ax = plt.subplots(figsize=(12,12))
 ax.scatter(flat_embeddings.embedding_[:, 0], flat_embeddings.embedding_[:, 1], color='lightblue', alpha=1, s=30, edgecolors=None)
@@ -114,5 +120,5 @@ for i in range(0, flat_embeddings.embedding_.shape[0]):
             horizontalalignment='center',
             verticalalignment='center',
            )
-plt.title('UMAP projection of the document embeddings with mxbai-embed-large')
-plt.savefig('work/plots/umap_projection_headings_mxbai-embed-large_not_cleaned.png', dpi=300)
+plt.title(plot_title)
+plt.savefig(outfile_title, dpi=300)

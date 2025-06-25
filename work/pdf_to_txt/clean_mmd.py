@@ -104,11 +104,7 @@ def process_directory(directory, outfile_path):
     for filename in filenames:
         cleaned_text = process_file(filename)
         name = (filename.split('/')[-1]).split('.')[-2]
-<<<<<<< HEAD
-        outfile_name = outfile_path + '/' + name + '_no_rrp.mmd'
-=======
         outfile_name = outfile_path + '/' + name + '.mmd'
->>>>>>> 5eedc97a8454eb002cef8c5f1cbf86642915b02a
         with open(outfile_name, 'w') as outfile:
             outfile.write(cleaned_text)
 
