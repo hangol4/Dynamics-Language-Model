@@ -96,7 +96,7 @@ print('flat embedding shape:', flat_embeddings.embedding_.shape)
 
 plt.figure(figsize=(10, 10))
 plt.title('UMAP projection of the document embeddings')
-umap.plot.points(flat_embeddings)
+umap.plot.points(flat_embeddings)h
 plt.savefig('work/plots/umap_projection_headings.png', dpi=300)
 
 fig, ax = plt.subplots(figsize=(12,12))
