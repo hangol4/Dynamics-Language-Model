@@ -46,7 +46,7 @@ caches_dir = '/home/hgolawska/llm_summer_project/caches'
 filename = './work/pdf_to_txt/output/cleaned/Binney_and_Tremaine_1-3_no_rrp.mmd'
 
 plot_title = f'UMAP projection of B&T 1-3 embeddings with nomic-embed-text\nmin_dist={min_dist}, n_neighbors={n_neighbors}'
-outfile_title = f'./work/plots/umap_1-3_no_rrp_level_higher.png'
+outfile_title = f'./work/plots/umap_1-3_no_rrp_four_hashtags.png'
 
 #model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
 #model = 'mxbai-embed-large'
@@ -69,7 +69,7 @@ for i in range(0, len(raw), chunk_size):
     labels = [most_common_word(chunk) for chunk in chunks]'''
 
 # split into chunks corresponding to sections
-chunks = raw.split('###')
+chunks = raw.split(' #### ')
 # remove empty chunks
 chunks = [chunk for chunk in chunks if chunk]
 # use the first line of each chunk as the label
@@ -77,8 +77,6 @@ labels = [chunk.split('\n')[0] for chunk in chunks]
 #print(labels[:10])  # print the first 10 labels for debugging
 # count the number of words in each chunk
 words = [len(chunk.split()) for chunk in chunks] 
-print('maximum number of words in a chunk:', max(words))
-print('average number of words in a chunk:', sum(words) / len(words))
 
 
 
@@ -122,3 +120,6 @@ for i in range(0, flat_embeddings.embedding_.shape[0]):
            )
 plt.title(plot_title)
 plt.savefig(outfile_title, dpi=300)
+
+print('maximum number of words in a chunk:', max(words))
+print('average number of words in a chunk:', sum(words) / len(words))
