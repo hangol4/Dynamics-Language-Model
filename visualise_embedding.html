@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bokeh Plot</title>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+  </head>
+  <body>
+    <div class="bk-root" id="9b40ae7f-9ed0-4d71-bba9-0021d2b429c0" data-root-id="1003"></div>
+  
+    <script type="application/json" id="1172">
+      {"e05d1e29-d7e8-4cde-ad2d-1e11e4c79d7a":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"GridStack1","overrides":[],"properties":[{"default":"warn","kind":null,"name":"mode"},{"default":null,"kind":null,"name":"ncols"},{"default":null,"kind":null,"name":"nrows"},{"default":true,"kind":null,"name":"allow_resize"},{"default":true,"kind":null,"name":"allow_drag"},{"default":[],"kind":null,"name":"state"}]},{"extends":null,"module":null,"name":"click1","overrides":[],"properties":[{"default":"","kind":null,"name":"terminal_output"},{"default":"","kind":null,"name":"debug_name"},{"default":0,"kind":null,"name":"clears"}]},{"extends":null,"module":null,"name":"NotificationAreaBase1","overrides":[],"properties":[{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"}]},{"extends":null,"module":null,"name":"NotificationArea1","overrides":[],"properties":[{"default":[],"kind":null,"name":"notifications"},{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"},{"default":[{"background":"#ffc107","icon":{"className":"fas fa-exclamation-triangle","color":"white","tagName":"i"},"type":"warning"},{"background":"#007bff","icon":{"className":"fas fa-info-circle","color":"white","tagName":"i"},"type":"info"}],"kind":null,"name":"types"}]},{"extends":null,"module":null,"name":"Notification","overrides":[],"properties":[{"default":null,"kind":null,"name":"background"},{"default":3000,"kind":null,"name":"duration"},{"default":null,"kind":null,"name":"icon"},{"default":"","kind":null,"name":"message"},{"default":null,"kind":null,"name":"notification_type"},{"default":false,"kind":null,"name":"_destroyed"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"tools":[{"id":"1022"},{"id":"1023"},{"id":"1024"},{"id":"1025"},{"id":"1026"},{"id":"1040"}]},"id":"1028","type":"Toolbar"},{"attributes":{"coordinates":null,"group":null,"text":"UMAP projection of B&amp;T 1-3 embeddings with nomic-embed-text\nmin_dist=0.9, n_neighbors=30"},"id":"1004","type":"Title"},{"attributes":{"coordinates":null,"formatter":{"id":"1047"},"group":null,"major_label_policy":{"id":"1048"},"ticker":{"id":"1015"}},"id":"1014","type":"LinearAxis"},{"attributes":{},"id":"1050","type":"Selection"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.1},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1036","type":"Scatter"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1027","type":"BoxAnnotation"},{"attributes":{"source":{"id":"1002"}},"id":"1039","type":"CDSView"},{"attributes":{"coordinates":null,"data_source":{"id":"1002"},"glyph":{"id":"1035"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1037"},"nonselection_glyph":{"id":"1036"},"view":{"id":"1039"}},"id":"1038","type":"GlyphRenderer"},{"attributes":{},"id":"1047","type":"BasicTickFormatter"},{"attributes":{},"id":"1022","type":"PanTool"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1035","type":"Scatter"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.2},"line_alpha":{"value":0.2},"line_color":{"value":"#1f77b4"},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1037","type":"Scatter"},{"attributes":{},"id":"1012","type":"LinearScale"},{"attributes":{},"id":"1045","type":"AllLabels"},{"attributes":{},"id":"1044","type":"BasicTickFormatter"},{"attributes":{"callback":null,"tooltips":[["Label","@label"]]},"id":"1040","type":"HoverTool"},{"attributes":{"axis":{"id":"1018"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1021","type":"Grid"},{"attributes":{},"id":"1026","type":"SaveTool"},{"attributes":{},"id":"1010","type":"LinearScale"},{"attributes":{},"id":"1025","type":"ResetTool"},{"attributes":{},"id":"1008","type":"DataRange1d"},{"attributes":{},"id":"1015","type":"BasicTicker"},{"attributes":{"coordinates":null,"formatter":{"id":"1044"},"group":null,"major_label_policy":{"id":"1045"},"ticker":{"id":"1019"}},"id":"1018","type":"LinearAxis"},{"attributes":{"data":{"label":["## 1 Introduction","The Galaxy","Other galaxies","Open and globular clusters","Groups and clusters of galaxies","Black holes","The relaxation time","Geometry","Dynamics","The Big Bang and inflation","The cosmic microwave background","2.2.2 Potentials of some simple systems","2.3.1 Kuzmin models and generalizations","2.3.2 Logarithmic potentials","2.3.3 Poisson's equation in very flattened systems","2.5.1 Potentials of spheroidal shells","Potentials of ellipsoidal systems","Disk potentials from homoeoids","2.6.2 Disk potentials from Bessel functions","2.6.4 Disk potentials from oblate spheroidal coordinates","Direct summation","Tree codes","Particle-mesh codes","2.9.4 Spherical-harmonic codes","2.9.5 Simulations of planar systems","3.1.1 Constants and integrals of the motion","3.2.1 Motion in the meridional plane","Surfaces of section","3.3.1 Two-dimensional non-rotating potential","Two-dimensional rotating potential","Weak bars","3.4.1 Symplectic integrators","3.4.3 Multistep predictor-corrector integrators","3.4.4 Multivalue integrators","3.4.5 Adaptive timesteps","3.4.6 Individual timesteps","3.5.1 Orbital tori","3.5.2 Angle-action variables for spherical potentials","3.5.3 Angle-action variables for flattened axisymmetric potentials","Angle-action variables","Summary","3.6.1 Adiabatic invariance of actions","Applications","3.7.1 Hamiltonian perturbation theory","3.7.2 Trapping by resonances","From order to chaos","The perfect ellipsoid","Dynamical effects of cusps","3.8.3 Dynamical effects of black holes"],"x":{"__ndarray__":"gk3eQdr/50HCceNBX57AQZhvx0HZsMNBKhHiQcuru0GkF+tBAGnyQfGA6EHSMe1BRB/mQaqxuUENWOlBC0DxQcRqwkHrY+ZBgGjtQcNr+UHXwL1BYvHwQUOA7UEr2vRB5ATrQZ5r8kGGcehBxOTuQVXw3EEY3eVBZ5nwQWPb7UEzWuNBWWm5QZKJvUGL2/hB74vqQWEx60EWdvFBk1jrQTfawkFcnrlBFm/hQTTA9EF5dfJBYNniQaUEvkGlf8NBeML1QQ==","dtype":"float32","order":"little","shape":[49]},"y":{"__ndarray__":"dmupP5NDuD9c/y49wIB2QI9SWkDR/nlAKcPJPwuCU0BGCBs/CKbTPvAYk77RfNs/+JNxPzYGLEBjK4pAiHlXQMwPLEBT4mxA7oGYQDWMiD8kAxlAy7pOP3x4VUB69K0/A6LnP1Fcj0DKDHI+j3J8QPKy4j8TXwBAy44AvvJ0lT+pLRm/3UIKQJM93j9v6is+vQg+v8zIY0DeVQRAQ3U/QK2OUUBsiHFAAisnPyVggkDgUeK+BzshQFobS0AIVhRAHvxvPw==","dtype":"float32","order":"little","shape":[49]}},"selected":{"id":"1050"},"selection_policy":{"id":"1049"}},"id":"1002","type":"ColumnDataSource"},{"attributes":{"overlay":{"id":"1027"}},"id":"1024","type":"BoxZoomTool"},{"attributes":{},"id":"1019","type":"BasicTicker"},{"attributes":{},"id":"1048","type":"AllLabels"},{"attributes":{"axis":{"id":"1014"},"coordinates":null,"group":null,"ticker":null},"id":"1017","type":"Grid"},{"attributes":{},"id":"1006","type":"DataRange1d"},{"attributes":{},"id":"1023","type":"WheelZoomTool"},{"attributes":{"below":[{"id":"1014"}],"center":[{"id":"1017"},{"id":"1021"}],"height":800,"left":[{"id":"1018"}],"renderers":[{"id":"1038"}],"title":{"id":"1004"},"toolbar":{"id":"1028"},"width":800,"x_range":{"id":"1006"},"x_scale":{"id":"1010"},"y_range":{"id":"1008"},"y_scale":{"id":"1012"}},"id":"1003","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"1049","type":"UnionRenderers"}],"root_ids":["1003"]},"title":"Bokeh Application","version":"2.4.3"}}
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('1172').textContent;
+              const render_items = [{"docid":"e05d1e29-d7e8-4cde-ad2d-1e11e4c79d7a","root_ids":["1003"],"roots":{"1003":"9b40ae7f-9ed0-4d71-bba9-0021d2b429c0"}}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
+</html>
