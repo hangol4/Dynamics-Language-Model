@@ -9,6 +9,9 @@ import matplotlib.pyplot as plt
 import string
 import textwrap
 import numpy as np
+from bokeh.plotting import figure, show
+from bokeh.models import ColumnDataSource, HoverTool
+from bokeh.io import output_file
 #from sentence_transformers import SentenceTransformer
 #from sentence_transformers.util import cos_sim
 
@@ -46,7 +49,7 @@ caches_dir = '/home/hgolawska/llm_summer_project/caches'
 filename = './work/pdf_to_txt/output/cleaned/Binney_and_Tremaine_1-3_no_rrp.mmd'
 
 plot_title = f'UMAP projection of B&T 1-3 embeddings with nomic-embed-text\nmin_dist={min_dist}, n_neighbors={n_neighbors}'
-outfile_title = f'./work/plots/umap_1-3_no_rrp_four_hashtags.png'
+outfile_title = f'./work/plots/umap_1-3_no_rrp_four_hashtags_laptop.png'
 
 #model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
 #model = 'mxbai-embed-large'
@@ -105,7 +108,6 @@ print('flat embedding shape:', flat_embeddings.embedding_.shape)
 
 fig, ax = plt.subplots(figsize=(12,12))
 ax.scatter(flat_embeddings.embedding_[:, 0], flat_embeddings.embedding_[:, 1], color='lightblue', alpha=1, s=30, edgecolors=None)
-ax.set_aspect('equal')
 # add a label for one in 10 points
 for i in range(0, flat_embeddings.embedding_.shape[0]):
     # Wrap the label to a maximum width (e.g., 15 characters per line)
@@ -118,8 +120,27 @@ for i in range(0, flat_embeddings.embedding_.shape[0]):
             horizontalalignment='center',
             verticalalignment='center',
            )
+ax.set_aspect('equal')
+#plt.gca().set_aspect('equal')
 plt.title(plot_title)
 plt.savefig(outfile_title, dpi=300)
+plt.show()
+
+
+# interactive plot using bokeh
+source = ColumnDataSource(data=dict(
+    x=flat_embeddings.embedding_[:, 0], 
+    y=flat_embeddings.embedding_[:, 1], 
+    label=labels))
+
+p = figure(title=plot_title, tools="pan,wheel_zoom,box_zoom,reset,save", width=800, height=800)
+scatter = p.scatter('x', 'y', source=source, size=10)
+hover = HoverTool(tooltips = [("", "@label")])
+p.add_tools(hover)
+#show(p)
+
+output_file("interactive_scatter.html")
+
 
 print('maximum number of words in a chunk:', max(words))
 print('average number of words in a chunk:', sum(words) / len(words))
