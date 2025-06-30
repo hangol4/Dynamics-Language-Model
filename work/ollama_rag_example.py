@@ -2,6 +2,7 @@
 
 import ollama
 import chromadb
+import sys
 
 # file with our "documents"
 fn = '/home/hgolawska/llm_summer_project/Dynamics-Language-Model/work/rag-from-household-objects-master/data/ig.txt'
@@ -22,14 +23,20 @@ collection = client.create_collection(name="docs")
 
 with open(fn) as f:
     raw = f.read()
+ 
 
 documents = []
 
-chunk_size = 500
-chunk_overlap = 50
 
-for i in range(0, len(raw), chunk_size):
-    documents.append(raw[i:i + chunk_size])
+chunk_size = 2000
+chunk_overlap = 100
+# this is length in characters, not sentences!
+
+# in this case chunks = documents
+'''for i in range(0, len(raw), chunk_size):
+    documents.append(raw[i:i + chunk_size])'''
+
+documents = raw.split('Ig Nobel Prize Winners')
 
 # store each document in a vector embedding database
 for i, d in enumerate(documents):
@@ -44,7 +51,7 @@ for i, d in enumerate(documents):
 # Step 2: Retrieve
 
 # an example input
-example_input = "Who won the 2014 ig nobel prize for psychology?"
+example_input = "What kind of price did Silvano Gallus win?"
 
 # generate an embedding for the input and retrieve the most relevant doc
 response = ollama.embed(
@@ -53,7 +60,7 @@ response = ollama.embed(
 )
 results = collection.query(
   query_embeddings=response["embeddings"],
-  n_results=5
+  n_results=1
 )
 
 
@@ -68,10 +75,14 @@ output = ollama.generate(
   prompt=f"Using this data: {data}. Respond to this prompt: {example_input}",
 )
 
-print(f"Retrieved data: {data}")
+with open(f'output_ollama_rag_example/data_{chunk_size}.txt', 'w') as f:
+    f.write('QUESTION: ' + example_input + '\n\nCHUNKS:\n')
+    for chunk in data:
+        f.write(chunk + '\n###########new chunk###########\n')
+
 
 print(output['response'])
 
-# exit
+#sys.exit()
 
 
