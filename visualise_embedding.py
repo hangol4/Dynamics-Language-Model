@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import string
 import textwrap
 import numpy as np
-from bokeh.plotting import figure, show
+from bokeh.plotting import figure, show, save
 from bokeh.models import ColumnDataSource, HoverTool
 from bokeh.io import output_file
 #from sentence_transformers import SentenceTransformer
@@ -40,30 +40,41 @@ def most_common_word(chunk):
             highest_count = count
     return most_common
 
+def chunks_from_file(filename):
+    # read in a file and chunk it using # as the delimiter
+    with open(filename) as f:
+        raw = f.read()
+
+    # split into chunks corresponding to sections
+    chunks = raw.split('#')
+    # remove empty chunks
+    chunks = [chunk for chunk in chunks if chunk]
+
+    print(f'Number of chunks: {len(chunks)}')
+
+    return chunks
+
+
 #embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
 
 min_dist = 0.9
 n_neighbors = 30
 
 caches_dir = '/home/hgolawska/llm_summer_project/caches'
-filename = './work/pdf_to_txt/output/cleaned/Binney_and_Tremaine_1-3_no_rrp.mmd'
+filename = './work/pdf_to_txt/output/cleaned/Binney_and_Tremaine.mmd'
+labels_filename = './work/pdf_to_txt/output/to_clean/Binney_and_Tremaine.mmd'
 
-plot_title = f'UMAP projection of B&T 1-3 embeddings with nomic-embed-text\nmin_dist={min_dist}, n_neighbors={n_neighbors}'
-outfile_title = f'./work/plots/umap_1-3_no_rrp_four_hashtags_laptop.png'
+plot_title = f'UMAP projection of the entire B&T embeddings with nomic-embed-text\nmin_dist={min_dist}, n_neighbors={n_neighbors}'
+outfile_title = f'./work/plots/umap_whole_interactive_test.png'
 
 #model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
 #model = 'mxbai-embed-large'
 model = 'nomic-embed-text'
 
-chunk_size = 250
-chunk_overlap = 50
-
-# read the documents and create the chunks
-with open(filename) as f:
-    raw = f.read()
-
 # split into fixed size chunks
 '''
+chunk_size = 250
+chunk_overlap = 50
 chunks = []
 
 for i in range(0, len(raw), chunk_size):
@@ -71,13 +82,14 @@ for i in range(0, len(raw), chunk_size):
     # use the most common word in the chunk as the label
     labels = [most_common_word(chunk) for chunk in chunks]'''
 
-# split into chunks corresponding to sections
-chunks = raw.split(' #### ')
-# remove empty chunks
-chunks = [chunk for chunk in chunks if chunk]
+chunks = chunks_from_file(filename)
+chunks_uncleaned = chunks_from_file(labels_filename)
+
+
 # use the first line of each chunk as the label
-labels = [chunk.split('\n')[0] for chunk in chunks]
+labels = [chunk.split('\n')[0] for chunk in chunks_uncleaned]
 #print(labels[:10])  # print the first 10 labels for debugging
+
 # count the number of words in each chunk
 words = [len(chunk.split()) for chunk in chunks] 
 
@@ -124,8 +136,7 @@ ax.set_aspect('equal')
 #plt.gca().set_aspect('equal')
 plt.title(plot_title)
 plt.savefig(outfile_title, dpi=300)
-plt.show()
-
+#plt.show()
 
 # interactive plot using bokeh
 source = ColumnDataSource(data=dict(
@@ -133,13 +144,16 @@ source = ColumnDataSource(data=dict(
     y=flat_embeddings.embedding_[:, 1], 
     label=labels))
 
+output_file("./work/plots/interactive_scatter_all_test.html")
+
 p = figure(title=plot_title, tools="pan,wheel_zoom,box_zoom,reset,save", width=800, height=800)
 scatter = p.scatter('x', 'y', source=source, size=10)
 hover = HoverTool(tooltips = [("", "@label")])
 p.add_tools(hover)
 #show(p)
 
-output_file("interactive_scatter.html")
+
+save(p)
 
 
 print('maximum number of words in a chunk:', max(words))

@@ -66,10 +66,10 @@ def clean_text(text):
     text = re.sub(r'(cos\\\\phi\\s*){2,}', 'cos\\\\phi ', text)  # Simplify repeated 'cos\\phi' sequences to a single instance with a trailing space
     text = re.sub(r'(\\\\,){2,}', '\\\\,', text)  # Corrected to reduce repeated '\\,' sequences to a single instance
     text = remove_duplicate_sentences(text)
-    '''try:
+    try:
         text = remove_repeated_phrases(text)
     except RecursionError:
-        logging.error("RecursionError occurred while removing repeated phrases. Skipping the removal of repeated phrases.")'''
+        logging.error("RecursionError occurred while removing repeated phrases. Skipping the removal of repeated phrases.")
     # Add more cleaning rules as needed
     return text
 
