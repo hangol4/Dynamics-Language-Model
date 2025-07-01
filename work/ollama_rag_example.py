@@ -60,7 +60,7 @@ response = ollama.embed(
 )
 results = collection.query(
   query_embeddings=response["embeddings"],
-  n_results=1
+  n_results=2
 )
 
 
