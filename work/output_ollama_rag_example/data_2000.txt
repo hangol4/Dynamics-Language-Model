@@ -1,4 +1,5 @@
-QUESTIONWhat kind of price did Silvano Gallus win?
+QUESTION: What kind of price did Silvano Gallus win?
+
 CHUNKS:
 
 The 2010 Ig Nobel Prizes were awarded on Thursday night, September 30th, 2000 at the 20th First Annual Ig Nobel Prize Ceremony, at Harvard’s Sanders Theatre. The ceremony was webcast live. You can watch the video on our youTube Channel.
@@ -83,4 +84,65 @@ WHO ATTENDED THE CEREMONY: Gareth Jones
 
 
 The 2009 
+###########new chunk###########
+
+The 2021 Ig Nobel Prizes were awarded at the 31st First Annual Ig Nobel Prize ceremony, on Thursday, September 9, 2021. The ceremony was webcast.
+
+BIOLOGY PRIZE [SWEDEN]:
+Susanne Schötz, Robert Eklund, and Joost van de Weijer, for analyzing variations in purring, chirping, chattering, trilling, tweedling, murmuring, meowing, moaning, squeaking, hissing, yowling, howling, growling, and other modes of cat–human communication.
+REFERENCE: “A Comparative Acoustic Analysis of Purring in Four Cats,” Susanne Schötz and Robert Eklund, Proceedings of Fonetik 2011, Speech, Music and Hearing, KTH, Stockholm, TMH-QPSR, 51.
+REFERENCE: “A Phonetic Pilot Study of Vocalisations in Three Cats,” Susanne Schötz, Proceedings of Fonetik 2012, Department of Philosophy, Linguistics and Theory of Science, University of Gothenburg, Sweden.
+REFERENCE: “A Phonetic Pilot Study of Chirp, Chatter, Tweet and Tweedle in Three Domestic Cats,” Susanne Schötz, Proceedings of Fonetik 2013, Linköping University, Sweden, 2013, pp. 65-68.
+REFERENCE: “A Study of Human Perception of Intonation in Domestic Cat Meows,” Susanne Schötz and Joost van de Weijer, Proceedings of the 7th International Conference on Speech Prosody, Dubin, Ireland, May 20-23, 2014.
+REFERENCE: “Melody in Human–Cat Communication (Meowsic): Origins, Past, Present and Future,” Susanne Schötz, Robert Eklund, and Joost van de Weijer, 2016.
+WHO TOOK PART IN THE CEREMONY: Susanne Schötz
+
+ECOLOGY PRIZE [SPAIN. IRAN]:
+Leila Satari, Alba Guillén, Àngela Vidal-Verdú, and Manuel Porcar, for using genetic analysis to identify the different species of bacteria that reside in wads of discarded chewing gum stuck on pavements in various countries.
+REFERENCE: “The Wasted Chewing Gum Bacteriome,” Leila Satari, Alba Guillén, Àngela Vidal-Verdú, and Manuel Porcar, Scientific Reports, vol. 10, no. 16846, 2020.
+WHO TOOK PART IN THE CEREMONY: Leila Satari, Alba Guillén, Àngela Vidal-Verdú, Manuel Porcar
+
+CHEMISTRY PRIZE [GERMANY, UK, NEW ZEALAND, GREECE, CYPRUS, AUSTRIA]:
+Jörg Wicker, Nicolas Krauter, Bettina Derstroff, Christof Stönner, Efstratios Bourtsoukidis, Achim Edtbauer, Jochen Wulf, Thomas Klüpfel, Stefan Kramer, and Jonathan Williams, for chemically analyzing the air inside movie theaters, to test whether the odors produced by an audience reliably indicate the levels of violence, sex, antisocial behavior, drug use, and bad language in the movie the audience is watching.
+REFERENCE: “Proof of Concept Study: Testing Human Volatile Organic Compounds as Tools for Age Classification of Films,” Christof Stönner, Achim Edtbauer, Bettina Derstroff, Efstratios Bourtsoukidis, Thomas Klüpfel, Jörg Wicker, and Jonathan Williams, PLoS ONE, vol. 13, no. 10, 2008, p. e0203044.
+REFERENCE: “Cinema Data Mining: The Smell of Fear,” Jörg Wicker, Nicolas Krauter, Bettina Derstorff, Christof Stönner, Efstratios Bourtsoukidis, Thomas Klüpfel, Jonathan Williams, and Stefan Kramer, Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, pp. 1295-1304. 2015.
+WHO TOOK PART IN THE CEREMONY: Jörg Wicker, Nicolas Krauter, Bettina Derstroff, Christof Stönner, Efstratios Bourtsoukidis, Achim Edtbauer, Jochen Wulf, Thomas Klüpfel, Stefan Kramer, Jonathan Williams
+
+ECONOMICS PRIZE [FRANCE, SWITZERLAND, AUSTRALIA, AUSTRIA, CZECH REPUBLIC, UK]:
+Pavlo Blavatskyy, for discovering that the obesity of a country’s politicians may be a good indicator of that country’s corruption.
+REFERENCE: “Obesity of Politicians and Corruption in Post‐Soviet Countries,” Pavlo Blavatskyy, Economic of Transition and Institutional Change, vol. 29, no. 2, 2021, pp. 343-356.
+WHO TOOK PART IN THE CEREMONY: Pavlo Blavatskyy
+
+MEDICINE PRIZE [GERMANY, TURKEY, UK]:
+Olcay Cem Bulut, Dare Oladokun, Burkard Lippert, and Ralph Hohenberger, for demonstrating that sexual orgasms can be as effective as decongestant medicines at improving nasal breathing.
+REFERENCE: “Can Sex Improve Nasal Function? — An Exploration of the Link Between Sex and Nasal Function,” Olcay Cem Bulut, Dare Oladokun, Burkard M. Lippert, and Ralph Hohenberger, Ear, Nose & Throat Journal, 2021, no. 0145561320981441.
+WHO TOOK PART IN THE CEREMONY: Olcay Cem Bulut, Dare Oladokun, Ralph Hohenberger
+
+PEACE PRIZE [USA]:
+Ethan Beseris, Steven Naleway, and David Carrier, for testing the hypothesis that humans evolved beards to protect themselves from punches to the face.
+REFERENCE: “Impact Protection Potential of Mammalian Hair: Testing the Pugilism Hypothesis for the Evolution of Human Facial Hair,” Ethan A. Beseris, Steven E. Naleway, David R. Carrier, Integrative Organismal Biology, vol. 2, no. 1, 2020, obaa005.
+WHO TOOK PART IN THE CEREMONY: Ethan Beseris, Steven Naleway, David Carrier
+
+PHYSICS PRIZE [THE NETHERLANDS, ITALY, TAIWAN, USA]:
+Alessandro Corbetta, Jasper Meeusen, Chung-min Lee, Roberto Benzi, and Federico Toschi, for conducting experiments to learn why pedestrians do not constantly collide with other pedestrians.
+REFERENCE: “Physics-based modeling and data representation of pairwise interactions among pedestrians,” Alessandro Corbetta, Jasper A. Meeusen, Chung-min Lee, Roberto Benzi, and Federico Toschi, Physical Review E, vol. 98, no. 062310, 2018.
+WHO TOOK PART IN THE CEREMONY: Alessandro Corbetta, Jasper Meeusen, Chung-min Lee, Roberto Benzi,, Federico Toschi
+
+KINETICS PRIZE [JAPAN, SWITZERLAND, ITALY]:
+Hisashi Murakami, Claudio Feliciani, Yuta Nishiyama, and Katsuhiro Nishinari, for conducting experiments to learn why pedestrians do sometimes collide with other pedestrians.
+REFERENCE: “Mutual Anticipation Can Contribute to Self-Organization in Human Crowds,” Hisashi Murakami, Claudio Feliciani, Yuta Nishiyama, and Katsuhiro Nishinari, Science Advances, vol. 7, no. 12, 2021, p. eabe7758.
+WHO TOOK PART IN THE CEREMONY: Hisashi Murakami, Claudio Feliciani, Yuta Nishiyama, Katsuhiro Nishinari
+
+ENTOMOLOGY PRIZE [USA]:
+John Mulrennan, Jr., Roger Grothaus, Charles Hammond, and Jay Lamdin, for their research study “A New Method of Cockroach Control on Submarines”.
+REFERENCE: “A New Method of Cockroach Control on Submarines,” John A. Mulrennan, Jr., Roger H. Grothaus, Charles L. Hammond, and Jay M. Lamdin, Journal of Economic Entomology, vol. 64, no. 5, October 1971, pp. 1196-8.
+WHO TOOK PART IN THE CEREMONY: John Mulrennan, Jr.
+
+TRANSPORTATION PRIZE [NAMIBIA, SOUTH AFRICA, TANZANIA, ZIMBABWE, BRAZIL, UK, USA]:
+Robin Radcliffe, Mark Jago, Peter Morkel, Estelle Morkel, Pierre du Preez, Piet Beytell, Birgit Kotting, Bakker Manuel, Jan Hendrik du Preez, Michele Miller, Julia Felippe, Stephen Parry, and Robin Gleed, for determining by experiment whether it is safer to transport an airborne rhinoceros upside-down.
+REFERENCE: “The Pulmonary and Metabolic Effects of Suspension by the Feet Compared with Lateral Recumbency in Immobilized Black Rhinoceroses (Diceros bicornis) Captured by Aerial Darting,” Robin W. Radcliffe, Mark Jago, Peter vdB Morkel, Estelle Morkel, Pierre du Preez, Piet Beytell, Birgit Kotting, Bakker Manuel, Jan Hendrik du Preez, Michele A. Miller, Julia Felippe, Stephen A Parry; R.D. Gleed, Journal of Wildlife Diseases, vol. 57, no. 2, 2021, 357–367.
+WHO TOOK PART IN THE CEREMONY: Pete Morkel, Mark Jago, Robin Gleed, Robin Radcliffe
+
+
+The 2020 
 ###########new chunk###########
