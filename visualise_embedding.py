@@ -100,6 +100,7 @@ doc_embeddings = np.array(doc_embeddings)
 mode = '3D'
 
 if mode == '2D':
+    
     # reduce the dimensionality of the embeddings using UMAP
     flat_embeddings = umap.UMAP(n_components=2, min_dist=min_dist, n_neighbors=n_neighbours, metric='cosine').fit(doc_embeddings)
 
@@ -160,11 +161,11 @@ if mode == '2D':
     save(p)
 
 else:
-    flat_embeddings = umap.UMAP(n_components=2, min_dist=min_dist, n_neighbors=n_neighbours, metric='cosine').fit(doc_embeddings)
+    flat_embeddings = umap.UMAP(n_components=3, min_dist=min_dist, n_neighbors=n_neighbours, metric='cosine').fit(doc_embeddings)
     embeddings_array = flat_embeddings.embedding_
     print('embeddings shape:', embeddings_array.shape)
 
-    x, y, z = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 200).transpose()
+    x, y, z = embeddings_array[:, 0], embeddings_array[:, 1], embeddings_array[:, 2]
     trace1 = go.Scatter3d(
         x=x,
         y=y,
@@ -180,7 +181,8 @@ else:
         )
     )
 
-    x2, y2, z2 = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 200).transpose()
+    # x2, y2, z2 = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 200).transpose()
+
     trace2 = go.Scatter3d(
         x=x2,
         y=y2,
