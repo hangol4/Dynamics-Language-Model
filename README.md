@@ -20,6 +20,8 @@ Only the first download will take long (depending on the size of the model). If 
 ### Cuillin
 
 ### Model Choice
+[The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783)
+[Ollama GitHub](https://github.com/ollama/ollama?tab=readme-ov-file)
 
 ## Getting started with Nougat on Cuillin
 
