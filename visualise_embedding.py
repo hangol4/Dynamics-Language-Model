@@ -52,8 +52,8 @@ n_neighbours = args.n_neighbours
 
 print(f"Using min_dist={min_dist} and n_neighbours={n_neighbours} for UMAP")
 
-min_dist = 0.9
-n_neighbours = 30
+#min_dist = 0.9
+#n_neighbours = 30
 
 caches_dir = '/home/hgolawska/llm_summer_project/caches'
 filename = './work/pdf_to_txt/output/cleaned/Binney_and_Tremaine.mmd'
