@@ -18,6 +18,56 @@ Only the first download will take long (depending on the size of the model). If 
 3. Type `/bye` to end a conversation, hit `cmd + C` to interrupt generating.
    
 ### Cuillin
+Adapted from [Mike's fork](https://github.com/michael-petersen/Dynamics-Language-Model/tree/5c41b9ec0f960147380407597075edf569fcdc29/cuillin)
+
+1. Initialisation
+
+First, download ollama for linux
+```
+curl --fail --show-error --location --progress-bar "https://ollama.com/download/ollama-linux-amd64.tgz" | tar -xzf - -C /home/s2239723
+```
+
+2. Obtaining new models 
+
+On the login node,
+```
+export OLLAMA_MODELS="/cephfs/mpetersen/LLM"
+ollama serve &
+ollama run llama4:scout
+ollama run llama4:maverick
+ollama run phi4-mini:latest
+```
+To simply pull models without running, we can replace `run` with `pull`:
+```
+ollama pull llama4:maverick
+```
+
+
+3. Production
+
+```
+# request resources
+srun -n 16 --pty --mem=128GB $SHELL
+export OLLAMA_MODELS="/cephfs/mpetersen/LLM"
+
+# set the number of threads for ollama to use
+export OLLAMA_NUM_THREADS=16
+
+# worker088, worker094 and worker095 are uniquely suited to take large process jobs
+srun -n 64 --pty --mem=256GB $SHELL
+export OLLAMA_MODELS="/cephfs/mpetersen/LLM"
+
+# set the number of threads for ollama to use
+export OLLAMA_NUM_THREADS=64
+
+# start the server as a background process
+ollama serve &
+
+# start the LLM
+ollama run llama4:scout
+```
+
+The larger models can take quite a while to load: review the memory usage before making plans for a quick session!
 
 ### Model Choice
 [The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783)
