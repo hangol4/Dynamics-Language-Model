@@ -2,6 +2,19 @@
 
 Summer project: building a llama-based large language model specialised in galaxy dynamics by leveraging Retrieval-Augmented Generation (RAG). The main source of information is a well-known textbook 'Galactic Dynamics' by James Binney and Scott Tremaine (Second Edition). To translate PDF files into text, we use [Nougat](https://github.com/facebookresearch/nougat/tree/main) -  a PDF parser that understands LaTeX math and tables. It performs an Optical Character Recognition (OCR) task for processing scientific documents into a markup language. 
 
+## Table of Contents
+- [Dynamics Language Model](#dynamics-language-model)
+- [Table of Contents](#table-of-contents)
+- [Getting started with Ollama](#getting-started-with-ollama)
+    - [My laptop](#my-laptop)
+    - [Cuillin](#cuillin)
+    - [Model file](#model-file)
+    - [Downloading models from the internet](#downloading-models-from-the-internet)
+    - [Model Choice](#model-choice)
+- [Getting started with Nougat on Cuillin](#getting-started-with-nougat-on-cuillin)
+- [Visualising embeddings](#visualising-embeddings)
+- [Other scripts](#other-scripts)
+
 ## Getting started with Ollama
 
 ### My laptop 
@@ -30,40 +43,46 @@ Adapted from [Mike's fork](https://github.com/michael-petersen/Dynamics-Language
 1. Initialisation
 
     First, download ollama for linux
-    ```
-    curl --fail --show-error --location --progress-bar "https://ollama.com/download/ollama-linux-amd64.tgz" | tar -xzf - -C /home/s2239723
+    ```bash
+    curl --fail --show-error --location --progress-bar "https://ollama.com/download/ollama-linux-amd64.tgz" | tar -xzf - -C /home/<username>
     ```
 
-2. Obtaining new models
+2. To get Ollama in your path (and be able to use the 'ollama' command instead of '/home/<username>/bin/ollama'), add the following line to /home/<username>/.bashrc:
+    ```
+    export PATH=/home/<username>/bin:$PATH
+    ```
+
+
+3. Obtaining new models
 
     On the login node,
-    ```
-    export OLLAMA_MODELS="/cephfs/mpetersen/LLM"
+    ```bash
+    export OLLAMA_MODELS="/cephfs/<username>/LLM"
     ollama serve &
     ollama run llama4:scout
     ollama run llama4:maverick
     ollama run phi4-mini:latest
     ```
     To simply pull models without running, we can replace `run` with `pull`:
-    ```
+    ```bash
     ollama pull llama4:maverick
     ```
 
-3. Production
+4. Production
 
     ```
     # request resources
     srun -n 16 --pty --mem=128GB $SHELL
-    export OLLAMA_MODELS="/cephfs/mpetersen/LLM"
+    export OLLAMA_MODELS="/cephfs/<username>/LLM"
 
-    # set the number of threads for ollama to use
+    # set the number of threads for Ollama to use
     export OLLAMA_NUM_THREADS=16
 
     # worker088, worker094 and worker095 are uniquely suited to take large process jobs
     srun -n 64 --pty --mem=256GB $SHELL
-    export OLLAMA_MODELS="/cephfs/mpetersen/LLM"
+    export OLLAMA_MODELS="/cephfs/<username>/LLM"
 
-    # set the number of threads for ollama to use
+    # set the number of threads for Ollama to use
     export OLLAMA_NUM_THREADS=64
 
     # start the server as a background process
@@ -75,9 +94,14 @@ Adapted from [Mike's fork](https://github.com/michael-petersen/Dynamics-Language
 
     The larger models can take quite a while to load: review the memory usage before making plans for a quick session! 
 
+5. Closing the server
+
+    Once you're done, run `lsof -i :11434`, then identify the PID of the LISTEN process. Then run `kill <PID>` to close the server.
+    
+
 ### Model file
 
-A model file is the blueprint to create and share models with Ollama. It can be used to control the model's hyperparameters such as temperature, size of the context window and to set the system prompt. 
+A model file is the blueprint to create and share models with Ollama. It can be used to control the model's hyperparameters such as temperature and size of the context window and to set the system prompt. 
 
 An example model file can look like this:
 
@@ -126,18 +150,21 @@ To build a model from a .gguf file:
     ```
 
 ### Model Choice
-[The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783)
-[Ollama GitHub](https://github.com/ollama/ollama?tab=readme-ov-file)
+Useful resources for choosing a model:
+- [The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783) - academic paper presenting the Llama 3 set of foundation models, including training preocedures, architecture and performance benchmarks,
+- [The Llama 4 herd](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) - release blog post by Meta AI,
+- [Model library](https://ollama.com/library) on Ollama's website - a list of available models with download instructions and descriptions, containing information such as model size, context window size, and input formats (text, image, audio). See shorter summary of the most popular models on [Ollama GitHub](https://github.com/ollama/ollama?tab=readme-ov-file#model-library),
+- [AstroMLab 1: Who Wins Astronomy Jeopardy!?](https://doi.org/10.48550/arXiv.2407.1119) - authors of this paper compared various large language models using the first astronomy-specific benchmarking dataset, with the division into proprietary and open-weights models. Find more up-to-date comparison on [AstroMLab's Hugging Face](https://huggingface.co/AstroMLab),
+- online benchmark leaderbords such as [LibeBench](https://livebench.ai/#/), [Vellum Leaderboard](https://www.vellum.ai/open-llm-leaderboard) and [Artificial Analysys Leaderboard](https://artificialanalysis.ai/leaderboards/models)- these compare skills such as math comprehension, reasoning and coding.
+
+
+Consider size: you should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models.
 
 ## Getting started with Nougat on Cuillin
 
 ## Visualising embeddings
 
-## Other scripts: rag from household objects, ollama example, LangChain Jupyter Notebooks
+## Other scripts
 
-## Downloading files from the internet
-To download files from the internet, you can use the `wget` command in a terminal.
-For example, to download a file from a URL, you can use:
-```bash
-wget https://example.com/file.txt
-```
+rag from household objects, ollama example, LangChain Jupyter Notebooks
+
