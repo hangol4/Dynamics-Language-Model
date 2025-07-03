@@ -50,14 +50,12 @@ args = parser.parse_args()
 min_dist = args.min_dist
 n_neighbours = args.n_neighbours
 
-print(f"Using min_dist={min_dist} and n_neighbours={n_neighbours} for UMAP")
-
 #min_dist = 0.9
 #n_neighbours = 30
 
 caches_dir = '/home/hgolawska/llm_summer_project/caches'
-filename = './work/pdf_to_txt/output/cleaned/Binney_and_Tremaine_chap2_v1_all.mmd'
-labels_filename = './work/pdf_to_txt/output/to_clean/Binney_and_Tremaine_chap2_v1.mmd'
+filename = './work/pdf_to_txt/output/cleaned/Binney_and_Tremaine.mmd'
+labels_filename = './work/pdf_to_txt/output/to_clean/Binney_and_Tremaine.mmd'
 
 plot_title = f'UMAP projection of the entire B&T embeddings with nomic-embed-text\nmin_dist={min_dist}, n_neighbors={n_neighbours}'
 outfile_title = f'./work/plots/umap_whole_interactive_test.png'
@@ -75,7 +73,6 @@ labels = [chunk.split('\n')[0] for chunk in chunks_uncleaned]
 
 # if the question flag is set, add the question input by the user to the chunks
 if args.question:
-    print("Question mode activated")
     question = input("Enter the question to embed: ")
     chunks.append(question)  # add the question to the chunks if in question mode
     labels.append('question')
@@ -94,7 +91,7 @@ words = [len(chunk.split()) for chunk in chunks]
 #doc_embeddings = model.encode(chunks, show_progress_bar=True)
 response = ollama.embed(model=model, input=chunks)
 doc_embeddings = response["embeddings"]
-print('calculated embeddings')
+
 doc_embeddings = np.array(doc_embeddings)
 
 mode = '3D'
@@ -103,7 +100,14 @@ if mode == '2D':
     
     # reduce the dimensionality of the embeddings using UMAP
     flat_embeddings = umap.UMAP(n_components=2, min_dist=min_dist, n_neighbors=n_neighbours, metric='cosine').fit(doc_embeddings)
-
+    
+    # uncomment the following lines to validate that the flattened embeddings match their labels
+    '''for i in range(len(chunks)):
+        x, y = flat_embeddings.embedding_[i, 0], flat_embeddings.embedding_[i, 1]
+        print(f"Chunk {i}: ({x:.3f}, {y:.3f})")
+        print(f"Label: {labels[i]}")
+        print(f"First 100 chars: {chunks[i][:100]}...")
+        print("-" * 50)'''
 
     # plot the embeddings
 
@@ -134,7 +138,7 @@ if mode == '2D':
             )
     ax.set_aspect('equal')
     plt.title(plot_title)
-    plt.savefig(outfile_title, dpi=300)
+    #plt.savefig(outfile_title, dpi=300)
     #plt.show()
 
     # interactive plot using bokeh
@@ -145,7 +149,7 @@ if mode == '2D':
     question_source = ColumnDataSource(data=dict(
         x=[flat_embeddings.embedding_[-1, 0]],
         y=[flat_embeddings.embedding_[-1, 1]],
-        label=['question']))
+        label=['Question']))
 
     output_file(f"./work/plots/interactive_scatter_all_question.html")
 
@@ -158,9 +162,11 @@ if mode == '2D':
     #show(p)
 
 
-    save(p)
+    #save(p)
 
 else:
+
+    # visualise in 3D
     flat_embeddings = umap.UMAP(n_components=3, min_dist=min_dist, n_neighbors=n_neighbours, metric='cosine').fit(doc_embeddings)
     embeddings_array = flat_embeddings.embedding_
     print('embeddings shape:', embeddings_array.shape)
@@ -171,45 +177,69 @@ else:
         y=y,
         z=z,
         mode='markers',
+        name='Binney and Tremaine chapters',
+        text=labels,
+        hovertemplate='%{text}<extra></extra>',
         marker=dict(
-            size=12,
-            line=dict(
-                color='rgba(217, 217, 217, 0.14)',
-                width=0.5
-            ),
-            opacity=0.8
+            color='rgba(55, 126, 246, 0.7)',
+            size=12
+            #opacity=0.8
         )
     )
 
-    # x2, y2, z2 = np.random.multivariate_normal(np.array([0,0,0]), np.eye(3), 200).transpose()
+    if args.question:
+        # add the question point
+    
+        x2, y2, z2 = embeddings_array[-1, 0], embeddings_array[-1, 1], embeddings_array[-1, 2]
 
-    trace2 = go.Scatter3d(
-        x=x2,
-        y=y2,
-        z=z2,
-        mode='markers',
-        marker=dict(
-            color='rgb(127, 127, 127)',
-            size=12,
-            symbol='circle',
-            line=dict(
-                color='rgb(204, 204, 204)',
-                width=1
-            ),
-            opacity=0.9
+        trace2 = go.Scatter3d(
+            x=[x2],
+            y=[y2],
+            z=[z2],
+            mode='markers',
+            text=[f'Question: {question}'],
+            hovertemplate='%{text}<extra></extra>',
+            name=f'Question: {question}',
+            marker=dict(
+                color='rgba(162, 32, 21, 0.7)',
+                size=12,
+                symbol='circle',
+                line=dict(
+                    color='rgb(162, 32, 21)',
+                    width=1
+                ),
+                #opacity=0.9
+            )
         )
-    )
-    data = [trace1, trace2]
+
+        data = [trace1, trace2]
+
+    else: 
+        data = [trace1]
+
     layout = go.Layout(
+        title_text=f'3D UMAP projection of the entire B&T embeddings with min_dist={min_dist} and n_neighbours={n_neighbours}',
         margin=dict(
             l=0,
             r=0,
             b=0,
-            t=0
+            t=50
+        ),
+            legend=dict(
+            x=0,  # Position legend at left edge
+            y=1,  # Position legend at top
+            xanchor='left',  # Anchor to left side
+            yanchor='top'    # Anchor to top
         )
     )
     fig = go.Figure(data=data, layout=layout)
-    fig.write_html('./work/plots/simple-3d-scatter.html')
+    fig.write_html('./work/plots/interactive-3d-scatter-all.html')
+
+print(f"Using min_dist={min_dist} and n_neighbours={n_neighbours} for UMAP")
+
 
 #print('maximum number of words in a chunk:', max(words))
 #print('average number of words in a chunk:', sum(words) / len(words))
+
+# How can we measure the mass of a black hole?
+# Kuzmin disk
