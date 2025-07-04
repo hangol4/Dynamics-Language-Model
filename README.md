@@ -149,7 +149,7 @@ To build a model from a .gguf file:
     ollama run astrosage
     ```
 
-### Model Choice
+### Model choice
 Useful resources for choosing a model:
 - [The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783) - academic paper presenting the Llama 3 set of foundation models, including training preocedures, architecture and performance benchmarks,
 - [The Llama 4 herd](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) - release blog post by Meta AI,
