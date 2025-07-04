@@ -181,7 +181,7 @@ else:
         text=labels,
         hovertemplate='%{text}<extra></extra>',
         marker=dict(
-            color='rgba(0, 0, 245, 0.6)',
+            color='rgba(0, 0, 245, 0.5)',
             size=12
             #opacity=0.8
         )
