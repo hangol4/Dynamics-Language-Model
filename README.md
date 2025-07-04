@@ -157,8 +157,10 @@ Useful resources for choosing a model:
 - [AstroMLab 1: Who Wins Astronomy Jeopardy!?](https://doi.org/10.48550/arXiv.2407.1119) - authors of this paper compared various large language models using the first astronomy-specific benchmarking dataset, with the division into proprietary and open-weights models. Find more up-to-date comparison on [AstroMLab's Hugging Face](https://huggingface.co/AstroMLab),
 - online benchmark leaderbords such as [LibeBench](https://livebench.ai/#/), [Vellum Leaderboard](https://www.vellum.ai/open-llm-leaderboard) and [Artificial Analysys Leaderboard](https://artificialanalysis.ai/leaderboards/models)- these compare skills such as math comprehension, reasoning and coding.
 
-
-Consider size: you should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models.
+Considerations:
+- size: you should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models,
+- context window size: the larger the context window, the more information the model can use to generate the next token, but it might require more memory and make it slower,
+- availability of API keys: some RAG scripts (e.g. many examples from LangChain) require an API key to access the model, which is not always available ([you have to be in the US](https://llama.developer.meta.com/join_waitlist) to get a key for all Meta models). You can get a Mistral AI key for free [here](https://docs.mistral.ai/getting-started/quickstart/) but it does not always work, or try [these](https://github.com/langchain-ai/langchain/tree/master/cookbook) example notebooks from LangChain on running open source LLMs locally on Intel CPU (I don't think they require API keys but I might be wrong).
 
 ## Getting started with Nougat on Cuillin
 
