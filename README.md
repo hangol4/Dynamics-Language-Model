@@ -170,10 +170,10 @@ Considerations:
 1. About Nougat: it is a PDF document parser that understands LaTeX math and tables and translates them into [markdown language](https://mathpix.com/docs/mathpix-markdown/overview). 
     
 2. Useful resources:
-- [MathPix Markdown](https://mathpix.com/docs/mathpix-markdown/how-to-mmd-vscode)  - a VS code extension to render markdown in VS code,
--  [Nougat website](https://facebookresearch.github.io/nougat/) with examples,
-- [Nougat GitHub page](https://github.com/facebookresearch/nougat/tree/main) with installation and usage instructions,
-- [Nougat: Neural Optical Understanding for Academic Documents](https://arxiv.org/abs/2308.13418) - academic paper introducing Nougat.
+    - [MathPix Markdown](https://mathpix.com/docs/mathpix-markdown/how-to-mmd-vscode)  - a VS code extension to render markdown in VS code,
+    - [Nougat website](https://facebookresearch.github.io/nougat/) with examples,
+    - [Nougat GitHub page](https://github.com/facebookresearch/nougat/tree/main) with installation and usage instructions,
+    - [Nougat: Neural Optical Understanding for Academic Documents](https://arxiv.org/abs/2308.13418) - academic paper introducing Nougat.
 
 2. Initialisation
 
@@ -199,10 +199,10 @@ Considerations:
     and then run Nougat as usual.
 
 4. Problems with Nougat
-- sometimes it omits some sections and subsections, identifying them with ** instead of ## (merging two or more subsections into one), uses an incorrect number of hashtags or omits section numbers,
-- it misinterprets boxes in Binney and Tremaine, recognising them as new sections but then merging with the rest of the text,
-- it makes mistakes while translating tables and equations, especially in subscripts and superscripts,
-- sometimes it replaces a paragraph with gibberish that doesn’t exist in the original text. The model can degenerate into repeating the same sentence over and over again, alternate between two sentences or sometimes change some words, so a strict repetition detection will not suffice. Even harder to detect are predictions where the model counts its own repetitions, which sometimes happens in the references section. Getting stuck in a repetitive loop is a known problem with Transformer-based models when sampled with greedy decoding ([source](https://arxiv.org/abs/2308.13418)). For the Dynamics Language Model, I used [clean_mmd.py](https://github.com/tijmen/cosmosage/blob/main/clean_mmd.py) from the creators of [Cosmosage](https://arxiv.org/html/2407.04420v1) to clean the Nougat output of these repetitions. It usually removes most of them, but not all.
+    - sometimes it omits some sections and subsections, identifying them with ** instead of ## (merging two or more subsections into one), uses an incorrect number of hashtags or omits section numbers,
+    - it misinterprets boxes in Binney and Tremaine, recognising them as new sections but then merging with the rest of the text,
+    - it makes mistakes while translating tables and equations, especially in subscripts and superscripts,
+    - sometimes it replaces a paragraph with gibberish that doesn’t exist in the original text. The model can degenerate into repeating the same sentence over and over again, alternate between two sentences or sometimes change some words, so a strict repetition detection will not suffice. Even harder to detect are predictions where the model counts its own repetitions, which sometimes happens in the references section. Getting stuck in a repetitive loop is a known problem with Transformer-based models when sampled with greedy decoding ([source](https://arxiv.org/abs/2308.13418)). For the Dynamics Language Model, I used [clean_mmd.py](https://github.com/tijmen/cosmosage/blob/main/clean_mmd.py) from the creators of [Cosmosage](https://arxiv.org/html/2407.04420v1) to clean the Nougat output of these repetitions. It usually removes most of them, but not all.
 
 ## Visualising embeddings
 
@@ -295,12 +295,12 @@ Adapted from [Mike's fork](https://github.com/michael-petersen/Dynamics-Language
 ### Embedding model selection
 
 1. Considerations:
-- context window size - if we give a text embedding model a string that’s too long, it will only encode the meaning of the first N tokens of the string, where N is the number of tokens in its context window ([source](https://nachi-keta.medium.com/context-window-and-vector-dimension-of-embedding-models-773167a04edb)). Embedding models with large context windows allow them to consider more surrounding text when creating embeddings, leading to better contextual understanding and more relevant results, especially for longer documents. While LLMs are pushing the boundaries of context window sizes, embedding models are often optimised for efficiency and speed. 
-- memory and model training - for transformer models like BERT, RoBERTa, DistilBERT, etc., the runtime and memory requirements grow quadratically with the input length. This limits transformers to inputs of certain lengths. A common value for BERT-based models is 512 tokens, which corresponds to about 300-400 words (for English). Also note that if a model was trained on short texts, the representations for long texts might not be that good ([source](https://sbert.net/examples/sentence_transformer/applications/computing-embeddings/README.html#input-sequence-length))
+    - context window size - if we give a text embedding model a string that’s too long, it will only encode the meaning of the first N tokens of the string, where N is the number of tokens in its context window ([source](https://nachi-keta.medium.com/context-window-and-vector-dimension-of-embedding-models-773167a04edb)). Embedding models with large context windows allow them to consider more surrounding text when creating embeddings, leading to better contextual understanding and more relevant results, especially for longer documents. While LLMs are pushing the boundaries of context window sizes, embedding models are often optimised for efficiency and speed. 
+    - memory and model training - for transformer models like BERT, RoBERTa, DistilBERT, etc., the runtime and memory requirements grow quadratically with the input length. This limits transformers to inputs of certain lengths. A common value for BERT-based models is 512 tokens, which corresponds to about 300-400 words (for English). Also note that if a model was trained on short texts, the representations for long texts might not be that good ([source](https://sbert.net/examples/sentence_transformer/applications/computing-embeddings/README.html#input-sequence-length))
 
 2. Open source model comparison
 
-| \textbf{Embedding model} | \textbf{Parameter size} | \textbf{Size} | \textbf{Context window (tokens)} | \textbf{Source}                          |
+| Embedding model          | Parameter size          | Size          | Context window (tokens)          | Source                          |
 |--------------------------|-------------------------|---------------|----------------------------------|------------------------------------------|
 | mxbai-embed-large        | 334M                    | 670MB         | 512                              | Ollama                                   |
 | all-minilm               | 23M                     | 67MB          | 512                              | Ollama                                   |
