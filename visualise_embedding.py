@@ -90,9 +90,7 @@ words = [len(chunk.split()) for chunk in chunks]
 
 #doc_embeddings = model.encode(chunks, show_progress_bar=True)
 response = ollama.embed(model=model, input=chunks)
-doc_embeddings = response["embeddings"]
-
-doc_embeddings = np.array(doc_embeddings)
+doc_embeddings = np.array(response["embeddings"])
 
 mode = '3D'
 
