@@ -5,3 +5,4 @@
 work/pdf_to_txt/output/
 
 work/langchain/run_locally/llama-2-7b-chat.Q8_0.gguf
+work/langchain/run_locally/Mistral-Large-Instruct-2407-Q4_K_M-00002-of-00002.gguf
