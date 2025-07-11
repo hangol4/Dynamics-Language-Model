@@ -179,6 +179,7 @@ Considerations:
 
     On the login node, run 
     ```bash 
+    module load anaconda
     pip install nougat-ocr
     pip install albumentations==1.0
     pip install transformers==4.38.2
@@ -210,6 +211,7 @@ Considerations:
 
 1. Install necessary libraries:
     ```bash
+    module load anaconda
     pip install ollama
     pip install umap-learn
     pip install bokeh
@@ -268,6 +270,7 @@ Adapted from [Mike's fork](https://github.com/michael-petersen/Dynamics-Language
 
     First, install through the terminal:
     ```bash
+    module load anaconda
     pip install sentence-transformers
     ```
     You might need to update `timm` with `pip install --upgrade timm` as well.
@@ -314,7 +317,33 @@ ST = Sentence Transformers
 
 We selected `nomic-embed-text-v1` due to its large context window, which is necessary to embed entire subsections of Binney and Tremaine at once.
 
+## RAG examples
+
+Over the course of the project, I downloaded from the internet and tested many RAG examples. The performacnce of neither of them was satisfactory for our purposes. They can be found in the [rag_examples](work/rag_examples) directory, and are summarized below. 
+
+### `rag-from-household-objects.py`
+- [source](https://github.com/joelgrus/rag-from-household-objects)
+- follow instructions in [Setting up Sentence Transformers](#setting-up-sentence-transformers)
+- when using the suggested database of ig nobels, it can't answer simple questions such as 'Who won the 2014 ig nobel prize for psychology?' or 'What did Brian Wansink win an ig nobel for?', even when one chunk is the entry for an entire year. It seems like the less common words such as '2014' and proper nouns don't get embedded
+
+### `ollama_rag_example.py`
+- [source](https://ollama.com/blog/embedding-models)
+- before running the script, install Chroma with `pip install chromadb`
+- it answers the example questions about llamas well, but when trying to query the ig nobel database it doesn't retreive the relevant chunk, even when we try to retrieve two most relevant chunks and use relatifely large chunks (2000 characters - see [retrieved_chunks_ollama_rag_example](work/rag_examples/retreived_chunks_ollama_rag_example/))
+
+### `langchain/qa/qa.ipynb`
+- [source](https://github.com/hwchase17/chroma-langchain/blob/master/qa.ipynb)
+- Ollama API keys necessary, doesn't work with free API keys from Mistral AI
+
+### `mistralai_rag_examples/basic_RAG.ipynb`
+- [source](https://github.com/mistralai/cookbook/blob/main/mistral/rag/basic_RAG.ipynb), also see [this](https://docs.mistral.ai/guides/rag/) website
+- the free API key from only allows to use mistral small, not mistral large
+
+### `langchain/run_locally/rag-locally-on-intel-cpu.ipynb`
+- [source](https://github.com/langchain-ai/langchain/blob/master/cookbook/rag-locally-on-intel-cpu.ipynb), see also [this](https://python.langchain.com/docs/how_to/local_llms/) website
+- when using the `nomic-embed-text-v1.5` in GGUF format with `llama.cpp`, it cahnges the context window to 2048 tokens
+- mistral large [is not available](https://docs.mistral.ai/getting-started/models/models_overview/#open-models) as .gguf file, I found some [here](https://huggingface.co/bartowski/Mistral-Large-Instruct-2407-GGUF) but it's not the official source. Same with [Llama 4](https://huggingface.co/lmstudio-community/Llama-4-Scout-17B-16E-Instruct-GGUF)
+
 ## Other scripts
 
-rag from household objects, ollama example, LangChain Jupyter Notebooks
 
