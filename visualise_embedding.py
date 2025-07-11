@@ -4,13 +4,12 @@ Code to embed a text file into a vector space and visualise it using UMAP
 
 import ollama
 import umap
-import umap.plot
 import matplotlib.pyplot as plt
 import argparse
 import textwrap
 import numpy as np
 import plotly.graph_objects as go
-from bokeh.plotting import figure, show, save
+from bokeh.plotting import figure, save
 from bokeh.models import ColumnDataSource, HoverTool
 from bokeh.io import output_file
 #from sentence_transformers import SentenceTransformer
@@ -57,14 +56,15 @@ caches_dir = '/home/hgolawska/llm_summer_project/caches'
 filename = './work/pdf_to_txt/output/cleaned/Binney_and_Tremaine.mmd'
 labels_filename = './work/pdf_to_txt/output/to_clean/Binney_and_Tremaine.mmd'
 
-plot_title = f'UMAP projection of the entire B&T embeddings with nomic-embed-text\nmin_dist={min_dist}, n_neighbors={n_neighbours}'
-outfile_title = f'./work/plots/umap_whole_interactive_test.png'
 
 #embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
 #model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
 
 #model = 'mxbai-embed-large'
 model = 'nomic-embed-text'
+
+plot_title = f'UMAP projection of the entire B&T embeddings with {model}\nmin_dist={min_dist}, n_neighbors={n_neighbours}'
+outfile_title = f'./work/plots/umap_whole_interactive_test.png'
 
 chunks = chunks_from_file(filename)
 chunks_uncleaned = chunks_from_file(labels_filename)
@@ -86,152 +86,148 @@ words = [len(chunk.split()) for chunk in chunks]
 
 # create the embeddings for the documents
 
-
-
-#doc_embeddings = model.encode(chunks, show_progress_bar=True)
 response = ollama.embed(model=model, input=chunks)
 doc_embeddings = np.array(response["embeddings"])
+#doc_embeddings = model.encode(chunks, show_progress_bar=True)
 
-mode = '3D'
-
-if mode == '2D':
+# visualise in 2D
     
-    # reduce the dimensionality of the embeddings using UMAP
-    flat_embeddings = umap.UMAP(n_components=2, min_dist=min_dist, n_neighbors=n_neighbours, metric='cosine').fit(doc_embeddings)
-    
-    # uncomment the following lines to validate that the flattened embeddings match their labels
-    '''for i in range(len(chunks)):
-        x, y = flat_embeddings.embedding_[i, 0], flat_embeddings.embedding_[i, 1]
-        print(f"Chunk {i}: ({x:.3f}, {y:.3f})")
-        print(f"Label: {labels[i]}")
-        print(f"First 100 chars: {chunks[i][:100]}...")
-        print("-" * 50)'''
+# reduce the dimensionality of the embeddings using UMAP
+flat_embeddings = umap.UMAP(n_components=2, min_dist=min_dist, n_neighbors=n_neighbours, metric='cosine').fit(doc_embeddings)
 
-    # plot the embeddings
+# plot the 2D embeddings
 
-    fig, ax = plt.subplots(figsize=(12,12))
-    ax.scatter(flat_embeddings.embedding_[:-1, 0], flat_embeddings.embedding_[:-1, 1], color='lightblue', alpha=1, s=30, edgecolors=None)
-    # add the last point in red
-    ax.scatter(flat_embeddings.embedding_[-1, 0], flat_embeddings.embedding_[-1, 1], color='red', alpha=1, s=30, edgecolors=None)
-    # add the labels to all points except for the last one
-    for i in range(0, flat_embeddings.embedding_.shape[0]-1):
-        # Wrap the label to a maximum width (e.g., 15 characters per line)
-        wrapped_label = "\n".join(textwrap.wrap(labels[i], width=15))
-        ax.text(flat_embeddings.embedding_[i, 0],
-                flat_embeddings.embedding_[i, 1],
-                wrapped_label,
-                color='black',
-                fontsize=8,
-                horizontalalignment='center',
-                verticalalignment='center',
-            )
-        # add the last point and label it 'question'
-    ax.text(flat_embeddings.embedding_[-1, 0],
-            flat_embeddings.embedding_[-1, 1],
-            'question',
-            color='red',
+fig, ax = plt.subplots(figsize=(12,12))
+ax.scatter(flat_embeddings.embedding_[:-1, 0], flat_embeddings.embedding_[:-1, 1], color='lightblue', alpha=1, s=30, edgecolors=None)
+
+# add wrapped labels
+for i in range(0, flat_embeddings.embedding_.shape[0]-1):
+    # Wrap the label to a maximum width (e.g., 15 characters per line)
+    wrapped_label = "\n".join(textwrap.wrap(labels[i], width=15))
+    ax.text(flat_embeddings.embedding_[i, 0],
+            flat_embeddings.embedding_[i, 1],
+            wrapped_label,
+            color='black',
             fontsize=8,
             horizontalalignment='center',
             verticalalignment='center',
-            )
-    ax.set_aspect('equal')
-    plt.title(plot_title)
-    #plt.savefig(outfile_title, dpi=300)
-    #plt.show()
-
-    # interactive plot using bokeh
-    source = ColumnDataSource(data=dict(
-        x=flat_embeddings.embedding_[:, 0], 
-        y=flat_embeddings.embedding_[:, 1], 
-        label=labels))
-    question_source = ColumnDataSource(data=dict(
-        x=[flat_embeddings.embedding_[-1, 0]],
-        y=[flat_embeddings.embedding_[-1, 1]],
-        label=['Question']))
-
-    output_file(f"./work/plots/interactive_scatter_all_question.html")
-
-    p = figure(title=plot_title, tools="pan,wheel_zoom,box_zoom,reset,save", width=800, height=800)
-    p.scatter('x', 'y', source=source, size=10, color='deepskyblue', alpha=0.5, legend_label='Binney and Tremaine')
-    if args.question:
-        p.scatter('x', 'y', source=question_source, size=10, color='red', legend_label=f'Question: {question}')
-    hover = HoverTool(tooltips = [("", "@label")])
-    p.add_tools(hover)
-    #show(p)
-
-
-    #save(p)
-
-else:
-
-    # visualise in 3D
-    flat_embeddings = umap.UMAP(n_components=3, min_dist=min_dist, n_neighbors=n_neighbours, metric='cosine').fit(doc_embeddings)
-    embeddings_array = flat_embeddings.embedding_
-    print('embeddings shape:', embeddings_array.shape)
-
-    x, y, z = embeddings_array[:, 0], embeddings_array[:, 1], embeddings_array[:, 2]
-    trace1 = go.Scatter3d(
-        x=x,
-        y=y,
-        z=z,
-        mode='markers',
-        name='Binney and Tremaine chapters',
-        text=labels,
-        hovertemplate='%{text}<extra></extra>',
-        marker=dict(
-            color='rgba(0, 0, 245, 0.5)',
-            size=12
-            #opacity=0.8
         )
-    )
-
-    if args.question:
-        # add the question point
     
-        x2, y2, z2 = embeddings_array[-1, 0], embeddings_array[-1, 1], embeddings_array[-1, 2]
+# change colors of the last point if question nmode is activated
 
-        trace2 = go.Scatter3d(
-            x=[x2],
-            y=[y2],
-            z=[z2],
-            mode='markers',
-            text=[f'Question: {question}'],
-            hovertemplate='%{text}<extra></extra>',
-            name=f'Question: {question}',
-            marker=dict(
-                color='rgba(162, 32, 21, 0.7)',
-                size=12,
-                symbol='circle',
-                line=dict(
-                    color='rgb(162, 32, 21)',
-                    width=1
-                ),
-                #opacity=0.9
-            )
-        )
+if args.question:
+    color_scatter = 'red'
+    color_label = 'red'
+else:
+    color_scatter = 'lightblue'
+    color_label = 'black'
 
-        data = [trace1, trace2]
+ax.scatter(flat_embeddings.embedding_[-1, 0], flat_embeddings.embedding_[-1, 1], color=color_scatter, alpha=1, s=30, edgecolors=None)
 
-    else: 
-        data = [trace1]
+wrapped_label = "\n".join(textwrap.wrap(labels[-1], width=15))
+ax.text(flat_embeddings.embedding_[-1, 0],
+        flat_embeddings.embedding_[-1, 1],
+        wrapped_label,
+        color='black',
+        fontsize=8,
+        horizontalalignment='center',
+        verticalalignment='center',
+    )
 
-    layout = go.Layout(
-        title_text=f'3D UMAP projection of the entire B&T embeddings with min_dist={min_dist} and n_neighbours={n_neighbours}',
-        margin=dict(
-            l=0,
-            r=0,
-            b=0,
-            t=50
-        ),
-            legend=dict(
-            x=0,  # Position legend at left edge
-            y=1,  # Position legend at top
-            xanchor='left',  # Anchor to left side
-            yanchor='top'    # Anchor to top
+ax.set_aspect('equal')
+plt.title(plot_title)
+#plt.savefig(outfile_title, dpi=300)
+
+# interactive plot using bokeh
+
+source = ColumnDataSource(data=dict(
+    x=flat_embeddings.embedding_[:, 0], 
+    y=flat_embeddings.embedding_[:, 1], 
+    label=labels))
+question_source = ColumnDataSource(data=dict(
+    x=[flat_embeddings.embedding_[-1, 0]],
+    y=[flat_embeddings.embedding_[-1, 1]],
+    label=['Question']))
+
+output_file(f"./work/plots/interactive_scatter_all_question.html")
+
+p = figure(title=plot_title, tools="pan,wheel_zoom,box_zoom,reset,save", width=800, height=800)
+p.scatter('x', 'y', source=source, size=10, color='deepskyblue', alpha=0.5, legend_label='Binney and Tremaine')
+if args.question:
+    p.scatter('x', 'y', source=question_source, size=10, color='red', legend_label=f'Question: {question}')
+hover = HoverTool(tooltips = [("", "@label")])
+p.add_tools(hover)
+
+save(p)
+
+
+# visualise in 3D - interactive plot using plotly
+
+flat_embeddings = umap.UMAP(n_components=3, min_dist=min_dist, n_neighbors=n_neighbours, metric='cosine').fit(doc_embeddings)
+embeddings_array = flat_embeddings.embedding_
+
+x, y, z = embeddings_array[:, 0], embeddings_array[:, 1], embeddings_array[:, 2]
+trace1 = go.Scatter3d(
+    x=x,
+    y=y,
+    z=z,
+    mode='markers',
+    name='Binney and Tremaine chapters',
+    text=labels,
+    hovertemplate='%{text}<extra></extra>',
+    marker=dict(
+        color='rgba(0, 0, 245, 0.5)',
+        size=12
+    )
+)
+
+if args.question:
+
+    # add the question point
+
+    x2, y2, z2 = embeddings_array[-1, 0], embeddings_array[-1, 1], embeddings_array[-1, 2]
+
+    trace2 = go.Scatter3d(
+        x=[x2],
+        y=[y2],
+        z=[z2],
+        mode='markers',
+        text=[f'Question: {question}'],
+        hovertemplate='%{text}<extra></extra>',
+        name=f'Question: {question}',
+        marker=dict(
+            color='rgba(162, 32, 21, 0.7)',
+            size=12,
+            symbol='circle',
+            line=dict(
+                color='rgb(162, 32, 21)',
+                width=1
+            ),
         )
     )
-    fig = go.Figure(data=data, layout=layout)
-    fig.write_html('./work/plots/interactive-3d-scatter-all.html')
+
+    data = [trace1, trace2]
+
+else: 
+    data = [trace1]
+
+layout = go.Layout(
+    title_text=f'3D UMAP projection of the entire B&T embeddings with min_dist={min_dist} and n_neighbours={n_neighbours}',
+    margin=dict(
+        l=0,
+        r=0,
+        b=0,
+        t=50
+    ),
+        legend=dict(
+        x=0,  # Position legend at left edge
+        y=1,  # Position legend at top
+        xanchor='left',  # Anchor to left side
+        yanchor='top'    # Anchor to top
+    )
+)
+fig = go.Figure(data=data, layout=layout)
+fig.write_html('./work/plots/interactive-3d-scatter-all.html')
 
 print(f"Using min_dist={min_dist} and n_neighbours={n_neighbours} for UMAP")
 

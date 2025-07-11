@@ -75,7 +75,7 @@ output = ollama.generate(
   prompt=f"Using this data: {data}. Respond to this prompt: {example_input}",
 )
 
-with open(f'output_ollama_rag_example/data_{chunk_size}.txt', 'w') as f:
+with open(f'retrieved_chunks_ollama_rag_example/data_{chunk_size}.txt', 'w') as f:
     f.write('QUESTION: ' + example_input + '\n\nCHUNKS:\n')
     for chunk in data:
         f.write(chunk + '\n###########new chunk###########\n')
