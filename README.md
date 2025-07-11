@@ -344,6 +344,4 @@ Over the course of the project, I downloaded from the internet and tested many R
 - when using the `nomic-embed-text-v1.5` in GGUF format with `llama.cpp`, it cahnges the context window to 2048 tokens
 - mistral large [is not available](https://docs.mistral.ai/getting-started/models/models_overview/#open-models) as .gguf file, I found some [here](https://huggingface.co/bartowski/Mistral-Large-Instruct-2407-GGUF) but it's not the official source. Same with [Llama 4](https://huggingface.co/lmstudio-community/Llama-4-Scout-17B-16E-Instruct-GGUF)
 
-## Other scripts
-
 
