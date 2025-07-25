@@ -16,7 +16,7 @@ Summer project: building a llama-based large language model specialised in galax
     - [Running the script](#running-the-script)
     - [Setting up Sentence Transformers](#setting-up-sentence-transformers)
     - [Embedding model selection](#embedding-model-selection)
-- [Other scripts](#other-scripts)
+- [RAG examples](#raq-examples)
 
 ## Getting started with Ollama
 
@@ -299,7 +299,7 @@ Adapted from [Mike's fork](https://github.com/michael-petersen/Dynamics-Language
 
 1. Considerations:
     - context window size - if we give a text embedding model a string that’s too long, it will only encode the meaning of the first N tokens of the string, where N is the number of tokens in its context window ([source](https://nachi-keta.medium.com/context-window-and-vector-dimension-of-embedding-models-773167a04edb)). Embedding models with large context windows allow them to consider more surrounding text when creating embeddings, leading to better contextual understanding and more relevant results, especially for longer documents. While LLMs are pushing the boundaries of context window sizes, embedding models are often optimised for efficiency and speed. 
-    - memory and model training - for transformer models like BERT, RoBERTa, DistilBERT, etc., the runtime and memory requirements grow quadratically with the input length. This limits transformers to inputs of certain lengths. A common value for BERT-based models is 512 tokens, which corresponds to about 300-400 words (for English). Also note that if a model was trained on short texts, the representations for long texts might not be that good ([source](https://sbert.net/examples/sentence_transformer/applications/computing-embeddings/README.html#input-sequence-length))
+    - memory and model training - for transformer models like BERT, RoBERTa, DistilBERT, etc., the runtime and memory requirements grow quadratically with the input length. This limits transformers to inputs of certain lengths. A common value for BERT-based models is 512 tokens, which corresponds to about 300-400 words (for English). Also, note that if a model was trained on short texts, the representations for long texts might not be that good ([source](https://sbert.net/examples/sentence_transformer/applications/computing-embeddings/README.html#input-sequence-length))
 
 2. Open source model comparison
 
@@ -319,17 +319,17 @@ We selected `nomic-embed-text-v1` due to its large context window, which is nece
 
 ## RAG examples
 
-Over the course of the project, I downloaded from the internet and tested many RAG examples. The performacnce of neither of them was satisfactory for our purposes. They can be found in the [rag_examples](work/rag_examples) directory, and are summarized below. 
+Over the course of the project, I downloaded from the internet and tested many RAG examples. The performacnce of neither of them was satisfactory for our purposes. They can be found in the [rag_examples](work/rag_examples) directory, and are summarised below. 
 
 ### `rag-from-household-objects.py`
 - [source](https://github.com/joelgrus/rag-from-household-objects)
 - follow instructions in [Setting up Sentence Transformers](#setting-up-sentence-transformers)
-- when using the suggested database of ig nobels, it can't answer simple questions such as 'Who won the 2014 ig nobel prize for psychology?' or 'What did Brian Wansink win an ig nobel for?', even when one chunk is the entry for an entire year. It seems like the less common words such as '2014' and proper nouns don't get embedded
+- when using the suggested database of ig nobels, it can't answer simple questions such as 'Who won the 2014 ig nobel prize for psychology?' or 'What did Brian Wansink win an ig nobel for?', even when one chunk is the entry for an entire year. It seems like the less common words, such as '2014' and proper nouns, don't get embedded
 
 ### `ollama_rag_example.py`
 - [source](https://ollama.com/blog/embedding-models)
 - before running the script, install Chroma with `pip install chromadb`
-- it answers the example questions about llamas well, but when trying to query the ig nobel database it doesn't retreive the relevant chunk, even when we try to retrieve two most relevant chunks and use relatifely large chunks (2000 characters - see [retrieved_chunks_ollama_rag_example](work/rag_examples/retreived_chunks_ollama_rag_example/))
+- it answers the example questions about llamas well, but when trying to query the ig nobel database it doesn't retrieve the relevant chunk, even when we try to retrieve the two most relevant chunks and use relatively large chunks (2000 characters - see [retrieved_chunks_ollama_rag_example](work/rag_examples/retreived_chunks_ollama_rag_example/))
 
 ### `langchain/qa/qa.ipynb`
 - [source](https://github.com/hwchase17/chroma-langchain/blob/master/qa.ipynb)
@@ -337,11 +337,11 @@ Over the course of the project, I downloaded from the internet and tested many R
 
 ### `mistralai_rag_examples/basic_RAG.ipynb`
 - [source](https://github.com/mistralai/cookbook/blob/main/mistral/rag/basic_RAG.ipynb), also see [this](https://docs.mistral.ai/guides/rag/) website
-- the free API key from only allows to use mistral small, not mistral large
+- the free API key only allows to use Mistral small, not Mistral large
 
 ### `langchain/run_locally/rag-locally-on-intel-cpu.ipynb`
 - [source](https://github.com/langchain-ai/langchain/blob/master/cookbook/rag-locally-on-intel-cpu.ipynb), see also [this](https://python.langchain.com/docs/how_to/local_llms/) website
-- when using the `nomic-embed-text-v1.5` in GGUF format with `llama.cpp`, it cahnges the context window to 2048 tokens
+- when using the `nomic-embed-text-v1.5` in GGUF format with `llama.cpp`, it changes the context window to 2048 tokens
 - mistral large [is not available](https://docs.mistral.ai/getting-started/models/models_overview/#open-models) as .gguf file, I found some [here](https://huggingface.co/bartowski/Mistral-Large-Instruct-2407-GGUF) but it's not the official source. Same with [Llama 4](https://huggingface.co/lmstudio-community/Llama-4-Scout-17B-16E-Instruct-GGUF)
 
 
