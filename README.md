@@ -1,6 +1,6 @@
 # Dynamics Language Model
 
-Summer project: building a llama-based large language model specialised in galaxy dynamics by leveraging Retrieval-Augmented Generation (RAG). The main source of information is a well-known textbook 'Galactic Dynamics' by James Binney and Scott Tremaine (Second Edition). To translate PDF files into text, we use [Nougat](https://github.com/facebookresearch/nougat/tree/main) -  a PDF parser that understands LaTeX math and tables. It performs an Optical Character Recognition (OCR) task for processing scientific documents into a markup language. 
+Summer project: building a llama-based large language model specialised in galaxy dynamics by leveraging Retrieval-Augmented Generation (RAG). The main source of information is a well-known textbook 'Galactic Dynamics' by James Binney and Scott Tremaine (Second Edition). To translate PDF files into text, we use [Nougat](https://github.com/facebookresearch/nougat/tree/main) -  a PDF parser that understands LaTeX math and tables. It performs an Optical Character Recognition (OCR) task for processing scientific documents into a markup language. Example output plots from the main code can be found in the [Dynamics-Language-Model-Plots](https://github.com/hangol4/Dynamics-Language-Model-Plots) repository.
 
 ## Table of Contents
 - [Dynamics Language Model](#dynamics-language-model)
@@ -240,6 +240,7 @@ Considerations:
 
     Find more information about UMAP parameters [here](https://umap-learn.readthedocs.io/en/latest/parameters.html).
 4. At the end, close the Ollama server following the instructions in the [Getting started with Ollama on Cuillin](#cuillin) section.
+5. The plots will get saved in the directory `work/plots`. To see example outputs, visit the accompanying repository [Dynamics-Language-Model-Plots](https://github.com/hangol4/Dynamics-Language-Model-Plots).
 
 
 ### Code structure
