@@ -17,6 +17,11 @@ Summer project: building a llama-based large language model specialised in galax
     - [Setting up Sentence Transformers](#setting-up-sentence-transformers)
     - [Embedding model selection](#embedding-model-selection)
 - [RAG examples](#raq-examples)
+    - [rag-from-household-objects.py](#rag-from-household-objects.py)
+    - [ollama_rag_example.py](#ollama_rag_example.py)
+    - [langchain/qa/qa.ipynb](#langchainqaqa.ipynb)
+    - [mistralai_rag_examples/basic_RAG.ipynb](#mistralairag_examplesbasic_rag.ipynb)
+    - [langchain/run_locally/rag-locally-on-intel-cpu.ipynb](#langchainrun_locallyrag-locally-on-intel-cpu.ipynb)
 
 ## Getting started with Ollama
 
