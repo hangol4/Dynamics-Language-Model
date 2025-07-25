@@ -1,12 +1,18 @@
 # Dynamics Language Model
 
-Summer project: building a llama-based large language model specialised in galaxy dynamics by leveraging Retrieval-Augmented Generation (RAG). The main source of information is a well-known textbook 'Galactic Dynamics' by James Binney and Scott Tremaine (Second Edition). To translate PDF files into text, we use [Nougat](https://github.com/facebookresearch/nougat/tree/main) -  a PDF parser that understands LaTeX math and tables. It performs an Optical Character Recognition (OCR) task for processing scientific documents into a markup language. Example output plots from the main code can be found in the [Dynamics-Language-Model-Plots](https://github.com/hangol4/Dynamics-Language-Model-Plots) repository.
+Summer project: building a llama-based large language model (LLM) specialised in galaxy dynamics by leveraging Retrieval-Augmented Generation (RAG). Our main source of information is a well-known textbook 'Galactic Dynamics' by James Binney and Scott Tremaine (Second Edition). To translate PDF files into text, we use [Nougat](https://github.com/facebookresearch/nougat/tree/main) -  a PDF parser that understands LaTeX math and tables. It performs an Optical Character Recognition (OCR) task for processing scientific documents into a markup language. 
+
+The main output from the project is the `visualise_embedding.py` script that reads in the text of Binney and Tremaine from a .mmd file, splits it into subsections, and embeds these subsections using a chosen embedding model. Then, it reduces the dimensionality of the embeddings to 2D and 3D using [UMAP](https://umap-learn.readthedocs.io/en/latest/index.html), and visualises the results in interactive plots. The script can also embed a question and visualise it in the same embedding space as the textbook subsections. Example output plots can be found in the [Dynamics-Language-Model-Plots](https://github.com/hangol4/Dynamics-Language-Model-Plots) repository. 
+
+To build a specialist LLM, work presented in this repository must be followed by fine-tuning or advanced RAG, as all the simple RAG examples we managed to find were not satisfactory for our purposes. The RAG examples can be found in the [rag_examples](work/rag_examples) directory, and are summarised in the [RAG examples](#rag-examples) section below.
+
+The project was carried out by Hanna Golawska, supervised by Michael Petersen and funded by the Physics and Astronomy Career Development Scholarship from School of Physics and Astronomy, University of Edinburgh.
 
 ## Table of Contents
 - [Dynamics Language Model](#dynamics-language-model)
 - [Table of Contents](#table-of-contents)
 - [Getting started with Ollama](#getting-started-with-ollama)
-    - [My laptop](#my-laptop)
+    - [Locally](#locally)
     - [Cuillin](#cuillin)
     - [Model file](#model-file)
     - [Downloading models from the internet](#downloading-models-from-the-internet)
@@ -16,7 +22,7 @@ Summer project: building a llama-based large language model specialised in galax
     - [Running the script](#running-the-script)
     - [Setting up Sentence Transformers](#setting-up-sentence-transformers)
     - [Embedding model selection](#embedding-model-selection)
-- [RAG examples](#raq-examples)
+- [RAG examples](#rag-examples)
     - [rag-from-household-objects.py](#rag-from-household-objects.py)
     - [ollama_rag_example.py](#ollama_rag_example.py)
     - [langchain/qa/qa.ipynb](#langchainqaqa.ipynb)
@@ -25,7 +31,7 @@ Summer project: building a llama-based large language model specialised in galax
 
 ## Getting started with Ollama
 
-### My laptop 
+### Locally
 (Apple MacBook with M2 chip, macOS Sonoma 14.5)
 
 1. Initialisation
@@ -162,13 +168,13 @@ Useful resources for choosing a model:
 - [The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783) - academic paper presenting the Llama 3 set of foundation models, including training procedures, architecture and performance benchmarks,
 - [The Llama 4 herd](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) - release blog post by Meta AI,
 - [Model library](https://ollama.com/library) on Ollama's website - a list of available models with download instructions and descriptions, containing information such as model size, context window size, and input formats (text, image, audio). See a shorter summary of the most popular models on [Ollama GitHub](https://github.com/ollama/ollama?tab=readme-ov-file#model-library),
-- [AstroMLab 1: Who Wins Astronomy Jeopardy!?](https://doi.org/10.48550/arXiv.2407.1119) - the authors of this paper compared various large language models using the first astronomy-specific benchmarking dataset, with the division into proprietary and open-weights models. Find more up-to-date comparison on [AstroMLab's Hugging Face](https://huggingface.co/AstroMLab),
+- [AstroMLab 1: Who Wins Astronomy Jeopardy!?](https://doi.org/10.48550/arXiv.2407.1119) - the authors of this paper compared various large language models using the first astronomy-specific benchmarking dataset, with the division into proprietary and open-weights models. Find a more up-to-date comparison on [AstroMLab's Hugging Face](https://huggingface.co/AstroMLab),
 - online benchmark leaderboards such as [LibeBench](https://livebench.ai/#/), [Vellum Leaderboard](https://www.vellum.ai/open-llm-leaderboard) and [Artificial Analysys Leaderboard](https://artificialanalysis.ai/leaderboards/models)- these compare skills such as math comprehension, reasoning and coding.
 
 Considerations:
-- size: you should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models,
+- memory: you should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models,
 - context window size: the larger the context window, the more information the model can use to generate the next token, but it might require more memory and make it slower,
-- availability of API keys: some RAG scripts (e.g., many examples from LangChain) require an API key to access the model, which is not always available ([you must be in the US](https://llama.developer.meta.com/join_waitlist) to get a key for all Meta models). You can obtain a Mistral AI key for free [here](https://docs.mistral.ai/getting-started/quickstart/), but it does not always work, or try [these](https://github.com/langchain-ai/langchain/tree/master/cookbook) example notebooks from LangChain on running open source LLMs locally on Intel CPU (I don't think they require API keys but I might be wrong).
+- availability of API keys: some RAG scripts (e.g., many examples from LangChain) require an API key to access the model, which is not always available ([you must be in the US](https://llama.developer.meta.com/join_waitlist) to get a key for all Meta models). You can obtain a Mistral AI key to use Mistral Small for free [here](https://docs.mistral.ai/getting-started/quickstart/), but it does not always work, or try [these](https://github.com/langchain-ai/langchain/tree/master/cookbook) example notebooks from LangChain on running open source LLMs locally on Intel CPU (also discussed in the [RAG examples](#rag-examples) section below).
 
 ## Getting started with Nougat on Cuillin
 
@@ -212,7 +218,7 @@ Considerations:
 
 ## Visualising embeddings
 
-### Running the script
+### Running the `visualise_embedding.py` script
 
 1. Install necessary libraries:
     ```bash
@@ -226,7 +232,7 @@ Considerations:
     ```bash 
     ollama serve &
     ```
-3. Tweak necessary lines, such as paths to input files and names for the plots, in the script `visualise_embedding.py`.
+3. Tweak necessary lines, such as paths to input files and names for the plots.
 4. Run the script: 
     ```bash
     python visualise_embedding.py 
@@ -254,13 +260,13 @@ Considerations:
     response = ollama.embed(model=model, input=chunks)
     doc_embeddings = np.array(response["embeddings"])
     ```
-    Alternatively, if using an embedding model accessible through Tentence Transformers:
+    Alternatively, if using an embedding model accessible through Sentence Transformers:
     ```python
     embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
     model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
     doc_embeddings = np.array(model.encode(chunks, show_progress_bar=True))
     ```
-    See the next section for instructions on setting up Tentence Transformers.
+    See the next section for instructions on setting up Sentence Transformers.
 4. The produced NumPy array has hundreds of dimensions - reduce its dimensionality to 2D and 3D using UMAP:
     ```python
     # reduce to 2D
@@ -326,7 +332,7 @@ We selected `nomic-embed-text-v1` due to its large context window, which is nece
 
 ## RAG examples
 
-Over the course of the project, I downloaded from the internet and tested many RAG examples. The performacnce of neither of them was satisfactory for our purposes. They can be found in the [rag_examples](work/rag_examples) directory, and are summarised below. 
+Over the course of the project, we downloaded from the internet and tested many RAG examples. The performacnce of neither of them was satisfactory for our purposes. They can be found in the [rag_examples](work/rag_examples) directory, and are summarised below. 
 
 ### `rag-from-household-objects.py`
 - [source](https://github.com/joelgrus/rag-from-household-objects)
