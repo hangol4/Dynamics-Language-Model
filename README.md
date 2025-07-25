@@ -226,7 +226,8 @@ Considerations:
     ```bash 
     ollama serve &
     ```
-2. Run the script: 
+3. Tweak necessary lines, such as paths to input files and names for the plots, in the script `visualise_embedding.py`.
+4. Run the script: 
     ```bash
     python visualise_embedding.py 
     ```
@@ -239,8 +240,8 @@ Considerations:
     `-n`, `--n_neighbours <int>` - number of nearest neighbours for UMAP.
 
     Find more information about UMAP parameters [here](https://umap-learn.readthedocs.io/en/latest/parameters.html).
-4. At the end, close the Ollama server following the instructions in the [Getting started with Ollama on Cuillin](#cuillin) section.
-5. The plots will get saved in the directory `work/plots`. To see example outputs, visit the accompanying repository [Dynamics-Language-Model-Plots](https://github.com/hangol4/Dynamics-Language-Model-Plots).
+5. At the end, close the Ollama server following the instructions in the [Getting started with Ollama on Cuillin](#cuillin) section.
+6. The plots will get saved in the directory `work/plots`. To see example outputs, visit the accompanying repository [Dynamics-Language-Model-Plots](https://github.com/hangol4/Dynamics-Language-Model-Plots).
 
 
 ### Code structure

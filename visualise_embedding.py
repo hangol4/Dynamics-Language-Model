@@ -49,18 +49,9 @@ args = parser.parse_args()
 min_dist = args.min_dist
 n_neighbours = args.n_neighbours
 
-#min_dist = 0.9
-#n_neighbours = 30
-
-caches_dir = '/home/hgolawska/llm_summer_project/caches'
 filename = './work/pdf_to_txt/output/cleaned/Binney_and_Tremaine.mmd'
 labels_filename = './work/pdf_to_txt/output/to_clean/Binney_and_Tremaine.mmd'
 
-
-#embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
-#model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
-
-#model = 'mxbai-embed-large'
 model = 'nomic-embed-text'
 
 plot_title = f'UMAP projection of the entire B&T embeddings with {model}\nmin_dist={min_dist}, n_neighbors={n_neighbours}'
@@ -80,14 +71,15 @@ if args.question:
 # count the number of words in each chunk
 words = [len(chunk.split()) for chunk in chunks] 
 
-
-# print(chunks[0])  # print the first chunk
-# print(labels[0])  # print the label for the first chunk
-
 # create the embeddings for the documents
 
 response = ollama.embed(model=model, input=chunks)
 doc_embeddings = np.array(response["embeddings"])
+
+# uncomment the following lines to use all-MiniLM-L6-v2 embedding model form Sentence Transformers instead
+#embedding_model = 'sentence-transformers/all-MiniLM-L6-v2'
+#caches_dir = '/home/hgolawska/llm_summer_project/caches'
+#model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
 #doc_embeddings = model.encode(chunks, show_progress_bar=True)
 
 # visualise in 2D
@@ -138,7 +130,7 @@ ax.set_aspect('equal')
 plt.title(plot_title)
 #plt.savefig(outfile_title, dpi=300)
 
-# interactive plot using bokeh
+# interactive 2D plot using bokeh
 
 source = ColumnDataSource(data=dict(
     x=flat_embeddings.embedding_[:, 0], 
@@ -234,6 +226,3 @@ print(f"Using min_dist={min_dist} and n_neighbours={n_neighbours} for UMAP")
 
 #print('maximum number of words in a chunk:', max(words))
 #print('average number of words in a chunk:', sum(words) / len(words))
-
-# How can we measure the mass of a black hole?
-# Kuzmin disk
