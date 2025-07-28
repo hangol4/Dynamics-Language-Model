@@ -142,7 +142,7 @@ if args.question:
         y=[flat_embeddings.embedding_[-1, 1]],
         label=['Question']))
 
-output_file(f"./work/plots/interactive_2d_all_question2.html")
+output_file(f"./work/plots/interactive-2d-all-question2.html")
 
 p = figure(title=plot_title, tools="pan,wheel_zoom,box_zoom,reset,save", width=800, height=800)
 p.scatter('x', 'y', source=source, size=10, color='rgba(0, 0, 245, 0.5)', legend_label='Binney and Tremaine')
@@ -221,7 +221,7 @@ layout = go.Layout(
     )
 )
 fig = go.Figure(data=data, layout=layout)
-fig.write_html('./work/plots/interactive-3d-scatter-all.html')
+fig.write_html('./work/plots/interactive-3d-all-question2.html')
 
 print(f"Using min_dist={min_dist} and n_neighbours={n_neighbours} for UMAP")
 
