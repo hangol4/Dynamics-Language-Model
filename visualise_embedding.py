@@ -54,8 +54,6 @@ labels_filename = './work/pdf_to_txt/output/to_clean/Binney_and_Tremaine.mmd'
 
 model = 'nomic-embed-text'
 
-plot_title = f'UMAP projection of the entire B&T embeddings with {model}\nmin_dist={min_dist}, n_neighbors={n_neighbours}'
-outfile_title = f'./work/plots/umap_whole_interactive_test.png'
 
 chunks = chunks_from_file(filename)
 chunks_uncleaned = chunks_from_file(labels_filename)
@@ -81,6 +79,8 @@ doc_embeddings = np.array(response["embeddings"])
 #caches_dir = '/home/hgolawska/llm_summer_project/caches'
 #model = SentenceTransformer(embedding_model, cache_folder=caches_dir, local_files_only=True)
 #doc_embeddings = model.encode(chunks, show_progress_bar=True)
+
+plot_title = f'UMAP projection of the entire B&T embeddings with {model}\nmin_dist={min_dist}, n_neighbors={n_neighbours}'
 
 # visualise in 2D
     
@@ -128,7 +128,7 @@ ax.text(flat_embeddings.embedding_[-1, 0],
 
 ax.set_aspect('equal')
 plt.title(plot_title)
-#plt.savefig(outfile_title, dpi=300)
+#plt.savefig('./work/plots/text_plot_whole.png', dpi=300)
 
 # interactive 2D plot using bokeh
 
@@ -136,21 +136,23 @@ source = ColumnDataSource(data=dict(
     x=flat_embeddings.embedding_[:, 0], 
     y=flat_embeddings.embedding_[:, 1], 
     label=labels))
-question_source = ColumnDataSource(data=dict(
-    x=[flat_embeddings.embedding_[-1, 0]],
-    y=[flat_embeddings.embedding_[-1, 1]],
-    label=['Question']))
+if args.question:
+    question_source = ColumnDataSource(data=dict(
+        x=[flat_embeddings.embedding_[-1, 0]],
+        y=[flat_embeddings.embedding_[-1, 1]],
+        label=['Question']))
 
-output_file(f"./work/plots/interactive_scatter_all_question.html")
+output_file(f"./work/plots/interactive_2d_all_question2.html")
 
 p = figure(title=plot_title, tools="pan,wheel_zoom,box_zoom,reset,save", width=800, height=800)
-p.scatter('x', 'y', source=source, size=10, color='deepskyblue', alpha=0.5, legend_label='Binney and Tremaine')
+p.scatter('x', 'y', source=source, size=10, color='rgba(0, 0, 245, 0.5)', legend_label='Binney and Tremaine')
 if args.question:
     p.scatter('x', 'y', source=question_source, size=10, color='red', legend_label=f'Question: {question}')
 hover = HoverTool(tooltips = [("", "@label")])
 p.add_tools(hover)
 
 save(p)
+# 'deepskyblue', alpha=0.5,
 
 
 # visualise in 3D - interactive plot using plotly
